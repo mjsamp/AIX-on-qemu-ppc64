@@ -1,6 +1,6 @@
 # AIX on qemu-system-ppc64
 
-My experience running AIX and relate software on Linux qemu-system-ppc64
+My experience running AIX and related software on Linux qemu-system-ppc64
 
 ## Environment
 
