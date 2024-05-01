@@ -224,7 +224,9 @@ Take a look into the console output files before trying install AIX if you don't
 
 This environment isn't recommended for production but it worth a try if you want to learn AIX and PowerHA for example.
 
-Testing PowerHA I did create a Resource Group with a service IP and a shared Volume Group successfully and move and failover worked very well in my tests.
+Testing PowerHA I was able to create a Resource Group with a service IP and a shared Volume Group successfully and move and failover worked very well in my tests.
+\
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/SNvnmmXTENk/0.jpg)](https://www.youtube.com/watch?v=SNvnmmXTENk)
 
 ## Buy me a coffee
 BTC: 329nUAQRxJPEybo5K1dgJdFteCojHimTcA
