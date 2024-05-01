@@ -1,4 +1,4 @@
-# AIX-on-qemu-ppc64
+# AIX on qemu-system-ppc64
 
 My experience running AIX and relate software on Linux qemu-system-ppc64
 
