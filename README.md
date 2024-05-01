@@ -42,7 +42,8 @@ Do the same for logredo64 because it also hangs while moving a shared VG to anot
 
 ## Fixing ps command
 
-ps is broken also (Segmentation Fault). Fortunately there is another ps that works but isn't the same so you may need replace -o flags like %c by comm in some scripts. This is the alternative ps.
+ps is broken also (Segmentation Fault). Fortunately there is another ps that works but isn't the same so you may need replace -o flags like %c by comm in some scripts for example.
+This is the alternative ps.
 
 ```bash
 root@node01:/>lslpp -w /usr/sysv/bin/ps
