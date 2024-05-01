@@ -1,0 +1,230 @@
+
+
+SLOF[0m[?25l **********************************************************************
+[1mQEMU Starting
+[0m Build Date = Jan 31 2020 20:27:09
+ FW Version = buildd@ release 20191209
+ Press "s" to enter Open Firmware.
+
+[0m[?25hC0000C0100C0120C0140C0200C0240C0260C02E0C0300C0320C0340C0360C0370C0380C0371C0373C0374C03F0C0400C0480C04C0C04D0C0500Populating /vdevice methods
+Populating /vdevice/vty@71000000
+Populating /vdevice/nvram@71000001
+Populating /vdevice/l-lan@71000002
+Populating /vdevice/v-scsi@71000003
+       SCSI: Looking for devices
+          8200000000000000 CD-ROM   : "QEMU     QEMU CD-ROM      2.5+"
+C05A0Populating /pci@800000020000000
+                     00 0000 (D) : 1234 1111    qemu vga
+                     00 0800 (D) : 1033 0194    serial bus [ usb-xhci ]
+                     00 1000 (D) : 1af4 1004    virtio [ scsi ]
+Populating /pci@800000020000000/scsi@2
+       SCSI: Looking for devices
+          100000000000000 DISK     : "QEMU     QEMU HARDDISK    2.5+"
+C0600C06C0C0700C0800C0880C0890C08A0C08A8Installing QEMU fb
+
+
+
+C08B0Scanning USB 
+  XHCI: Initializing
+    USB Keyboard 
+    USB mouse 
+C08C0C08D0No console specified using screen & keyboard
+User selected input-device console: /vdevice/vty@71000000
+User selected output-device console: /vdevice/vty@71000000
+C08E0C08E8C08FF     
+  Welcome to Open Firmware
+
+  Copyright (c) 2004, 2017 IBM Corporation All rights reserved.
+  This program and the accompanying materials are made available
+  under the terms of the BSD License available at
+  http://www.opensource.org/licenses/bsd-license.php
+
+
+Trying to load:  from: /pci@800000020000000/scsi@2/disk@100000000000000: ...   Successfully loaded
+
+                        ---> qemu,pseries detected <---
+
+                 ---> Press '6' to enter Single User Mode <---
+
+
+
+get-property for ibm,hypertas-functions on zero phandle
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+                                Welcome to AIX.
+                   boot image timestamp: 12:07:30 04/30/2024
+        processor count: 1;  memory size: 4096MB;  kernel size: 45422126
+         boot device: /pci@800000020000000/scsi@2/disk@100000000000000
+AIX vm,uuid property contains invalid data
+processing splpar characteristic: MaxEntCap
+processing splpar characteristic: DesMem
+processing splpar characteristic: DesProcs
+processing splpar characteristic: MaxPlatProcs
+processing splpar characteristic: HostThrs
+
+AKVM: hcall-multi-tce detected but overridden, allow with "multce" boot argument
+-------------------------------------------------------------------------------
+Star
+0539
+0811
+0539
+0812
+0708
+0811
+078c
+25b6
+25b6
+25b6
+25b6
+078c
+0539
+2071
+0539
+2073
+0539
+25b3
+0539
+0538
+0539
+0591
+0539
+
+0511
+0551
+0517
+0517
+0517
+0517
+0553
+0517
+0517
+0538
+0539
+0538
+0539
+2070
+0539
+0538
+0539
+270b
+0539
+0538
+0539
+0811
+0539
+0811
+0539
+0812
+0708
+0811
+078c
+25b6
+25b6
+25b6
+25b6
+25b6
+2071
+2071
+04ee
+25b2
+25b2
+0727
+0727
+2071
+0539
+25b3
+0539
+25b5
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+7000
+0539
+0538
+0581
+0539
+0538
+0539
+0538
+0581
+0581
+0539
+0538
+0539
+0731
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+2028
+0539
+
+0c33
+Saving Base Customize Data to boot disk
+Starting the sync daemon
+Starting the error daemon
+
+System initialization completed.
+TE=OFF
+CHKEXEC=OFF
+CHKSHLIB=OFF
+CHKSCRIPT=OFF
+CHKKERNEXT=OFF
+STOP_UNTRUSTD=OFF
+STOP_ON_CHKFAIL=OFF
+LOCK_KERN_POLICIES=OFF
+TSD_FILES_LOCK=OFF
+TSD_LOCK=OFF
+TEP=OFF
+TLP=OFF
+Successfully updated the Kernel Authorization Table.
+Successfully updated the Kernel Role Table.
+Successfully updated the Kernel Command Table.
+Successfully updated the Kernel Device Table.
+Successfully updated the Kernel Object Domain Table.
+Successfully updated the Kernel Domains Table.
+Successfully updated the Kernel RBAC log level. 
+Successfully updated the Kernel RBAC log level. 
+OPERATIONAL MODE Security Flags
+ROOT                      :    ENABLED
+TRACEAUTH                 :   DISABLED
+System runtime mode is now OPERATIONAL MODE.
+Setting tunable parameters...complete
+Starting Multi-user Initialization
+ Performing auto-varyon of Volume Groups 
+ Activating all paging spaces 
+0517-075 swapon: Paging device /dev/hd6 is already active.

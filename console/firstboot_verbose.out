@@ -1,0 +1,4862 @@
+
+
+SLOF[0m[?25l **********************************************************************
+[1mQEMU Starting
+[0m Build Date = Jan 31 2020 20:27:09
+ FW Version = buildd@ release 20191209
+ Press "s" to enter Open Firmware.
+
+[0m[?25hC0000C0100C0120C0140C0200C0240C0260C02E0C0300C0320C0340C0360C0370C0380C0371C0373C0374C03F0C0400C0480C04C0C04D0C0500Populating /vdevice methods
+Populating /vdevice/vty@71000000
+Populating /vdevice/nvram@71000001
+Populating /vdevice/l-lan@71000002
+Populating /vdevice/v-scsi@71000003
+       SCSI: Looking for devices
+          8200000000000000 CD-ROM   : "QEMU     QEMU CD-ROM      2.5+"
+C05A0Populating /pci@800000020000000
+                     00 0000 (D) : 1234 1111    qemu vga
+                     00 0800 (D) : 1033 0194    serial bus [ usb-xhci ]
+                     00 1000 (D) : 1af4 1004    virtio [ scsi ]
+Populating /pci@800000020000000/scsi@2
+       SCSI: Looking for devices
+          100000000000000 DISK     : "QEMU     QEMU HARDDISK    2.5+"
+C0600C06C0C0700C0800C0880C0890C08A0C08A8Installing QEMU fb
+
+
+
+C08B0Scanning USB 
+  XHCI: Initializing
+    USB Keyboard 
+    USB mouse 
+C08C0C08D0No console specified using screen & keyboard
+User selected input-device console: /vdevice/vty@71000000
+User selected output-device console: /vdevice/vty@71000000
+C08E0C08E8C08FF     
+  Welcome to Open Firmware
+
+  Copyright (c) 2004, 2017 IBM Corporation All rights reserved.
+  This program and the accompanying materials are made available
+  under the terms of the BSD License available at
+  http://www.opensource.org/licenses/bsd-license.php
+
+
+Trying to load: -s verbose from: /pci@800000020000000/scsi@2/disk@100000000000000: ...   Successfully loaded
+
+                        ---> qemu,pseries detected <---
+
+                 ---> Press '6' to enter Single User Mode <---
+
+
+
+get-property for ibm,hypertas-functions on zero phandle
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+                                Welcome to AIX.
+                   boot image timestamp: 12:07:30 04/30/2024
+        processor count: 1;  memory size: 4096MB;  kernel size: 45422126
+         boot device: /pci@800000020000000/scsi@2/disk@100000000000000
+
+800FC418 bytes of free memory remain at address 7FF03BE8
+load address: 0x00004000   aixmon size: 0x000F62F0   boot image size: 0x0143B690
+AIX vm,uuid property contains invalid data
+get_ppp return code: 0xFFFFFFFE
+processing splpar characteristic: MaxEntCap
+processing splpar characteristic: DesMem
+processing splpar characteristic: DesProcs
+processing splpar characteristic: MaxPlatProcs
+processing splpar characteristic: HostThrs
+
+AKVM: hcall-multi-tce detected but overridden, allow with "multce" boot argument
+The temporary memory region list is at 1 percent capacity.
+The temporary IPLCB is at 1 percent capacity.
+The IPLCB address is 0x0FFF9000
+name                 offset           size
+ipl_cb_and_bit_map 00000000 ......00005A5C
+bit_map........... 00000880 ......00000006
+ipl_info.......... 000001D8 ......00000024
+splpar_info....... 000001FC ......00000050
+system_info....... 0000024C ......000000C4
+processor_info.... 00000310 ......00000148
+lpar_id_info...... 00000458 ......00000088
+dr_proc_info...... 000004E0 ......00000008
+dr_mem_info....... 000004E8 ......00000028
+lpar_info......... 00000510 ......00000014
+segment page...... 00000530 ......00000028
+processor page.... 00000558 ......00000010
+kernel variables.. 00000568 ......000000F4
+res_asso_id....... 0000065C ......00000050
+res_asso_group.... 000006AC ......0000002C
+asso_ref_pnt...... 000006D8 ......00000010
+residual.......... 00000940 ......0000511C
+fwad_info......... 000006E8 ......00000040
+contig mem rsv.... 00000828 ......00000058
+	region address		region length		attr  label
+0	0x0000000000000000	0x000000000FFF7000	0x01  0x01
+1	0x000000000FFF7000	0x0000000000002000	0x01  0x03
+2	0x000000000FFF9000	0x0000000000006000	0x01  0x02
+3	0x000000000FFFF000	0x0000000000000800	0x00  0x05
+4	0x000000000FFFF800	0x00000000F0000800	0x01  0x01
+5	0x0000000100000000	0xFFFFFFFF00000000	0x00  0x07
+----------------------------
+
+0000014C bytes of free memory remain at address 00004000
+compressed kernel addr: FA2F0;  sz: 9DB7A3;  uncompressed kernel addr:  1D4AD800
+         name     source       dest       size   flags
+ 0      .data   1e0bda40    2000000    18ce4a8     1
+ 1    basecfg    1504000    fff5000       14ff     1
+ 2      ramfs     ad5a90    f68b000     969a99     1
+ 3      .text   1d4ada40      fa2f0     c10000     1
+ 4       .ldr   1f98bee8     d0b000      adc14     1
+ 5     symtab   1fdfd6b2     db9000     20177c     1
+ 6  kern. hdr   1d4ad800          0        240     1
+ 7       .bss          0    38ce4a8    3851b58     2
+free space between BSS and RAM filesystem: 0856B000
+
+entry_point: 0x000FA318
+                        kernel debugger setting: enabled
+-------------------------------------------------------------------------------
+StarLED{814}
+
+AIX Version 7.2
+exec(/etc/init){1,0}
+
+INIT: EXECUTING /sbin/rc.boot 1
+exec(/usr/bin/sh,-c,/sbin/rc.boot 1){983330,1}
+exec(/sbin/rc.boot,/sbin/rc.boot,1){983330,1}
++ PHASE=1
++ + bootinfo -p
+exec(/usr/sbin/bootinfo,-p){1048868,983330}
+PLATFORM=chrp
++ [ ! -x /usr/lib/boot/bin/bootinfo_chrp ]
++ [ 1 -eq 1 ]
++ init -c unlink /usr/lib/boot/bin/!(*_chrp)
+exec(/etc/init,-c,unlink /usr/lib/boot/bin/!(*_chrp)){1048870,983330}
++ chramfs -t
+exec(/usr/sbin/chramfs,-t){1048872,983330}
++ init -c unlink /usr/sbin/chramfs
++ 1> /dev/null
+exec(/etc/init,-c,unlink /usr/sbin/chramfs){1048874,983330}
++ + bootinfo -t
+exec(/usr/sbin/bootinfo,-t){1048876,983330}
+BOOTYPE=1
++ [ 0 -ne 0 ]
++ [ -z 1 ]
++ unset pdev_to_ldev native_netboot_cfg
++ unset disknet_odm_init config_ATM
++ echo \n\n_______________________________________ _____________________________________ \nrc.boot: starting disk boot process
++ 1> /tmp/boot_log
++ echo B1 Starting Disk Boot
++ 1> /tmp/cfg_log
++ ln /usr/lib/libbind.a /usr/lib/libc.a /usr/lib/libcfg.a /usr/lib/libcfgscsi.a /usr/lib/libcrypt.a /usr/lib/libefs.a /usr/lib/liblvm.a /usr/lib/libodm.a /usr/lib/libs.a /lib
+exec(/usr/bin/ln,/usr/lib/libbind.a,/usr/lib/libc.a,/usr/lib/libcfg.a,/usr/lib/libcfgscsi.a,/usr/lib/libcrypt.a,/usr/lib/libefs.a,/usr/lib/liblvm.a,/usr/lib/libodm.a,/usr/lib/libs.a,/lib){1048878,983330}
++ echo rc.boot: executing "restbase"
++ 1>> /tmp/boot_log
++ restbase
+exec(/etc/restbase){1048880,983330}
+exec(/bin/sh,-c,uncompress /tmp/restbase.Z){1114406,1048880}
+exec(/usr/bin/uncompress,/tmp/restbase.Z){1114406,1048880}
++ rc=0
++ [ 0 -eq 1 ]
++ [ 0 -eq 2 ]
++ /usr/lib/methods/showled 0x510 DEV CFG 1 START
+exec(/usr/lib/methods/showled,0x510,DEV CFG 1 START){1048882,983330}
++ echo rc.boot: executing "cfgmgr -f -v"
++ 1>> /tmp/boot_log
++ cfgmgr -f -v
+exec(/usr/sbin/cfgmgr,-f,-v){1048884,983330}
+cfgmgr is running in phase 1
+----------------
+Time: 0	LEDS: 0x538
+Invoking top level program -- "/usr/lib/methods/cfgrule_vrtcore"
+exec(/bin/sh,-c,/usr/lib/methods/cfgrule_vrtcore ){1114408,1048884}
+exec(/usr/lib/methods/cfgrule_vrtcore){1114408,1048884}
+Time: 0	LEDS: 0x539
+Return code = 0
+***** stdout *****
+virtio0
+
+***** stderr *****
+MS 1114408 1048884 /usr/lib/methods/cfgrule_vrtcore
+
+----------------
+Attempting to configure device 'virtio0'
+Time: 0	LEDS: 0x2070
+Invoking /usr/lib/methods/cfgvrtcore -1 -l virtio0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgvrtcore -1 -l virtio0){1114410,1048884}
+exec(/usr/lib/methods/cfgvrtcore,-1,-l,virtio0){1114410,1048884}
+Number of running methods: 1
+----------------
+Completed method for: virtio0, Elapsed time = 0
+Return code = 0
+*** no stdout ****
+***** stderr *****
+MS 1114410 1048884 /usr/lib/methods/cfgvrtcore -1 -l virtio0
+M4 1114410 Parallel mode = 0
+M4 1114410 Get CuDv for virtio0
+M4 1114410 Get device PdDv, uniquetype=pseudo/bus/virtio
+M4 1114410 ..make_dvc_available()
+M4 1114410 ..get_dvdr_name()
+M4 1114410 driver: vrtcore
+M4 1114410 Major number: 11
+M4 1114410 Minor number: 0
+M4 1114410 ..mk_sp_file()
+M4 1114410 Calling build_dds()
+M4 1114410 ..get_attr_list()
+M4 1114410 Get PdAts for 'uniquetype = pseudo/bus/virtio'
+M4 1114410 Get CuAts for 'name = virtio0'
+M4 1114410 Attr contig_mem found
+M4 1114410 build_dds(): The contig_mem attribute is "crmalloc"
+M4 1114410 ..handle_vpd()
+M4 1114410 Setting CuDv to AVAILABLE
+M4 1114410 Exit code = 0
+
+----------------
+Time: 0	LEDS: 0x539
+Number of running methods: 0
+----------------
+Time: 0	LEDS: 0x538
+Invoking top level program -- "/etc/methods/defsys"
+exec(/bin/sh,-c,/etc/methods/defsys ){1114412,1048884}
+exec(/etc/methods/defsys){1114412,1048884}
+Time: 0	LEDS: 0x539
+Return code = 0
+***** stdout *****
+sys0
+
+*** no stderr ****
+----------------
+Attempting to configure device 'sys0'
+Time: 0	LEDS: 0x811
+Invoking /usr/lib/methods/cfgsys_chrp -1 -l sys0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgsys_chrp -1 -l sys0){1114414,1048884}
+exec(/usr/lib/methods/cfgsys_chrp,-1,-l,sys0){1114414,1048884}
+Number of running methods: 1
+----------------
+Completed method for: sys0, Elapsed time = 1714482596
+Return code = 0
+***** stdout *****
+sysplanar0
+
+***** stderr *****
+MS 1114414 1048884 /usr/lib/methods/cfgsys_chrp -1 -l sys0
+M4 1114414 Parallel mode = 0
+M4 1114414 Get CuDv for sys0
+M4 1114414 Get device PdDv, uniquetype=sys/node/chrp
+M4 1114414 ..make_dvc_available()
+M4 1114414 In configure_device()
+M4 1114414 mdd_get: offset=00000080, size=00000158
+M4 1114414 Calling mdd ioctl
+M4 1114414 mdd_get: offset=0000024c, size=000000c4
+M4 1114414 Calling mdd ioctl
+M4 1114414 mdd_get: offset=00000080, size=00000158
+M4 1114414 Calling mdd ioctl
+M4 1114414 mdd_get: offset=0000024c, size=000000c4
+M4 1114414 Calling mdd ioctl
+M4 1114414 Invoking set_attrs
+M4 1114414 get alist(sys0,sys/node/chrp,)
+M4 1114414 ..get_attr_list()
+M4 1114414 Get PdAts for 'uniquetype = sys/node/chrp'
+M4 1114414 Get CuAts for 'name = sys0'
+M4 1114414 Attr live_update found
+M4 1114414 mdd_get: offset=00000080, size=00000158
+M4 1114414 Calling mdd ioctl
+M4 1114414 mdd_get: offset=0000024c, size=000000c4
+M4 1114414 Calling mdd ioctl
+M4 1114414 secure_boot=Policy_0(Disabled)
+M4 1114414 setattrval(sys0,secure_boot,Policy_0(Disabled))
+M4 1114414 Attr secure_boot found
+M4 1114414 Value received from getatt: Policy_0(Disabled)
+M4 1114414 mdd_get: offset=000001d8, size=00000024
+M4 1114414 Calling mdd ioctl
+M4 1114414 Setting system attributes
+M4 1114414 part_id_value=0x0000000000000000 id_to_partition=0X0000000000000000
+M4 1114414 setattrval(sys0,id_to_partition,0X0000000000000000)
+M4 1114414 Attr id_to_partition found
+M4 1114414 Value received from getatt: 0X0000000000000000
+M4 1114414 Attr clouddev found
+M4 1114414 part_no=0x0000000000000000 id_to_system=0X0000000000000000
+M4 1114414 setattrval(sys0,id_to_system,0X0000000000000000)
+M4 1114414 Attr id_to_system found
+M4 1114414 Value received from getatt: 0X0000000000000000
+M4 1114414 setattrval(sys0,modelcode,0x0800004c)
+M4 1114414 Attr modelcode found
+M4 1114414 Value received from getatt: 0x0800004c
+M4 1114414 Getting keylock state
+M4 1114414 setattrval(sys0,keylock,normal)
+M4 1114414 Attr keylock found
+M4 1114414 Value received from getatt: normal
+M4 1114414 setattrval(sys0,fwversion,SLOF,HEAD)
+M4 1114414 Attr fwversion found
+M4 1114414 Value received from getatt: SLOF,HEAD
+M4 1114414 Attr rtasversion found
+M4 1114414 setattrval(sys0,modelname,IBM pSeries (emulated by qemu))
+M4 1114414 Attr modelname found
+M4 1114414 Value received from getatt: IBM pSeries (emulated by qemu)
+M4 1114414 Attr systemid found
+M4 1114414 Attr cod_proc found
+M4 1114414 Attr pci_full_cfg found
+M4 1114414 extended-clock-freq prop NOT found cnt=0
+M4 1114414 Attr frequency found
+M4 1114414 Getting NVRAM variable:'bootinfo-aix='
+M4 1114414 Return code from get_nv_env() = -1
+M4 1114414 bootinfo-aix not found
+M4 1114414 Boot device: '/pci@800000020000000/scsi@2/disk@100000000000000'
+M4 1114414 new bootinfo-aix value: 'bootinfo-aix=/pci@800000020000000/scsi@2/disk@100000000000000:1'
+M4 1114414 Setting NVRAM variable: bootinfo-aix=/pci@800000020000000/scsi@2/disk@100000000000000:1
+M4 1114414 Getting NVRAM variable:'ibm,dasd-spin-interval='
+M4 1114414 Return code from get_nv_env() = -1
+M4 1114414 Attr dasd_spin_delay found
+M4 1114414 ..handle_vpd()
+M4 1114414 Setting CuDv to AVAILABLE
+M4 1114414 Invoking define_children
+M0 1114414 cfgsys_chrp.c 452 getattr() failed
+M0 1114414 cfgsys_chrp.c 453 ODM cpuguard attribute not found.
+M4 1114414 In get_mem_size
+M4 1114414 num=1
+M4 1114414 Memory size from nodes = 0x100000000
+M4 1114414 get_mem_size_from_prop: Entered
+M4 1114414 get_mem_size_from_prop: drmem_tok=0x0
+M4 1114414 Total memory size from the property=0x0
+M4 1114414 Memory size from property = 0x0
+M4 1114414 Memory size = 0x100000000
+M4 1114414 Exit code = 0
+
+----------------
+Time: 1714482596	LEDS: 0x539
+Number of running methods: 0
+ cfgmgr 
+0539----------------
+Attempting to configure device 'sysplanar0'
+ cfgmgr 
+0811Time: 1714482596	LEDS: 0x811
+Invoking /usr/lib/methods/cfgsysplanar_chrp -1 -l sysplanar0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgsysplanar_chrp -1 -l sysplanar0){1114416,1048884}
+exec(/usr/lib/methods/cfgsysplanar_chrp,-1,-l,sysplanar0){1114416,1048884}
+Number of running methods: 1
+----------------
+Completed method for: sysplanar0, Elapsed time = 0
+Return code = 0
+***** stdout *****
+mem0
+L2cache0
+proc0
+pci0
+vio0
+
+***** stderr *****
+MS 1114416 1048884 /usr/lib/methods/cfgsysplanar_chrp -1 -l sysplanar0
+M4 1114416 Parallel mode = 0
+M4 1114416 Get CuDv for sysplanar0
+M4 1114416 Get device PdDv, uniquetype=planar/sys/sysplanar_rspc
+M4 1114416 Get parent CuDv, name=sys0
+M4 1114416 ..make_dvc_available()
+M4 1114416 ..handle_vpd()
+M4 1114416 Setting CuDv to AVAILABLE
+M4 1114416 Exit code = 0
+
+----------------
+Time: 1714482596	LEDS: 0x539
+Number of running methods: 0
+ cfgmgr 
+0539----------------
+Attempting to configure device 'mem0'
+ cfgmgr 
+0812Time: 1714482596	LEDS: 0x812
+Invoking /usr/lib/methods/cfgmem_chrp -1 -l mem0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgmem_chrp -1 -l mem0){1114418,1048884}
+exec(/usr/lib/methods/cfgmem_chrp,-1,-l,mem0){1114418,1048884}
+Number of running methods: 1
+----------------
+Attempting to configure device 'L2cache0'
+ cfgmgr 
+0708Time: 1714482596	LEDS: 0x708
+Invoking /usr/lib/methods/cfgL2cache_chrp -1 -l L2cache0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgL2cache_chrp -1 -l L2cache0){1179946,1048884}
+exec(/usr/lib/methods/cfgL2cache_chrp,-1,-l,L2cache0){1179946,1048884}
+Number of running methods: 2
+----------------
+Attempting to configure device 'proc0'
+ cfgmgr 
+0811Time: 1714482596	LEDS: 0x811
+Invoking /usr/lib/methods/cfgproc_chrp -1 -l proc0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgproc_chrp -1 -l proc0){1245482,1048884}
+exec(/usr/lib/methods/cfgproc_chrp,-1,-l,proc0){1245482,1048884}
+Number of running methods: 3
+----------------
+Attempting to configure device 'pci0'
+ cfgmgr 
+078cTime: 1714482597	LEDS: 0x78a
+Invoking /usr/lib/methods/cfgbus_pcic -1 -l pci0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgbus_pcic -1 -l pci0){1311020,1048884}
+exec(/usr/lib/methods/cfgbus_pcic,-1,-l,pci0){1311020,1048884}
+Number of running methods: 4
+----------------
+Attempting to configure device 'vio0'
+ cfgmgr 
+25b6Time: 1714482597	LEDS: 0x25b6
+Invoking /usr/lib/methods/cfgbus_vdevice -1 -l vio0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgbus_vdevice -1 -l vio0){1376558,1048884}
+exec(/usr/lib/methods/cfgbus_vdevice,-1,-l,vio0){1376558,1048884}
+Number of running methods: 5
+----------------
+Completed method for: pci0, Elapsed time = 0
+Return code = 0
+***** stdout *****
+:devices.pci.vga:devices.pci.qemu.std-vga
+:devices.pci.usb-xhci:devices.pci.f41a0011
+scsi0
+
+***** stderr *****
+MS 1311020 1048884 /usr/lib/methods/cfgbus_pcic -1 -l pci0
+M1 1311020 Query interrupts failed, status = 0
+M1 1311020 Call to query interrpts failed: scsi0
+M1 1311020 AKVM override!
+
+----------------
+Time: 1714482597	LEDS: 0x25b6 for vio0
+Number of running methods: 4
+ cfgmgr 
+25b6----------------
+Attempting to configure device 'scsi0'
+ cfgmgr 
+2071Time: 1714482597	LEDS: 0x2071
+Invoking /usr/lib/methods/cfgvrtscsi -1 -l scsi0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgvrtscsi -1 -l scsi0){1311022,1048884}
+exec(/usr/lib/methods/cfgvrtscsi,-1,-l,scsi0){1311022,1048884}
+common_cfg.device_feature_select = 0x00000000
+common_cfg.device_feature        = 0x30000006
+common_cfg.driver_feature_select = 0x00000000
+common_cfg.driver_feature        = 0x30000004
+common_cfg.msix_config           = 0xFFFF
+common_cfg.num_queues            = 0x0003
+common_cfg.device_status         = 0x08
+common_cfg.config_generation     = 0x00
+common_cfg.queue_select          = 0x0000
+common_cfg.queue_size            = 0x0080
+common_cfg.queue_msix_vector     = 0xFFFF
+common_cfg.queue_enable          = 0x0000
+common_cfg.queue_notify_off      = 0x0000
+common_cfg.queue_desc_lo         = 0x00000000
+common_cfg.queue_desc_hi         = 0x00000000
+common_cfg.queue_avail_lo        = 0x00000000
+common_cfg.queue_avail_hi        = 0x00000000
+common_cfg.queue_used_lo         = 0x00000000
+common_cfg.queue_used_hi         = 0x00000000
+scsi->num_queues        = 0x00000001
+scsi->seg_max           = 0x0000007E
+scsi->max_sectors       = 0x0000FFFF
+scsi->cmd_per_lun       = 0x00000080
+scsi->event_info_size   = 0x00000010
+scsi->sense_size        = 0x00000060
+scsi->max_channel       = 0x00000000
+scsi->max_target        = 0x000000FF
+scsi->max_lun           = 0x00003FFF
+scsi->cdb_size          = 0x00000020
+Number of running methods: 5
+----------------
+Completed method for: mem0, Elapsed time = 1
+Return code = 0
+*** no stdout ****
+***** stderr *****
+MS 1114418 1048884 /usr/lib/methods/cfgmem_chrp -1 -l mem0
+M4 1114418 Parallel mode = 1
+M4 1114418 Get CuDv for mem0
+M4 1114418 Get device PdDv, uniquetype=memory/sys/totmem
+M4 1114418 Get parent CuDv, name=sysplanar0
+M4 1114418 ..make_dvc_available()
+M4 1114418 ..handle_vpd()
+M4 1114418 Setting CuDv to AVAILABLE
+M4 1114418 Exit code = 0
+
+----------------
+Time: 1714482597	LEDS: 0x2071 for scsi0
+Number of running methods: 4
+ cfgmgr 
+2071----------------
+Completed method for: L2cache0, Elapsed time = 2
+Return code = 0
+*** no stdout ****
+***** stderr *****
+MS 1179946 1048884 /usr/lib/methods/cfgL2cache_chrp -1 -l L2cache0
+M4 1179946 Parallel mode = 1
+M4 1179946 Get CuDv for L2cache0
+M4 1179946 Get device PdDv, uniquetype=memory/sys/L2cache_rspc
+M4 1179946 Get parent CuDv, name=sysplanar0
+M4 1179946 ..make_dvc_available()
+M4 1179946 ..handle_vpd()
+M4 1179946 Setting CuDv to AVAILABLE
+M4 1179946 Exit code = 0
+
+----------------
+Time: 1714482598	LEDS: 0x2071 for scsi0
+Number of running methods: 3
+ cfgmgr 
+2071----------------
+Completed method for: proc0, Elapsed time = 2
+Return code = 0
+*** no stdout ****
+***** stderr *****
+MS 1245482 1048884 /usr/lib/methods/cfgproc_chrp -1 -l proc0
+M4 1245482 Parallel mode = 1
+M4 1245482 Get CuDv for proc0
+M4 1245482 Get device PdDv, uniquetype=processor/sys/proc_rspc
+M4 1245482 Get parent CuDv, name=sysplanar0
+M4 1245482 ..make_dvc_available()
+M4 1245482 Invoking set_attrs
+M4 1245482 Found processor, name = proc0, connwhere = P0
+M4 1245482 ..handle_vpd()
+M4 1245482 Setting CuDv to AVAILABLE
+M4 1245482 Exit code = 0
+
+----------------
+Time: 1714482598	LEDS: 0x2071 for scsi0
+Number of running methods: 2
+ cfgmgr 
+2071----------------
+Completed method for: vio0, Elapsed time = 1
+Return code = 0
+***** stdout *****
+vsa0
+:devices.vdevice.nvram:devices.vdevice.qemu.spapr-nvram
+ent0
+vscsi0
+
+***** stderr *****
+MS 1376558 1048884 /usr/lib/methods/cfgbus_vdevice -1 -l vio0
+M4 1376558 Parallel mode = 1
+M4 1376558 Get CuDv for vio0
+M4 1376558 Get device PdDv, uniquetype=bus/chrp/vdevice
+M4 1376558 Get parent CuDv, name=sysplanar0
+M4 1376558 ..make_dvc_available()
+M4 1376558 ..get_dvdr_name()
+M4 1376558 driver: vdev_busdd
+M4 1376558 Major number: 13
+M4 1376558 Minor number: 0
+M4 1376558 ..mk_sp_file()
+M4 1376558 Calling build_dds()
+M4 1376558 ..handle_vpd()
+M4 1376558 Setting CuDv to AVAILABLE
+M4 1376558 Exit code = 0
+
+----------------
+Time: 1714482598	LEDS: 0x2071 for scsi0
+Number of running methods: 1
+ cfgmgr 
+2071----------------
+Attempting to configure device 'vsa0'
+Method: /etc/methods/cfgvcon not in boot image, configure in phase 2
+----------------
+Attempting to configure device 'ent0'
+Method: /usr/lib/methods/cfgvioent not in boot image, configure in phase 2
+----------------
+Completed method for: scsi0, Elapsed time = 1
+Return code = 0
+***** stdout *****
+hdisk0 
+***** stderr *****
+MS 1311022 1048884 /usr/lib/methods/cfgvrtscsi -1 -l scsi0
+M4 1311022 Parallel mode = 1
+M4 1311022 Get CuDv for scsi0
+M4 1311022 Get device PdDv, uniquetype=adapter/pci/f41a0800
+M4 1311022 Get parent CuDv, name=pci0
+M4 1311022 ..make_dvc_available()
+M4 1311022 ..get_dvdr_name()
+M4 1311022 driver: vrtscsi
+M4 1311022 Major number: 20
+M4 1311022 Minor number: 0
+M4 1311022 ..mk_sp_file()
+M4 1311022 Calling build_dds()
+M4 1311022 ..get_attr_list()
+M4 1311022 Get PdAts for 'uniquetype = bus/chrp/pci'
+M4 1311022 Get CuAts for 'name = pci0'
+M4 1311022 Attr bus_id found
+M4 1311022 ..get_attr_list()
+M4 1311022 Get PdAts for 'uniquetype = adapter/pci/f41a0800'
+M4 1311022 Get CuAts for 'name = scsi0'
+M4 1311022 Attr bar0 found
+M4 1311022 Attr bar0_size found
+M4 1311022 Attr bar1 found
+M4 1311022 Attr bar1_size found
+M4 1311022 Attr bar2 found
+M4 1311022 Attr bar2_size found
+M4 1311022 Attr virtio_mode found
+M4 1311022 Attr intr_priority found
+M4 1311022 Attr io_dma found
+M4 1311022 Attr nchan found
+C0 1311022 cfgfw_chrp.c 5521 Failed to query MSIs, rc=0x2f, status=0x0
+M4 1311022 ..handle_vpd()
+M4 1311022 Setting CuDv to AVAILABLE
+M1 1311022 	...scsi_id/lun_id = 0x0/0x0
+M1 1311022 		...LUN = 0x0, type = 0x0
+M1 1311022 1 luns found
+M1 1311022 1 luns remain after filtering
+M4 1311022 Exit code = 0
+
+----------------
+Time: 1714482598	LEDS: 0x539
+Number of running methods: 0
+ cfgmgr 
+0539----------------
+Attempting to configure device 'hdisk0'
+ cfgmgr 
+2073Time: 1714482598	LEDS: 0x2073
+Invoking /usr/lib/methods/cfgscsidisk -1 -l hdisk0 
+exec(/bin/sh,-c,/usr/lib/methods/cfgscsidisk -1 -l hdisk0){1311024,1048884}
+exec(/usr/lib/methods/cfgscsidisk,-1,-l,hdisk0){1311024,1048884}
+Number of running methods: 1
+----------------
+Completed method for: hdisk0, Elapsed time = 1
+Return code = 0
+*** no stdout ****
+***** stderr *****
+MS 1311024 1048884 /usr/lib/methods/cfgscsidisk -1 -l hdisk0
+M4 1311024 Parallel mode = 1
+M4 1311024 Get CuDv for hdisk0
+M4 1311024 Get device PdDv, uniquetype=disk/vrtscsi/mpioosdisk
+M4 1311024 Get parent CuDv, name=scsi0
+M4 1311024 ..is_mpio_capable()
+M4 1311024 Device is MPIO
+M4 1311024 ..get_paths()
+M4 1311024 Getting CuPaths for name='hdisk0' AND path_status = '0'
+M4 1311024 Found 1 paths
+M4 1311024 ..load_and_init_pcm_rtl()
+M4 1311024 Loading PCM RTL: /usr/lib/methods/aixdiskpcmrtl
+M4 1311024 ..make_dvc_available()
+M4 1311024 ..get_dvdr_name()
+M4 1311024 driver: scsidisk
+M4 1311024 ..mk_sp_file()
+M4 1311024 ..mk_sp_file()
+M4 1311024 ..get_attr_list()
+M4 1311024 Get PdAts for 'uniquetype = disk/vrtscsi/mpioosdisk'
+M4 1311024 Get CuAts for 'name = hdisk0'
+M4 1311024 Attr mpio_model_map found
+M4 1311024 Attr max_cdb_size not found
+M4 1311024 Attr ww_name not found
+M4 1311024 Attr node_name not found
+M0 1311024 cfgscsidisk.c 7280 build uuid failed rc=80
+M4 1311024 Attr device_mode found
+M4 1311024 Attr pr_options found
+M4 1311024 Attr queue_depth found
+M4 1311024 Attr rw_max_time not found
+M4 1311024 Attr rw_fast_fail_to not found
+M4 1311024 Attr queued_ioctls not found
+M4 1311024 Attr min_btwn_idle not found
+M4 1311024 Attr max_retries not found
+M4 1311024 Attr max_flushes not found
+M4 1311024 Attr scbsy_dly not found
+M4 1311024 Attr qfull_dly not found
+M4 1311024 Attr max_retry_delay found
+M4 1311024 Attr scsi_vers not found
+M4 1311024 Attr tst1_spt not found
+M4 1311024 Attr set_tas not found
+M4 1311024 Attr mpio_perf not found
+M4 1311024 Attr enable_rw16 not found
+M4 1311024 Attr reassign_to found
+M4 1311024 Attr start_timeout found
+M4 1311024 Attr rw_timeout found
+M4 1311024 Attr safe_relocate found
+M4 1311024 Attr extended_rw not found
+M4 1311024 Attr rw16 not found
+M4 1311024 Attr reset_delay not found
+M4 1311024 Attr recovery_limit found
+M4 1311024 Attr q_type found
+M4 1311024 Attr q_err found
+M4 1311024 Attr clr_q found
+M4 1311024 Attr max_data_rate not found
+M4 1311024 Attr media_rate not found
+M4 1311024 Attr mode_data found
+M4 1311024 Attr mode_default found
+M4 1311024 Attr max_transfer found
+M4 1311024 Attr block_size not found
+M4 1311024 Attr max_coalesce not found
+M4 1311024 Attr reserve_policy found
+M4 1311024 Attr lun_reset_spt found
+M4 1311024 Attr restart_dev_dly not found
+M4 1311024 Attr restart_dev not found
+M4 1311024 Attr ucfg_stopu not found
+M4 1311024 Attr kext_errsave not found
+M4 1311024 Attr port_num not found
+M4 1311024 Attr host_addr not found
+M4 1311024 Attr target_name not found
+M4 1311024 Attr DIF_protection not found
+M4 1311024 Attr alt_proto not found
+M4 1311024 ..build_dvc_attr_arrays()
+M4 1311024 Get CuAts for name='hdisk0'
+M4 1311024 Get PdAts for uniquetype='disk/vrtscsi/mpioosdisk'
+M4 1311024 Get PdAts for uniquetype='PCM/friend/vrtscsiother'
+M4 1311024 ..get_attr_list()
+M4 1311024 Get PdAts for 'uniquetype = disk/vrtscsi/mpioosdisk'
+M4 1311024 Get CuAts for 'name = hdisk0'
+M4 1311024 Attr max_data_rate not found
+M4 1311024 Attr media_rate not found
+M4 1311024 Attr max_transfer found
+M4 1311024 ..handle_vpd()
+M4 1311024 Get CuVPD for name = 'hdisk0' and vpd_type = '0'
+M4 1311024 Setting CuDv to AVAILABLE
+M4 1311024 ..update_paths_in_odm()
+M0 1311024 cfgmpio_util.c 727 path_list@:0x200f1b38, path_list_count=1
+M4 1311024 ..sync_cudv()
+M4 1311024 ..get_paths()
+M4 1311024 Getting CuPaths for name='hdisk0' AND path_status = '1'
+M4 1311024 Found 1 paths
+M4 1311024 Terminating and unloading PCM RTL
+M4 1311024 Exit code = 0
+
+----------------
+Time: 1714482599	LEDS: 0x539
+Number of running methods: 0
+ cfgmgr 
+0539----------------
+Attempting to configure device 'vscsi0'
+ cfgmgr 
+25b3Time: 1714482599	LEDS: 0x25b3
+Invoking /usr/lib/methods/cfg_vclient -1 -l vscsi0 
+exec(/bin/sh,-c,/usr/lib/methods/cfg_vclient -1 -l vscsi0){1311026,1048884}
+exec(/usr/lib/methods/cfg_vclient,-1,-l,vscsi0){1311026,1048884}
+Number of running methods: 1
+----------------
+Completed method for: vscsi0, Elapsed time = 1
+Return code = 0
+***** stdout *****
+cd0 
+***** stderr *****
+MS 1311026 1048884 /usr/lib/methods/cfg_vclient -1 -l vscsi0
+M4 1311026 Parallel mode = 0
+M4 1311026 Get CuDv for vscsi0
+M4 1311026 Get device PdDv, uniquetype=adapter/vdevice/IBM,v-scsi
+M4 1311026 Get parent CuDv, name=vio0
+M4 1311026 ..make_dvc_available()
+M4 1311026 ..get_dvdr_name()
+M4 1311026 driver: vscsi_initdd
+M4 1311026 Major number: 14
+M4 1311026 Minor number: 0
+M4 1311026 ..mk_sp_file()
+M4 1311026 Calling build_dds()
+M4 1311026 ..get_attr_list()
+M4 1311026 Get PdAts for 'uniquetype = adapter/vdevice/IBM,v-scsi'
+M4 1311026 Get CuAts for 'name = vscsi0'
+M4 1311026 Attr vscsi_ping_to found
+M4 1311026 Attr vscsi_path_to found
+M4 1311026 Attr vscsi_err_recov found
+M4 1311026 Attr rw_timeout found
+M4 1311026 ..handle_vpd()
+M4 1311026 Setting CuDv to AVAILABLE
+M1 1311026 		...LUN = 0x8000000000000000, no device
+M1 1311026 		...LUN = 0x8001000000000000, no device
+M1 1311026 		...LUN = 0x8002000000000000, no device
+M1 1311026 		...LUN = 0x8003000000000000, no device
+M1 1311026 		...LUN = 0x8004000000000000, no device
+M1 1311026 		...LUN = 0x8005000000000000, no device
+M1 1311026 		...LUN = 0x8006000000000000, no device
+M1 1311026 		...LUN = 0x8007000000000000, no device
+M1 1311026 		...LUN = 0x8008000000000000, no device
+M1 1311026 		...LUN = 0x8009000000000000, no device
+M1 1311026 		...LUN = 0x800a000000000000, no device
+M1 1311026 		...LUN = 0x800b000000000000, no device
+M1 1311026 		...LUN = 0x800c000000000000, no device
+M1 1311026 		...LUN = 0x800d000000000000, no device
+M1 1311026 		...LUN = 0x800e000000000000, no device
+M1 1311026 		...LUN = 0x800f000000000000, no device
+M1 1311026 		...LUN = 0x8010000000000000, no device
+M1 1311026 		...LUN = 0x8011000000000000, no device
+M1 1311026 		...LUN = 0x8012000000000000, no device
+M1 1311026 		...LUN = 0x8013000000000000, no device
+M1 1311026 		...LUN = 0x8014000000000000, no device
+M1 1311026 		...LUN = 0x8015000000000000, no device
+M1 1311026 		...LUN = 0x8016000000000000, no device
+M1 1311026 		...LUN = 0x8017000000000000, no device
+M1 1311026 		...LUN = 0x8018000000000000, no device
+M1 1311026 		...LUN = 0x8019000000000000, no device
+M1 1311026 		...LUN = 0x801a000000000000, no device
+M1 1311026 		...LUN = 0x801b000000000000, no device
+M1 1311026 		...LUN = 0x801c000000000000, no device
+M1 1311026 		...LUN = 0x801d000000000000, no device
+M1 1311026 		...LUN = 0x801e000000000000, no device
+M1 1311026 		...LUN = 0x801f000000000000, no device
+M1 1311026 		...LUN = 0x8020000000000000, no device
+M1 1311026 		...LUN = 0x8021000000000000, no device
+M1 1311026 		...LUN = 0x8022000000000000, no device
+M1 1311026 		...LUN = 0x8023000000000000, no device
+M1 1311026 		...LUN = 0x8024000000000000, no device
+M1 1311026 		...LUN = 0x8025000000000000, no device
+M1 1311026 		...LUN = 0x8026000000000000, no device
+M1 1311026 		...LUN = 0x8027000000000000, no device
+M1 1311026 		...LUN = 0x8028000000000000, no device
+M1 1311026 		...LUN = 0x8029000000000000, no device
+M1 1311026 		...LUN = 0x802a000000000000, no device
+M1 1311026 		...LUN = 0x802b000000000000, no device
+M1 1311026 		...LUN = 0x802c000000000000, no device
+M1 1311026 		...LUN = 0x802d000000000000, no device
+M1 1311026 		...LUN = 0x802e000000000000, no device
+M1 1311026 		...LUN = 0x802f000000000000, no device
+M1 1311026 		...LUN = 0x8030000000000000, no device
+M1 1311026 		...LUN = 0x8031000000000000, no device
+M1 1311026 		...LUN = 0x8032000000000000, no device
+M1 1311026 		...LUN = 0x8033000000000000, no device
+M1 1311026 		...LUN = 0x8034000000000000, no device
+M1 1311026 		...LUN = 0x8035000000000000, no device
+M1 1311026 		...LUN = 0x8036000000000000, no device
+M1 1311026 		...LUN = 0x8037000000000000, no device
+M1 1311026 		...LUN = 0x8038000000000000, no device
+M1 1311026 		...LUN = 0x8039000000000000, no device
+M1 1311026 		...LUN = 0x803a000000000000, no device
+M1 1311026 		...LUN = 0x803b000000000000, no device
+M1 1311026 		...LUN = 0x803c000000000000, no device
+M1 1311026 		...LUN = 0x803d000000000000, no device
+M1 1311026 		...LUN = 0x803e000000000000, no device
+M1 1311026 		...LUN = 0x803f000000000000, no device
+M1 1311026 		...LUN = 0x8100000000000000, no device
+M1 1311026 		...LUN = 0x8101000000000000, no device
+M1 1311026 		...LUN = 0x8102000000000000, no device
+M1 1311026 		...LUN = 0x8103000000000000, no device
+M1 1311026 		...LUN = 0x8104000000000000, no device
+M1 1311026 		...LUN = 0x8105000000000000, no device
+M1 1311026 		...LUN = 0x8106000000000000, no device
+M1 1311026 		...LUN = 0x8107000000000000, no device
+M1 1311026 		...LUN = 0x8108000000000000, no device
+M1 1311026 		...LUN = 0x8109000000000000, no device
+M1 1311026 		...LUN = 0x810a000000000000, no device
+M1 1311026 		...LUN = 0x810b000000000000, no device
+M1 1311026 		...LUN = 0x810c000000000000, no device
+M1 1311026 		...LUN = 0x810d000000000000, no device
+M1 1311026 		...LUN = 0x810e000000000000, no device
+M1 1311026 		...LUN = 0x810f000000000000, no device
+M1 1311026 		...LUN = 0x8110000000000000, no device
+M1 1311026 		...LUN = 0x8111000000000000, no device
+M1 1311026 		...LUN = 0x8112000000000000, no device
+M1 1311026 		...LUN = 0x8113000000000000, no device
+M1 1311026 		...LUN = 0x8114000000000000, no device
+M1 1311026 		...LUN = 0x8115000000000000, no device
+M1 1311026 		...LUN = 0x8116000000000000, no device
+M1 1311026 		...LUN = 0x8117000000000000, no device
+M1 1311026 		...LUN = 0x8118000000000000, no device
+M1 1311026 		...LUN = 0x8119000000000000, no device
+M1 1311026 		...LUN = 0x811a000000000000, no device
+M1 1311026 		...LUN = 0x811b000000000000, no device
+M1 1311026 		...LUN = 0x811c000000000000, no device
+M1 1311026 		...LUN = 0x811d000000000000, no device
+M1 1311026 		...LUN = 0x811e000000000000, no device
+M1 1311026 		...LUN = 0x811f000000000000, no device
+M1 1311026 		...LUN = 0x8120000000000000, no device
+M1 1311026 		...LUN = 0x8121000000000000, no device
+M1 1311026 		...LUN = 0x8122000000000000, no device
+M1 1311026 		...LUN = 0x8123000000000000, no device
+M1 1311026 		...LUN = 0x8124000000000000, no device
+M1 1311026 		...LUN = 0x8125000000000000, no device
+M1 1311026 		...LUN = 0x8126000000000000, no device
+M1 1311026 		...LUN = 0x8127000000000000, no device
+M1 1311026 		...LUN = 0x8128000000000000, no device
+M1 1311026 		...LUN = 0x8129000000000000, no device
+M1 1311026 		...LUN = 0x812a000000000000, no device
+M1 1311026 		...LUN = 0x812b000000000000, no device
+M1 1311026 		...LUN = 0x812c000000000000, no device
+M1 1311026 		...LUN = 0x812d000000000000, no device
+M1 1311026 		...LUN = 0x812e000000000000, no device
+M1 1311026 		...LUN = 0x812f000000000000, no device
+M1 1311026 		...LUN = 0x8130000000000000, no device
+M1 1311026 		...LUN = 0x8131000000000000, no device
+M1 1311026 		...LUN = 0x8132000000000000, no device
+M1 1311026 		...LUN = 0x8133000000000000, no device
+M1 1311026 		...LUN = 0x8134000000000000, no device
+M1 1311026 		...LUN = 0x8135000000000000, no device
+M1 1311026 		...LUN = 0x8136000000000000, no device
+M1 1311026 		...LUN = 0x8137000000000000, no device
+M1 1311026 		...LUN = 0x8138000000000000, no device
+M1 1311026 		...LUN = 0x8139000000000000, no device
+M1 1311026 		...LUN = 0x813a000000000000, no device
+M1 1311026 		...LUN = 0x813b000000000000, no device
+M1 1311026 		...LUN = 0x813c000000000000, no device
+M1 1311026 		...LUN = 0x813d000000000000, no device
+M1 1311026 		...LUN = 0x813e000000000000, no device
+M1 1311026 		...LUN = 0x813f000000000000, no device
+M1 1311026 		...LUN = 0x8200000000000000, type = 0x5
+M1 1311026 		...LUN = 0x8201000000000000, no device
+M1 1311026 		...LUN = 0x8202000000000000, no device
+M1 1311026 		...LUN = 0x8203000000000000, no device
+M1 1311026 		...LUN = 0x8204000000000000, no device
+M1 1311026 		...LUN = 0x8205000000000000, no device
+M1 1311026 		...LUN = 0x8206000000000000, no device
+M1 1311026 		...LUN = 0x8207000000000000, no device
+M1 1311026 		...LUN = 0x8208000000000000, no device
+M1 1311026 		...LUN = 0x8209000000000000, no device
+M1 1311026 		...LUN = 0x820a000000000000, no device
+M1 1311026 		...LUN = 0x820b000000000000, no device
+M1 1311026 		...LUN = 0x820c000000000000, no device
+M1 1311026 		...LUN = 0x820d000000000000, no device
+M1 1311026 		...LUN = 0x820e000000000000, no device
+M1 1311026 		...LUN = 0x820f000000000000, no device
+M1 1311026 		...LUN = 0x8210000000000000, no device
+M1 1311026 		...LUN = 0x8211000000000000, no device
+M1 1311026 		...LUN = 0x8212000000000000, no device
+M1 1311026 		...LUN = 0x8213000000000000, no device
+M1 1311026 		...LUN = 0x8214000000000000, no device
+M1 1311026 		...LUN = 0x8215000000000000, no device
+M1 1311026 		...LUN = 0x8216000000000000, no device
+M1 1311026 		...LUN = 0x8217000000000000, no device
+M1 1311026 		...LUN = 0x8218000000000000, no device
+M1 1311026 		...LUN = 0x8219000000000000, no device
+M1 1311026 		...LUN = 0x821a000000000000, no device
+M1 1311026 		...LUN = 0x821b000000000000, no device
+M1 1311026 		...LUN = 0x821c000000000000, no device
+M1 1311026 		...LUN = 0x821d000000000000, no device
+M1 1311026 		...LUN = 0x821e000000000000, no device
+M1 1311026 		...LUN = 0x821f000000000000, no device
+M1 1311026 		...LUN = 0x8220000000000000, no device
+M1 1311026 		...LUN = 0x8221000000000000, no device
+M1 1311026 		...LUN = 0x8222000000000000, no device
+M1 1311026 		...LUN = 0x8223000000000000, no device
+M1 1311026 		...LUN = 0x8224000000000000, no device
+M1 1311026 		...LUN = 0x8225000000000000, no device
+M1 1311026 		...LUN = 0x8226000000000000, no device
+M1 1311026 		...LUN = 0x8227000000000000, no device
+M1 1311026 		...LUN = 0x8228000000000000, no device
+M1 1311026 		...LUN = 0x8229000000000000, no device
+M1 1311026 		...LUN = 0x822a000000000000, no device
+M1 1311026 		...LUN = 0x822b000000000000, no device
+M1 1311026 		...LUN = 0x822c000000000000, no device
+M1 1311026 		...LUN = 0x822d000000000000, no device
+M1 1311026 		...LUN = 0x822e000000000000, no device
+M1 1311026 		...LUN = 0x822f000000000000, no device
+M1 1311026 		...LUN = 0x8230000000000000, no device
+M1 1311026 		...LUN = 0x8231000000000000, no device
+M1 1311026 		...LUN = 0x8232000000000000, no device
+M1 1311026 		...LUN = 0x8233000000000000, no device
+M1 1311026 		...LUN = 0x8234000000000000, no device
+M1 1311026 		...LUN = 0x8235000000000000, no device
+M1 1311026 		...LUN = 0x8236000000000000, no device
+M1 1311026 		...LUN = 0x8237000000000000, no device
+M1 1311026 		...LUN = 0x8238000000000000, no device
+M1 1311026 		...LUN = 0x8239000000000000, no device
+M1 1311026 		...LUN = 0x823a000000000000, no device
+M1 1311026 		...LUN = 0x823b000000000000, no device
+M1 1311026 		...LUN = 0x823c000000000000, no device
+M1 1311026 		...LUN = 0x823d000000000000, no device
+M1 1311026 		...LUN = 0x823e000000000000, no device
+M1 1311026 		...LUN = 0x823f000000000000, no device
+M1 1311026 		...LUN = 0x8300000000000000, no device
+M1 1311026 		...LUN = 0x8301000000000000, no device
+M1 1311026 		...LUN = 0x8302000000000000, no device
+M1 1311026 		...LUN = 0x8303000000000000, no device
+M1 1311026 		...LUN = 0x8304000000000000, no device
+M1 1311026 		...LUN = 0x8305000000000000, no device
+M1 1311026 		...LUN = 0x8306000000000000, no device
+M1 1311026 		...LUN = 0x8307000000000000, no device
+M1 1311026 		...LUN = 0x8308000000000000, no device
+M1 1311026 		...LUN = 0x8309000000000000, no device
+M1 1311026 		...LUN = 0x830a000000000000, no device
+M1 1311026 		...LUN = 0x830b000000000000, no device
+M1 1311026 		...LUN = 0x830c000000000000, no device
+M1 1311026 		...LUN = 0x830d000000000000, no device
+M1 1311026 		...LUN = 0x830e000000000000, no device
+M1 1311026 		...LUN = 0x830f000000000000, no device
+M1 1311026 		...LUN = 0x8310000000000000, no device
+M1 1311026 		...LUN = 0x8311000000000000, no device
+M1 1311026 		...LUN = 0x8312000000000000, no device
+M1 1311026 		...LUN = 0x8313000000000000, no device
+M1 1311026 		...LUN = 0x8314000000000000, no device
+M1 1311026 		...LUN = 0x8315000000000000, no device
+M1 1311026 		...LUN = 0x8316000000000000, no device
+M1 1311026 		...LUN = 0x8317000000000000, no device
+M1 1311026 		...LUN = 0x8318000000000000, no device
+M1 1311026 		...LUN = 0x8319000000000000, no device
+M1 1311026 		...LUN = 0x831a000000000000, no device
+M1 1311026 		...LUN = 0x831b000000000000, no device
+M1 1311026 		...LUN = 0x831c000000000000, no device
+M1 1311026 		...LUN = 0x831d000000000000, no device
+M1 1311026 		...LUN = 0x831e000000000000, no device
+M1 1311026 		...LUN = 0x831f000000000000, no device
+M1 1311026 		...LUN = 0x8320000000000000, no device
+M1 1311026 		...LUN = 0x8321000000000000, no device
+M1 1311026 		...LUN = 0x8322000000000000, no device
+M1 1311026 		...LUN = 0x8323000000000000, no device
+M1 1311026 		...LUN = 0x8324000000000000, no device
+M1 1311026 		...LUN = 0x8325000000000000, no device
+M1 1311026 		...LUN = 0x8326000000000000, no device
+M1 1311026 		...LUN = 0x8327000000000000, no device
+M1 1311026 		...LUN = 0x8328000000000000, no device
+M1 1311026 		...LUN = 0x8329000000000000, no device
+M1 1311026 		...LUN = 0x832a000000000000, no device
+M1 1311026 		...LUN = 0x832b000000000000, no device
+M1 1311026 		...LUN = 0x832c000000000000, no device
+M1 1311026 		...LUN = 0x832d000000000000, no device
+M1 1311026 		...LUN = 0x832e000000000000, no device
+M1 1311026 		...LUN = 0x832f000000000000, no device
+M1 1311026 		...LUN = 0x8330000000000000, no device
+M1 1311026 		...LUN = 0x8331000000000000, no device
+M1 1311026 		...LUN = 0x8332000000000000, no device
+M1 1311026 		...LUN = 0x8333000000000000, no device
+M1 1311026 		...LUN = 0x8334000000000000, no device
+M1 1311026 		...LUN = 0x8335000000000000, no device
+M1 1311026 		...LUN = 0x8336000000000000, no device
+M1 1311026 		...LUN = 0x8337000000000000, no device
+M1 1311026 		...LUN = 0x8338000000000000, no device
+M1 1311026 		...LUN = 0x8339000000000000, no device
+M1 1311026 		...LUN = 0x833a000000000000, no device
+M1 1311026 		...LUN = 0x833b000000000000, no device
+M1 1311026 		...LUN = 0x833c000000000000, no device
+M1 1311026 		...LUN = 0x833d000000000000, no device
+M1 1311026 		...LUN = 0x833e000000000000, no device
+M1 1311026 		...LUN = 0x833f000000000000, no device
+M1 1311026 		...LUN = 0x8400000000000000, no device
+M1 1311026 		...LUN = 0x8401000000000000, no device
+M1 1311026 		...LUN = 0x8402000000000000, no device
+M1 1311026 		...LUN = 0x8403000000000000, no device
+M1 1311026 		...LUN = 0x8404000000000000, no device
+M1 1311026 		...LUN = 0x8405000000000000, no device
+M1 1311026 		...LUN = 0x8406000000000000, no device
+M1 1311026 		...LUN = 0x8407000000000000, no device
+M1 1311026 		...LUN = 0x8408000000000000, no device
+M1 1311026 		...LUN = 0x8409000000000000, no device
+M1 1311026 		...LUN = 0x840a000000000000, no device
+M1 1311026 		...LUN = 0x840b000000000000, no device
+M1 1311026 		...LUN = 0x840c000000000000, no device
+M1 1311026 		...LUN = 0x840d000000000000, no device
+M1 1311026 		...LUN = 0x840e000000000000, no device
+M1 1311026 		...LUN = 0x840f000000000000, no device
+M1 1311026 		...LUN = 0x8410000000000000, no device
+M1 1311026 		...LUN = 0x8411000000000000, no device
+M1 1311026 		...LUN = 0x8412000000000000, no device
+M1 1311026 		...LUN = 0x8413000000000000, no device
+M1 1311026 		...LUN = 0x8414000000000000, no device
+M1 1311026 		...LUN = 0x8415000000000000, no device
+M1 1311026 		...LUN = 0x8416000000000000, no device
+M1 1311026 		...LUN = 0x8417000000000000, no device
+M1 1311026 		...LUN = 0x8418000000000000, no device
+M1 1311026 		...LUN = 0x8419000000000000, no device
+M1 1311026 		...LUN = 0x841a000000000000, no device
+M1 1311026 		...LUN = 0x841b000000000000, no device
+M1 1311026 		...LUN = 0x841c000000000000, no device
+M1 1311026 		...LUN = 0x841d000000000000, no device
+M1 1311026 		...LUN = 0x841e000000000000, no device
+M1 1311026 		...LUN = 0x841f000000000000, no device
+M1 1311026 		...LUN = 0x8420000000000000, no device
+M1 1311026 		...LUN = 0x8421000000000000, no device
+M1 1311026 		...LUN = 0x8422000000000000, no device
+M1 1311026 		...LUN = 0x8423000000000000, no device
+M1 1311026 		...LUN = 0x8424000000000000, no device
+M1 1311026 		...LUN = 0x8425000000000000, no device
+M1 1311026 		...LUN = 0x8426000000000000, no device
+M1 1311026 		...LUN = 0x8427000000000000, no device
+M1 1311026 		...LUN = 0x8428000000000000, no device
+M1 1311026 		...LUN = 0x8429000000000000, no device
+M1 1311026 		...LUN = 0x842a000000000000, no device
+M1 1311026 		...LUN = 0x842b000000000000, no device
+M1 1311026 		...LUN = 0x842c000000000000, no device
+M1 1311026 		...LUN = 0x842d000000000000, no device
+M1 1311026 		...LUN = 0x842e000000000000, no device
+M1 1311026 		...LUN = 0x842f000000000000, no device
+M1 1311026 		...LUN = 0x8430000000000000, no device
+M1 1311026 		...LUN = 0x8431000000000000, no device
+M1 1311026 		...LUN = 0x8432000000000000, no device
+M1 1311026 		...LUN = 0x8433000000000000, no device
+M1 1311026 		...LUN = 0x8434000000000000, no device
+M1 1311026 		...LUN = 0x8435000000000000, no device
+M1 1311026 		...LUN = 0x8436000000000000, no device
+M1 1311026 		...LUN = 0x8437000000000000, no device
+M1 1311026 		...LUN = 0x8438000000000000, no device
+M1 1311026 		...LUN = 0x8439000000000000, no device
+M1 1311026 		...LUN = 0x843a000000000000, no device
+M1 1311026 		...LUN = 0x843b000000000000, no device
+M1 1311026 		...LUN = 0x843c000000000000, no device
+M1 1311026 		...LUN = 0x843d000000000000, no device
+M1 1311026 		...LUN = 0x843e000000000000, no device
+M1 1311026 		...LUN = 0x843f000000000000, no device
+M1 1311026 		...LUN = 0x8500000000000000, no device
+M1 1311026 		...LUN = 0x8501000000000000, no device
+M1 1311026 		...LUN = 0x8502000000000000, no device
+M1 1311026 		...LUN = 0x8503000000000000, no device
+M1 1311026 		...LUN = 0x8504000000000000, no device
+M1 1311026 		...LUN = 0x8505000000000000, no device
+M1 1311026 		...LUN = 0x8506000000000000, no device
+M1 1311026 		...LUN = 0x8507000000000000, no device
+M1 1311026 		...LUN = 0x8508000000000000, no device
+M1 1311026 		...LUN = 0x8509000000000000, no device
+M1 1311026 		...LUN = 0x850a000000000000, no device
+M1 1311026 		...LUN = 0x850b000000000000, no device
+M1 1311026 		...LUN = 0x850c000000000000, no device
+M1 1311026 		...LUN = 0x850d000000000000, no device
+M1 1311026 		...LUN = 0x850e000000000000, no device
+M1 1311026 		...LUN = 0x850f000000000000, no device
+M1 1311026 		...LUN = 0x8510000000000000, no device
+M1 1311026 		...LUN = 0x8511000000000000, no device
+M1 1311026 		...LUN = 0x8512000000000000, no device
+M1 1311026 		...LUN = 0x8513000000000000, no device
+M1 1311026 		...LUN = 0x8514000000000000, no device
+M1 1311026 		...LUN = 0x8515000000000000, no device
+M1 1311026 		...LUN = 0x8516000000000000, no device
+M1 1311026 		...LUN = 0x8517000000000000, no device
+M1 1311026 		...LUN = 0x8518000000000000, no device
+M1 1311026 		...LUN = 0x8519000000000000, no device
+M1 1311026 		...LUN = 0x851a000000000000, no device
+M1 1311026 		...LUN = 0x851b000000000000, no device
+M1 1311026 		...LUN = 0x851c000000000000, no device
+M1 1311026 		...LUN = 0x851d000000000000, no device
+M1 1311026 		...LUN = 0x851e000000000000, no device
+M1 1311026 		...LUN = 0x851f000000000000, no device
+M1 1311026 		...LUN = 0x8520000000000000, no device
+M1 1311026 		...LUN = 0x8521000000000000, no device
+M1 1311026 		...LUN = 0x8522000000000000, no device
+M1 1311026 		...LUN = 0x8523000000000000, no device
+M1 1311026 		...LUN = 0x8524000000000000, no device
+M1 1311026 		...LUN = 0x8525000000000000, no device
+M1 1311026 		...LUN = 0x8526000000000000, no device
+M1 1311026 		...LUN = 0x8527000000000000, no device
+M1 1311026 		...LUN = 0x8528000000000000, no device
+M1 1311026 		...LUN = 0x8529000000000000, no device
+M1 1311026 		...LUN = 0x852a000000000000, no device
+M1 1311026 		...LUN = 0x852b000000000000, no device
+M1 1311026 		...LUN = 0x852c000000000000, no device
+M1 1311026 		...LUN = 0x852d000000000000, no device
+M1 1311026 		...LUN = 0x852e000000000000, no device
+M1 1311026 		...LUN = 0x852f000000000000, no device
+M1 1311026 		...LUN = 0x8530000000000000, no device
+M1 1311026 		...LUN = 0x8531000000000000, no device
+M1 1311026 		...LUN = 0x8532000000000000, no device
+M1 1311026 		...LUN = 0x8533000000000000, no device
+M1 1311026 		...LUN = 0x8534000000000000, no device
+M1 1311026 		...LUN = 0x8535000000000000, no device
+M1 1311026 		...LUN = 0x8536000000000000, no device
+M1 1311026 		...LUN = 0x8537000000000000, no device
+M1 1311026 		...LUN = 0x8538000000000000, no device
+M1 1311026 		...LUN = 0x8539000000000000, no device
+M1 1311026 		...LUN = 0x853a000000000000, no device
+M1 1311026 		...LUN = 0x853b000000000000, no device
+M1 1311026 		...LUN = 0x853c000000000000, no device
+M1 1311026 		...LUN = 0x853d000000000000, no device
+M1 1311026 		...LUN = 0x853e000000000000, no device
+M1 1311026 		...LUN = 0x853f000000000000, no device
+M1 1311026 		...LUN = 0x8600000000000000, no device
+M1 1311026 		...LUN = 0x8601000000000000, no device
+M1 1311026 		...LUN = 0x8602000000000000, no device
+M1 1311026 		...LUN = 0x8603000000000000, no device
+M1 1311026 		...LUN = 0x8604000000000000, no device
+M1 1311026 		...LUN = 0x8605000000000000, no device
+M1 1311026 		...LUN = 0x8606000000000000, no device
+M1 1311026 		...LUN = 0x8607000000000000, no device
+M1 1311026 		...LUN = 0x8608000000000000, no device
+M1 1311026 		...LUN = 0x8609000000000000, no device
+M1 1311026 		...LUN = 0x860a000000000000, no device
+M1 1311026 		...LUN = 0x860b000000000000, no device
+M1 1311026 		...LUN = 0x860c000000000000, no device
+M1 1311026 		...LUN = 0x860d000000000000, no device
+M1 1311026 		...LUN = 0x860e000000000000, no device
+M1 1311026 		...LUN = 0x860f000000000000, no device
+M1 1311026 		...LUN = 0x8610000000000000, no device
+M1 1311026 		...LUN = 0x8611000000000000, no device
+M1 1311026 		...LUN = 0x8612000000000000, no device
+M1 1311026 		...LUN = 0x8613000000000000, no device
+M1 1311026 		...LUN = 0x8614000000000000, no device
+M1 1311026 		...LUN = 0x8615000000000000, no device
+M1 1311026 		...LUN = 0x8616000000000000, no device
+M1 1311026 		...LUN = 0x8617000000000000, no device
+M1 1311026 		...LUN = 0x8618000000000000, no device
+M1 1311026 		...LUN = 0x8619000000000000, no device
+M1 1311026 		...LUN = 0x861a000000000000, no device
+M1 1311026 		...LUN = 0x861b000000000000, no device
+M1 1311026 		...LUN = 0x861c000000000000, no device
+M1 1311026 		...LUN = 0x861d000000000000, no device
+M1 1311026 		...LUN = 0x861e000000000000, no device
+M1 1311026 		...LUN = 0x861f000000000000, no device
+M1 1311026 		...LUN = 0x8620000000000000, no device
+M1 1311026 		...LUN = 0x8621000000000000, no device
+M1 1311026 		...LUN = 0x8622000000000000, no device
+M1 1311026 		...LUN = 0x8623000000000000, no device
+M1 1311026 		...LUN = 0x8624000000000000, no device
+M1 1311026 		...LUN = 0x8625000000000000, no device
+M1 1311026 		...LUN = 0x8626000000000000, no device
+M1 1311026 		...LUN = 0x8627000000000000, no device
+M1 1311026 		...LUN = 0x8628000000000000, no device
+M1 1311026 		...LUN = 0x8629000000000000, no device
+M1 1311026 		...LUN = 0x862a000000000000, no device
+M1 1311026 		...LUN = 0x862b000000000000, no device
+M1 1311026 		...LUN = 0x862c000000000000, no device
+M1 1311026 		...LUN = 0x862d000000000000, no device
+M1 1311026 		...LUN = 0x862e000000000000, no device
+M1 1311026 		...LUN = 0x862f000000000000, no device
+M1 1311026 		...LUN = 0x8630000000000000, no device
+M1 1311026 		...LUN = 0x8631000000000000, no device
+M1 1311026 		...LUN = 0x8632000000000000, no device
+M1 1311026 		...LUN = 0x8633000000000000, no device
+M1 1311026 		...LUN = 0x8634000000000000, no device
+M1 1311026 		...LUN = 0x8635000000000000, no device
+M1 1311026 		...LUN = 0x8636000000000000, no device
+M1 1311026 		...LUN = 0x8637000000000000, no device
+M1 1311026 		...LUN = 0x8638000000000000, no device
+M1 1311026 		...LUN = 0x8639000000000000, no device
+M1 1311026 		...LUN = 0x863a000000000000, no device
+M1 1311026 		...LUN = 0x863b000000000000, no device
+M1 1311026 		...LUN = 0x863c000000000000, no device
+M1 1311026 		...LUN = 0x863d000000000000, no device
+M1 1311026 		...LUN = 0x863e000000000000, no device
+M1 1311026 		...LUN = 0x863f000000000000, no device
+M1 1311026 		...LUN = 0x8700000000000000, no device
+M1 1311026 		...LUN = 0x8701000000000000, no device
+M1 1311026 		...LUN = 0x8702000000000000, no device
+M1 1311026 		...LUN = 0x8703000000000000, no device
+M1 1311026 		...LUN = 0x8704000000000000, no device
+M1 1311026 		...LUN = 0x8705000000000000, no device
+M1 1311026 		...LUN = 0x8706000000000000, no device
+M1 1311026 		...LUN = 0x8707000000000000, no device
+M1 1311026 		...LUN = 0x8708000000000000, no device
+M1 1311026 		...LUN = 0x8709000000000000, no device
+M1 1311026 		...LUN = 0x870a000000000000, no device
+M1 1311026 		...LUN = 0x870b000000000000, no device
+M1 1311026 		...LUN = 0x870c000000000000, no device
+M1 1311026 		...LUN = 0x870d000000000000, no device
+M1 1311026 		...LUN = 0x870e000000000000, no device
+M1 1311026 		...LUN = 0x870f000000000000, no device
+M1 1311026 		...LUN = 0x8710000000000000, no device
+M1 1311026 		...LUN = 0x8711000000000000, no device
+M1 1311026 		...LUN = 0x8712000000000000, no device
+M1 1311026 		...LUN = 0x8713000000000000, no device
+M1 1311026 		...LUN = 0x8714000000000000, no device
+M1 1311026 		...LUN = 0x8715000000000000, no device
+M1 1311026 		...LUN = 0x8716000000000000, no device
+M1 1311026 		...LUN = 0x8717000000000000, no device
+M1 1311026 		...LUN = 0x8718000000000000, no device
+M1 1311026 		...LUN = 0x8719000000000000, no device
+M1 1311026 		...LUN = 0x871a000000000000, no device
+M1 1311026 		...LUN = 0x871b000000000000, no device
+M1 1311026 		...LUN = 0x871c000000000000, no device
+M1 1311026 		...LUN = 0x871d000000000000, no device
+M1 1311026 		...LUN = 0x871e000000000000, no device
+M1 1311026 		...LUN = 0x871f000000000000, no device
+M1 1311026 		...LUN = 0x8720000000000000, no device
+M1 1311026 		...LUN = 0x8721000000000000, no device
+M1 1311026 		...LUN = 0x8722000000000000, no device
+M1 1311026 		...LUN = 0x8723000000000000, no device
+M1 1311026 		...LUN = 0x8724000000000000, no device
+M1 1311026 		...LUN = 0x8725000000000000, no device
+M1 1311026 		...LUN = 0x8726000000000000, no device
+M1 1311026 		...LUN = 0x8727000000000000, no device
+M1 1311026 		...LUN = 0x8728000000000000, no device
+M1 1311026 		...LUN = 0x8729000000000000, no device
+M1 1311026 		...LUN = 0x872a000000000000, no device
+M1 1311026 		...LUN = 0x872b000000000000, no device
+M1 1311026 		...LUN = 0x872c000000000000, no device
+M1 1311026 		...LUN = 0x872d000000000000, no device
+M1 1311026 		...LUN = 0x872e000000000000, no device
+M1 1311026 		...LUN = 0x872f000000000000, no device
+M1 1311026 		...LUN = 0x8730000000000000, no device
+M1 1311026 		...LUN = 0x8731000000000000, no device
+M1 1311026 		...LUN = 0x8732000000000000, no device
+M1 1311026 		...LUN = 0x8733000000000000, no device
+M1 1311026 		...LUN = 0x8734000000000000, no device
+M1 1311026 		...LUN = 0x8735000000000000, no device
+M1 1311026 		...LUN = 0x8736000000000000, no device
+M1 1311026 		...LUN = 0x8737000000000000, no device
+M1 1311026 		...LUN = 0x8738000000000000, no device
+M1 1311026 		...LUN = 0x8739000000000000, no device
+M1 1311026 		...LUN = 0x873a000000000000, no device
+M1 1311026 		...LUN = 0x873b000000000000, no device
+M1 1311026 		...LUN = 0x873c000000000000, no device
+M1 1311026 		...LUN = 0x873d000000000000, no device
+M1 1311026 		...LUN = 0x873e000000000000, no device
+M1 1311026 		...LUN = 0x873f000000000000, no device
+M1 1311026 		...LUN = 0x8800000000000000, no device
+M1 1311026 		...LUN = 0x8801000000000000, no device
+M1 1311026 		...LUN = 0x8802000000000000, no device
+M1 1311026 		...LUN = 0x8803000000000000, no device
+M1 1311026 		...LUN = 0x8804000000000000, no device
+M1 1311026 		...LUN = 0x8805000000000000, no device
+M1 1311026 		...LUN = 0x8806000000000000, no device
+M1 1311026 		...LUN = 0x8807000000000000, no device
+M1 1311026 		...LUN = 0x8808000000000000, no device
+M1 1311026 		...LUN = 0x8809000000000000, no device
+M1 1311026 		...LUN = 0x880a000000000000, no device
+M1 1311026 		...LUN = 0x880b000000000000, no device
+M1 1311026 		...LUN = 0x880c000000000000, no device
+M1 1311026 		...LUN = 0x880d000000000000, no device
+M1 1311026 		...LUN = 0x880e000000000000, no device
+M1 1311026 		...LUN = 0x880f000000000000, no device
+M1 1311026 		...LUN = 0x8810000000000000, no device
+M1 1311026 		...LUN = 0x8811000000000000, no device
+M1 1311026 		...LUN = 0x8812000000000000, no device
+M1 1311026 		...LUN = 0x8813000000000000, no device
+M1 1311026 		...LUN = 0x8814000000000000, no device
+M1 1311026 		...LUN = 0x8815000000000000, no device
+M1 1311026 		...LUN = 0x8816000000000000, no device
+M1 1311026 		...LUN = 0x8817000000000000, no device
+M1 1311026 		...LUN = 0x8818000000000000, no device
+M1 1311026 		...LUN = 0x8819000000000000, no device
+M1 1311026 		...LUN = 0x881a000000000000, no device
+M1 1311026 		...LUN = 0x881b000000000000, no device
+M1 1311026 		...LUN = 0x881c000000000000, no device
+M1 1311026 		...LUN = 0x881d000000000000, no device
+M1 1311026 		...LUN = 0x881e000000000000, no device
+M1 1311026 		...LUN = 0x881f000000000000, no device
+M1 1311026 		...LUN = 0x8820000000000000, no device
+M1 1311026 		...LUN = 0x8821000000000000, no device
+M1 1311026 		...LUN = 0x8822000000000000, no device
+M1 1311026 		...LUN = 0x8823000000000000, no device
+M1 1311026 		...LUN = 0x8824000000000000, no device
+M1 1311026 		...LUN = 0x8825000000000000, no device
+M1 1311026 		...LUN = 0x8826000000000000, no device
+M1 1311026 		...LUN = 0x8827000000000000, no device
+M1 1311026 		...LUN = 0x8828000000000000, no device
+M1 1311026 		...LUN = 0x8829000000000000, no device
+M1 1311026 		...LUN = 0x882a000000000000, no device
+M1 1311026 		...LUN = 0x882b000000000000, no device
+M1 1311026 		...LUN = 0x882c000000000000, no device
+M1 1311026 		...LUN = 0x882d000000000000, no device
+M1 1311026 		...LUN = 0x882e000000000000, no device
+M1 1311026 		...LUN = 0x882f000000000000, no device
+M1 1311026 		...LUN = 0x8830000000000000, no device
+M1 1311026 		...LUN = 0x8831000000000000, no device
+M1 1311026 		...LUN = 0x8832000000000000, no device
+M1 1311026 		...LUN = 0x8833000000000000, no device
+M1 1311026 		...LUN = 0x8834000000000000, no device
+M1 1311026 		...LUN = 0x8835000000000000, no device
+M1 1311026 		...LUN = 0x8836000000000000, no device
+M1 1311026 		...LUN = 0x8837000000000000, no device
+M1 1311026 		...LUN = 0x8838000000000000, no device
+M1 1311026 		...LUN = 0x8839000000000000, no device
+M1 1311026 		...LUN = 0x883a000000000000, no device
+M1 1311026 		...LUN = 0x883b000000000000, no device
+M1 1311026 		...LUN = 0x883c000000000000, no device
+M1 1311026 		...LUN = 0x883d000000000000, no device
+M1 1311026 		...LUN = 0x883e000000000000, no device
+M1 1311026 		...LUN = 0x883f000000000000, no device
+M1 1311026 		...LUN = 0x8900000000000000, no device
+M1 1311026 		...LUN = 0x8901000000000000, no device
+M1 1311026 		...LUN = 0x8902000000000000, no device
+M1 1311026 		...LUN = 0x8903000000000000, no device
+M1 1311026 		...LUN = 0x8904000000000000, no device
+M1 1311026 		...LUN = 0x8905000000000000, no device
+M1 1311026 		...LUN = 0x8906000000000000, no device
+M1 1311026 		...LUN = 0x8907000000000000, no device
+M1 1311026 		...LUN = 0x8908000000000000, no device
+M1 1311026 		...LUN = 0x8909000000000000, no device
+M1 1311026 		...LUN = 0x890a000000000000, no device
+M1 1311026 		...LUN = 0x890b000000000000, no device
+M1 1311026 		...LUN = 0x890c000000000000, no device
+M1 1311026 		...LUN = 0x890d000000000000, no device
+M1 1311026 		...LUN = 0x890e000000000000, no device
+M1 1311026 		...LUN = 0x890f000000000000, no device
+M1 1311026 		...LUN = 0x8910000000000000, no device
+M1 1311026 		...LUN = 0x8911000000000000, no device
+M1 1311026 		...LUN = 0x8912000000000000, no device
+M1 1311026 		...LUN = 0x8913000000000000, no device
+M1 1311026 		...LUN = 0x8914000000000000, no device
+M1 1311026 		...LUN = 0x8915000000000000, no device
+M1 1311026 		...LUN = 0x8916000000000000, no device
+M1 1311026 		...LUN = 0x8917000000000000, no device
+M1 1311026 		...LUN = 0x8918000000000000, no device
+M1 1311026 		...LUN = 0x8919000000000000, no device
+M1 1311026 		...LUN = 0x891a000000000000, no device
+M1 1311026 		...LUN = 0x891b000000000000, no device
+M1 1311026 		...LUN = 0x891c000000000000, no device
+M1 1311026 		...LUN = 0x891d000000000000, no device
+M1 1311026 		...LUN = 0x891e000000000000, no device
+M1 1311026 		...LUN = 0x891f000000000000, no device
+M1 1311026 		...LUN = 0x8920000000000000, no device
+M1 1311026 		...LUN = 0x8921000000000000, no device
+M1 1311026 		...LUN = 0x8922000000000000, no device
+M1 1311026 		...LUN = 0x8923000000000000, no device
+M1 1311026 		...LUN = 0x8924000000000000, no device
+M1 1311026 		...LUN = 0x8925000000000000, no device
+M1 1311026 		...LUN = 0x8926000000000000, no device
+M1 1311026 		...LUN = 0x8927000000000000, no device
+M1 1311026 		...LUN = 0x8928000000000000, no device
+M1 1311026 		...LUN = 0x8929000000000000, no device
+M1 1311026 		...LUN = 0x892a000000000000, no device
+M1 1311026 		...LUN = 0x892b000000000000, no device
+M1 1311026 		...LUN = 0x892c000000000000, no device
+M1 1311026 		...LUN = 0x892d000000000000, no device
+M1 1311026 		...LUN = 0x892e000000000000, no device
+M1 1311026 		...LUN = 0x892f000000000000, no device
+M1 1311026 		...LUN = 0x8930000000000000, no device
+M1 1311026 		...LUN = 0x8931000000000000, no device
+M1 1311026 		...LUN = 0x8932000000000000, no device
+M1 1311026 		...LUN = 0x8933000000000000, no device
+M1 1311026 		...LUN = 0x8934000000000000, no device
+M1 1311026 		...LUN = 0x8935000000000000, no device
+M1 1311026 		...LUN = 0x8936000000000000, no device
+M1 1311026 		...LUN = 0x8937000000000000, no device
+M1 1311026 		...LUN = 0x8938000000000000, no device
+M1 1311026 		...LUN = 0x8939000000000000, no device
+M1 1311026 		...LUN = 0x893a000000000000, no device
+M1 1311026 		...LUN = 0x893b000000000000, no device
+M1 1311026 		...LUN = 0x893c000000000000, no device
+M1 1311026 		...LUN = 0x893d000000000000, no device
+M1 1311026 		...LUN = 0x893e000000000000, no device
+M1 1311026 		...LUN = 0x893f000000000000, no device
+M1 1311026 		...LUN = 0x8a00000000000000, no device
+M1 1311026 		...LUN = 0x8a01000000000000, no device
+M1 1311026 		...LUN = 0x8a02000000000000, no device
+M1 1311026 		...LUN = 0x8a03000000000000, no device
+M1 1311026 		...LUN = 0x8a04000000000000, no device
+M1 1311026 		...LUN = 0x8a05000000000000, no device
+M1 1311026 		...LUN = 0x8a06000000000000, no device
+M1 1311026 		...LUN = 0x8a07000000000000, no device
+M1 1311026 		...LUN = 0x8a08000000000000, no device
+M1 1311026 		...LUN = 0x8a09000000000000, no device
+M1 1311026 		...LUN = 0x8a0a000000000000, no device
+M1 1311026 		...LUN = 0x8a0b000000000000, no device
+M1 1311026 		...LUN = 0x8a0c000000000000, no device
+M1 1311026 		...LUN = 0x8a0d000000000000, no device
+M1 1311026 		...LUN = 0x8a0e000000000000, no device
+M1 1311026 		...LUN = 0x8a0f000000000000, no device
+M1 1311026 		...LUN = 0x8a10000000000000, no device
+M1 1311026 		...LUN = 0x8a11000000000000, no device
+M1 1311026 		...LUN = 0x8a12000000000000, no device
+M1 1311026 		...LUN = 0x8a13000000000000, no device
+M1 1311026 		...LUN = 0x8a14000000000000, no device
+M1 1311026 		...LUN = 0x8a15000000000000, no device
+M1 1311026 		...LUN = 0x8a16000000000000, no device
+M1 1311026 		...LUN = 0x8a17000000000000, no device
+M1 1311026 		...LUN = 0x8a18000000000000, no device
+M1 1311026 		...LUN = 0x8a19000000000000, no device
+M1 1311026 		...LUN = 0x8a1a000000000000, no device
+M1 1311026 		...LUN = 0x8a1b000000000000, no device
+M1 1311026 		...LUN = 0x8a1c000000000000, no device
+M1 1311026 		...LUN = 0x8a1d000000000000, no device
+M1 1311026 		...LUN = 0x8a1e000000000000, no device
+M1 1311026 		...LUN = 0x8a1f000000000000, no device
+M1 1311026 		...LUN = 0x8a20000000000000, no device
+M1 1311026 		...LUN = 0x8a21000000000000, no device
+M1 1311026 		...LUN = 0x8a22000000000000, no device
+M1 1311026 		...LUN = 0x8a23000000000000, no device
+M1 1311026 		...LUN = 0x8a24000000000000, no device
+M1 1311026 		...LUN = 0x8a25000000000000, no device
+M1 1311026 		...LUN = 0x8a26000000000000, no device
+M1 1311026 		...LUN = 0x8a27000000000000, no device
+M1 1311026 		...LUN = 0x8a28000000000000, no device
+M1 1311026 		...LUN = 0x8a29000000000000, no device
+M1 1311026 		...LUN = 0x8a2a000000000000, no device
+M1 1311026 		...LUN = 0x8a2b000000000000, no device
+M1 1311026 		...LUN = 0x8a2c000000000000, no device
+M1 1311026 		...LUN = 0x8a2d000000000000, no device
+M1 1311026 		...LUN = 0x8a2e000000000000, no device
+M1 1311026 		...LUN = 0x8a2f000000000000, no device
+M1 1311026 		...LUN = 0x8a30000000000000, no device
+M1 1311026 		...LUN = 0x8a31000000000000, no device
+M1 1311026 		...LUN = 0x8a32000000000000, no device
+M1 1311026 		...LUN = 0x8a33000000000000, no device
+M1 1311026 		...LUN = 0x8a34000000000000, no device
+M1 1311026 		...LUN = 0x8a35000000000000, no device
+M1 1311026 		...LUN = 0x8a36000000000000, no device
+M1 1311026 		...LUN = 0x8a37000000000000, no device
+M1 1311026 		...LUN = 0x8a38000000000000, no device
+M1 1311026 		...LUN = 0x8a39000000000000, no device
+M1 1311026 		...LUN = 0x8a3a000000000000, no device
+M1 1311026 		...LUN = 0x8a3b000000000000, no device
+M1 1311026 		...LUN = 0x8a3c000000000000, no device
+M1 1311026 		...LUN = 0x8a3d000000000000, no device
+M1 1311026 		...LUN = 0x8a3e000000000000, no device
+M1 1311026 		...LUN = 0x8a3f000000000000, no device
+M1 1311026 		...LUN = 0x8b00000000000000, no device
+M1 1311026 		...LUN = 0x8b01000000000000, no device
+M1 1311026 		...LUN = 0x8b02000000000000, no device
+M1 1311026 		...LUN = 0x8b03000000000000, no device
+M1 1311026 		...LUN = 0x8b04000000000000, no device
+M1 1311026 		...LUN = 0x8b05000000000000, no device
+M1 1311026 		...LUN = 0x8b06000000000000, no device
+M1 1311026 		...LUN = 0x8b07000000000000, no device
+M1 1311026 		...LUN = 0x8b08000000000000, no device
+M1 1311026 		...LUN = 0x8b09000000000000, no device
+M1 1311026 		...LUN = 0x8b0a000000000000, no device
+M1 1311026 		...LUN = 0x8b0b000000000000, no device
+M1 1311026 		...LUN = 0x8b0c000000000000, no device
+M1 1311026 		...LUN = 0x8b0d000000000000, no device
+M1 1311026 		...LUN = 0x8b0e000000000000, no device
+M1 1311026 		...LUN = 0x8b0f000000000000, no device
+M1 1311026 		...LUN = 0x8b10000000000000, no device
+M1 1311026 		...LUN = 0x8b11000000000000, no device
+M1 1311026 		...LUN = 0x8b12000000000000, no device
+M1 1311026 		...LUN = 0x8b13000000000000, no device
+M1 1311026 		...LUN = 0x8b14000000000000, no device
+M1 1311026 		...LUN = 0x8b15000000000000, no device
+M1 1311026 		...LUN = 0x8b16000000000000, no device
+M1 1311026 		...LUN = 0x8b17000000000000, no device
+M1 1311026 		...LUN = 0x8b18000000000000, no device
+M1 1311026 		...LUN = 0x8b19000000000000, no device
+M1 1311026 		...LUN = 0x8b1a000000000000, no device
+M1 1311026 		...LUN = 0x8b1b000000000000, no device
+M1 1311026 		...LUN = 0x8b1c000000000000, no device
+M1 1311026 		...LUN = 0x8b1d000000000000, no device
+M1 1311026 		...LUN = 0x8b1e000000000000, no device
+M1 1311026 		...LUN = 0x8b1f000000000000, no device
+M1 1311026 		...LUN = 0x8b20000000000000, no device
+M1 1311026 		...LUN = 0x8b21000000000000, no device
+M1 1311026 		...LUN = 0x8b22000000000000, no device
+M1 1311026 		...LUN = 0x8b23000000000000, no device
+M1 1311026 		...LUN = 0x8b24000000000000, no device
+M1 1311026 		...LUN = 0x8b25000000000000, no device
+M1 1311026 		...LUN = 0x8b26000000000000, no device
+M1 1311026 		...LUN = 0x8b27000000000000, no device
+M1 1311026 		...LUN = 0x8b28000000000000, no device
+M1 1311026 		...LUN = 0x8b29000000000000, no device
+M1 1311026 		...LUN = 0x8b2a000000000000, no device
+M1 1311026 		...LUN = 0x8b2b000000000000, no device
+M1 1311026 		...LUN = 0x8b2c000000000000, no device
+M1 1311026 		...LUN = 0x8b2d000000000000, no device
+M1 1311026 		...LUN = 0x8b2e000000000000, no device
+M1 1311026 		...LUN = 0x8b2f000000000000, no device
+M1 1311026 		...LUN = 0x8b30000000000000, no device
+M1 1311026 		...LUN = 0x8b31000000000000, no device
+M1 1311026 		...LUN = 0x8b32000000000000, no device
+M1 1311026 		...LUN = 0x8b33000000000000, no device
+M1 1311026 		...LUN = 0x8b34000000000000, no device
+M1 1311026 		...LUN = 0x8b35000000000000, no device
+M1 1311026 		...LUN = 0x8b36000000000000, no device
+M1 1311026 		...LUN = 0x8b37000000000000, no device
+M1 1311026 		...LUN = 0x8b38000000000000, no device
+M1 1311026 		...LUN = 0x8b39000000000000, no device
+M1 1311026 		...LUN = 0x8b3a000000000000, no device
+M1 1311026 		...LUN = 0x8b3b000000000000, no device
+M1 1311026 		...LUN = 0x8b3c000000000000, no device
+M1 1311026 		...LUN = 0x8b3d000000000000, no device
+M1 1311026 		...LUN = 0x8b3e000000000000, no device
+M1 1311026 		...LUN = 0x8b3f000000000000, no device
+M1 1311026 		...LUN = 0x8c00000000000000, no device
+M1 1311026 		...LUN = 0x8c01000000000000, no device
+M1 1311026 		...LUN = 0x8c02000000000000, no device
+M1 1311026 		...LUN = 0x8c03000000000000, no device
+M1 1311026 		...LUN = 0x8c04000000000000, no device
+M1 1311026 		...LUN = 0x8c05000000000000, no device
+M1 1311026 		...LUN = 0x8c06000000000000, no device
+M1 1311026 		...LUN = 0x8c07000000000000, no device
+M1 1311026 		...LUN = 0x8c08000000000000, no device
+M1 1311026 		...LUN = 0x8c09000000000000, no device
+M1 1311026 		...LUN = 0x8c0a000000000000, no device
+M1 1311026 		...LUN = 0x8c0b000000000000, no device
+M1 1311026 		...LUN = 0x8c0c000000000000, no device
+M1 1311026 		...LUN = 0x8c0d000000000000, no device
+M1 1311026 		...LUN = 0x8c0e000000000000, no device
+M1 1311026 		...LUN = 0x8c0f000000000000, no device
+M1 1311026 		...LUN = 0x8c10000000000000, no device
+M1 1311026 		...LUN = 0x8c11000000000000, no device
+M1 1311026 		...LUN = 0x8c12000000000000, no device
+M1 1311026 		...LUN = 0x8c13000000000000, no device
+M1 1311026 		...LUN = 0x8c14000000000000, no device
+M1 1311026 		...LUN = 0x8c15000000000000, no device
+M1 1311026 		...LUN = 0x8c16000000000000, no device
+M1 1311026 		...LUN = 0x8c17000000000000, no device
+M1 1311026 		...LUN = 0x8c18000000000000, no device
+M1 1311026 		...LUN = 0x8c19000000000000, no device
+M1 1311026 		...LUN = 0x8c1a000000000000, no device
+M1 1311026 		...LUN = 0x8c1b000000000000, no device
+M1 1311026 		...LUN = 0x8c1c000000000000, no device
+M1 1311026 		...LUN = 0x8c1d000000000000, no device
+M1 1311026 		...LUN = 0x8c1e000000000000, no device
+M1 1311026 		...LUN = 0x8c1f000000000000, no device
+M1 1311026 		...LUN = 0x8c20000000000000, no device
+M1 1311026 		...LUN = 0x8c21000000000000, no device
+M1 1311026 		...LUN = 0x8c22000000000000, no device
+M1 1311026 		...LUN = 0x8c23000000000000, no device
+M1 1311026 		...LUN = 0x8c24000000000000, no device
+M1 1311026 		...LUN = 0x8c25000000000000, no device
+M1 1311026 		...LUN = 0x8c26000000000000, no device
+M1 1311026 		...LUN = 0x8c27000000000000, no device
+M1 1311026 		...LUN = 0x8c28000000000000, no device
+M1 1311026 		...LUN = 0x8c29000000000000, no device
+M1 1311026 		...LUN = 0x8c2a000000000000, no device
+M1 1311026 		...LUN = 0x8c2b000000000000, no device
+M1 1311026 		...LUN = 0x8c2c000000000000, no device
+M1 1311026 		...LUN = 0x8c2d000000000000, no device
+M1 1311026 		...LUN = 0x8c2e000000000000, no device
+M1 1311026 		...LUN = 0x8c2f000000000000, no device
+M1 1311026 		...LUN = 0x8c30000000000000, no device
+M1 1311026 		...LUN = 0x8c31000000000000, no device
+M1 1311026 		...LUN = 0x8c32000000000000, no device
+M1 1311026 		...LUN = 0x8c33000000000000, no device
+M1 1311026 		...LUN = 0x8c34000000000000, no device
+M1 1311026 		...LUN = 0x8c35000000000000, no device
+M1 1311026 		...LUN = 0x8c36000000000000, no device
+M1 1311026 		...LUN = 0x8c37000000000000, no device
+M1 1311026 		...LUN = 0x8c38000000000000, no device
+M1 1311026 		...LUN = 0x8c39000000000000, no device
+M1 1311026 		...LUN = 0x8c3a000000000000, no device
+M1 1311026 		...LUN = 0x8c3b000000000000, no device
+M1 1311026 		...LUN = 0x8c3c000000000000, no device
+M1 1311026 		...LUN = 0x8c3d000000000000, no device
+M1 1311026 		...LUN = 0x8c3e000000000000, no device
+M1 1311026 		...LUN = 0x8c3f000000000000, no device
+M1 1311026 		...LUN = 0x8d00000000000000, no device
+M1 1311026 		...LUN = 0x8d01000000000000, no device
+M1 1311026 		...LUN = 0x8d02000000000000, no device
+M1 1311026 		...LUN = 0x8d03000000000000, no device
+M1 1311026 		...LUN = 0x8d04000000000000, no device
+M1 1311026 		...LUN = 0x8d05000000000000, no device
+M1 1311026 		...LUN = 0x8d06000000000000, no device
+M1 1311026 		...LUN = 0x8d07000000000000, no device
+M1 1311026 		...LUN = 0x8d08000000000000, no device
+M1 1311026 		...LUN = 0x8d09000000000000, no device
+M1 1311026 		...LUN = 0x8d0a000000000000, no device
+M1 1311026 		...LUN = 0x8d0b000000000000, no device
+M1 1311026 		...LUN = 0x8d0c000000000000, no device
+M1 1311026 		...LUN = 0x8d0d000000000000, no device
+M1 1311026 		...LUN = 0x8d0e000000000000, no device
+M1 1311026 		...LUN = 0x8d0f000000000000, no device
+M1 1311026 		...LUN = 0x8d10000000000000, no device
+M1 1311026 		...LUN = 0x8d11000000000000, no device
+M1 1311026 		...LUN = 0x8d12000000000000, no device
+M1 1311026 		...LUN = 0x8d13000000000000, no device
+M1 1311026 		...LUN = 0x8d14000000000000, no device
+M1 1311026 		...LUN = 0x8d15000000000000, no device
+M1 1311026 		...LUN = 0x8d16000000000000, no device
+M1 1311026 		...LUN = 0x8d17000000000000, no device
+M1 1311026 		...LUN = 0x8d18000000000000, no device
+M1 1311026 		...LUN = 0x8d19000000000000, no device
+M1 1311026 		...LUN = 0x8d1a000000000000, no device
+M1 1311026 		...LUN = 0x8d1b000000000000, no device
+M1 1311026 		...LUN = 0x8d1c000000000000, no device
+M1 1311026 		...LUN = 0x8d1d000000000000, no device
+M1 1311026 		...LUN = 0x8d1e000000000000, no device
+M1 1311026 		...LUN = 0x8d1f000000000000, no device
+M1 1311026 		...LUN = 0x8d20000000000000, no device
+M1 1311026 		...LUN = 0x8d21000000000000, no device
+M1 1311026 		...LUN = 0x8d22000000000000, no device
+M1 1311026 		...LUN = 0x8d23000000000000, no device
+M1 1311026 		...LUN = 0x8d24000000000000, no device
+M1 1311026 		...LUN = 0x8d25000000000000, no device
+M1 1311026 		...LUN = 0x8d26000000000000, no device
+M1 1311026 		...LUN = 0x8d27000000000000, no device
+M1 1311026 		...LUN = 0x8d28000000000000, no device
+M1 1311026 		...LUN = 0x8d29000000000000, no device
+M1 1311026 		...LUN = 0x8d2a000000000000, no device
+M1 1311026 		...LUN = 0x8d2b000000000000, no device
+M1 1311026 		...LUN = 0x8d2c000000000000, no device
+M1 1311026 		...LUN = 0x8d2d000000000000, no device
+M1 1311026 		...LUN = 0x8d2e000000000000, no device
+M1 1311026 		...LUN = 0x8d2f000000000000, no device
+M1 1311026 		...LUN = 0x8d30000000000000, no device
+M1 1311026 		...LUN = 0x8d31000000000000, no device
+M1 1311026 		...LUN = 0x8d32000000000000, no device
+M1 1311026 		...LUN = 0x8d33000000000000, no device
+M1 1311026 		...LUN = 0x8d34000000000000, no device
+M1 1311026 		...LUN = 0x8d35000000000000, no device
+M1 1311026 		...LUN = 0x8d36000000000000, no device
+M1 1311026 		...LUN = 0x8d37000000000000, no device
+M1 1311026 		...LUN = 0x8d38000000000000, no device
+M1 1311026 		...LUN = 0x8d39000000000000, no device
+M1 1311026 		...LUN = 0x8d3a000000000000, no device
+M1 1311026 		...LUN = 0x8d3b000000000000, no device
+M1 1311026 		...LUN = 0x8d3c000000000000, no device
+M1 1311026 		...LUN = 0x8d3d000000000000, no device
+M1 1311026 		...LUN = 0x8d3e000000000000, no device
+M1 1311026 		...LUN = 0x8d3f000000000000, no device
+M1 1311026 		...LUN = 0x8e00000000000000, no device
+M1 1311026 		...LUN = 0x8e01000000000000, no device
+M1 1311026 		...LUN = 0x8e02000000000000, no device
+M1 1311026 		...LUN = 0x8e03000000000000, no device
+M1 1311026 		...LUN = 0x8e04000000000000, no device
+M1 1311026 		...LUN = 0x8e05000000000000, no device
+M1 1311026 		...LUN = 0x8e06000000000000, no device
+M1 1311026 		...LUN = 0x8e07000000000000, no device
+M1 1311026 		...LUN = 0x8e08000000000000, no device
+M1 1311026 		...LUN = 0x8e09000000000000, no device
+M1 1311026 		...LUN = 0x8e0a000000000000, no device
+M1 1311026 		...LUN = 0x8e0b000000000000, no device
+M1 1311026 		...LUN = 0x8e0c000000000000, no device
+M1 1311026 		...LUN = 0x8e0d000000000000, no device
+M1 1311026 		...LUN = 0x8e0e000000000000, no device
+M1 1311026 		...LUN = 0x8e0f000000000000, no device
+M1 1311026 		...LUN = 0x8e10000000000000, no device
+M1 1311026 		...LUN = 0x8e11000000000000, no device
+M1 1311026 		...LUN = 0x8e12000000000000, no device
+M1 1311026 		...LUN = 0x8e13000000000000, no device
+M1 1311026 		...LUN = 0x8e14000000000000, no device
+M1 1311026 		...LUN = 0x8e15000000000000, no device
+M1 1311026 		...LUN = 0x8e16000000000000, no device
+M1 1311026 		...LUN = 0x8e17000000000000, no device
+M1 1311026 		...LUN = 0x8e18000000000000, no device
+M1 1311026 		...LUN = 0x8e19000000000000, no device
+M1 1311026 		...LUN = 0x8e1a000000000000, no device
+M1 1311026 		...LUN = 0x8e1b000000000000, no device
+M1 1311026 		...LUN = 0x8e1c000000000000, no device
+M1 1311026 		...LUN = 0x8e1d000000000000, no device
+M1 1311026 		...LUN = 0x8e1e000000000000, no device
+M1 1311026 		...LUN = 0x8e1f000000000000, no device
+M1 1311026 		...LUN = 0x8e20000000000000, no device
+M1 1311026 		...LUN = 0x8e21000000000000, no device
+M1 1311026 		...LUN = 0x8e22000000000000, no device
+M1 1311026 		...LUN = 0x8e23000000000000, no device
+M1 1311026 		...LUN = 0x8e24000000000000, no device
+M1 1311026 		...LUN = 0x8e25000000000000, no device
+M1 1311026 		...LUN = 0x8e26000000000000, no device
+M1 1311026 		...LUN = 0x8e27000000000000, no device
+M1 1311026 		...LUN = 0x8e28000000000000, no device
+M1 1311026 		...LUN = 0x8e29000000000000, no device
+M1 1311026 		...LUN = 0x8e2a000000000000, no device
+M1 1311026 		...LUN = 0x8e2b000000000000, no device
+M1 1311026 		...LUN = 0x8e2c000000000000, no device
+M1 1311026 		...LUN = 0x8e2d000000000000, no device
+M1 1311026 		...LUN = 0x8e2e000000000000, no device
+M1 1311026 		...LUN = 0x8e2f000000000000, no device
+M1 1311026 		...LUN = 0x8e30000000000000, no device
+M1 1311026 		...LUN = 0x8e31000000000000, no device
+M1 1311026 		...LUN = 0x8e32000000000000, no device
+M1 1311026 		...LUN = 0x8e33000000000000, no device
+M1 1311026 		...LUN = 0x8e34000000000000, no device
+M1 1311026 		...LUN = 0x8e35000000000000, no device
+M1 1311026 		...LUN = 0x8e36000000000000, no device
+M1 1311026 		...LUN = 0x8e37000000000000, no device
+M1 1311026 		...LUN = 0x8e38000000000000, no device
+M1 1311026 		...LUN = 0x8e39000000000000, no device
+M1 1311026 		...LUN = 0x8e3a000000000000, no device
+M1 1311026 		...LUN = 0x8e3b000000000000, no device
+M1 1311026 		...LUN = 0x8e3c000000000000, no device
+M1 1311026 		...LUN = 0x8e3d000000000000, no device
+M1 1311026 		...LUN = 0x8e3e000000000000, no device
+M1 1311026 		...LUN = 0x8e3f000000000000, no device
+M1 1311026 		...LUN = 0x8f00000000000000, no device
+M1 1311026 		...LUN = 0x8f01000000000000, no device
+M1 1311026 		...LUN = 0x8f02000000000000, no device
+M1 1311026 		...LUN = 0x8f03000000000000, no device
+M1 1311026 		...LUN = 0x8f04000000000000, no device
+M1 1311026 		...LUN = 0x8f05000000000000, no device
+M1 1311026 		...LUN = 0x8f06000000000000, no device
+M1 1311026 		...LUN = 0x8f07000000000000, no device
+M1 1311026 		...LUN = 0x8f08000000000000, no device
+M1 1311026 		...LUN = 0x8f09000000000000, no device
+M1 1311026 		...LUN = 0x8f0a000000000000, no device
+M1 1311026 		...LUN = 0x8f0b000000000000, no device
+M1 1311026 		...LUN = 0x8f0c000000000000, no device
+M1 1311026 		...LUN = 0x8f0d000000000000, no device
+M1 1311026 		...LUN = 0x8f0e000000000000, no device
+M1 1311026 		...LUN = 0x8f0f000000000000, no device
+M1 1311026 		...LUN = 0x8f10000000000000, no device
+M1 1311026 		...LUN = 0x8f11000000000000, no device
+M1 1311026 		...LUN = 0x8f12000000000000, no device
+M1 1311026 		...LUN = 0x8f13000000000000, no device
+M1 1311026 		...LUN = 0x8f14000000000000, no device
+M1 1311026 		...LUN = 0x8f15000000000000, no device
+M1 1311026 		...LUN = 0x8f16000000000000, no device
+M1 1311026 		...LUN = 0x8f17000000000000, no device
+M1 1311026 		...LUN = 0x8f18000000000000, no device
+M1 1311026 		...LUN = 0x8f19000000000000, no device
+M1 1311026 		...LUN = 0x8f1a000000000000, no device
+M1 1311026 		...LUN = 0x8f1b000000000000, no device
+M1 1311026 		...LUN = 0x8f1c000000000000, no device
+M1 1311026 		...LUN = 0x8f1d000000000000, no device
+M1 1311026 		...LUN = 0x8f1e000000000000, no device
+M1 1311026 		...LUN = 0x8f1f000000000000, no device
+M1 1311026 		...LUN = 0x8f20000000000000, no device
+M1 1311026 		...LUN = 0x8f21000000000000, no device
+M1 1311026 		...LUN = 0x8f22000000000000, no device
+M1 1311026 		...LUN = 0x8f23000000000000, no device
+M1 1311026 		...LUN = 0x8f24000000000000, no device
+M1 1311026 		...LUN = 0x8f25000000000000, no device
+M1 1311026 		...LUN = 0x8f26000000000000, no device
+M1 1311026 		...LUN = 0x8f27000000000000, no device
+M1 1311026 		...LUN = 0x8f28000000000000, no device
+M1 1311026 		...LUN = 0x8f29000000000000, no device
+M1 1311026 		...LUN = 0x8f2a000000000000, no device
+M1 1311026 		...LUN = 0x8f2b000000000000, no device
+M1 1311026 		...LUN = 0x8f2c000000000000, no device
+M1 1311026 		...LUN = 0x8f2d000000000000, no device
+M1 1311026 		...LUN = 0x8f2e000000000000, no device
+M1 1311026 		...LUN = 0x8f2f000000000000, no device
+M1 1311026 		...LUN = 0x8f30000000000000, no device
+M1 1311026 		...LUN = 0x8f31000000000000, no device
+M1 1311026 		...LUN = 0x8f32000000000000, no device
+M1 1311026 		...LUN = 0x8f33000000000000, no device
+M1 1311026 		...LUN = 0x8f34000000000000, no device
+M1 1311026 		...LUN = 0x8f35000000000000, no device
+M1 1311026 		...LUN = 0x8f36000000000000, no device
+M1 1311026 		...LUN = 0x8f37000000000000, no device
+M1 1311026 		...LUN = 0x8f38000000000000, no device
+M1 1311026 		...LUN = 0x8f39000000000000, no device
+M1 1311026 		...LUN = 0x8f3a000000000000, no device
+M1 1311026 		...LUN = 0x8f3b000000000000, no device
+M1 1311026 		...LUN = 0x8f3c000000000000, no device
+M1 1311026 		...LUN = 0x8f3d000000000000, no device
+M1 1311026 		...LUN = 0x8f3e000000000000, no device
+M1 1311026 		...LUN = 0x8f3f000000000000, no device
+M4 1311026 Exit code = 0
+
+----------------
+Time: 1714482600	LEDS: 0x539
+Number of running methods: 0
+ cfgmgr 
+0539----------------
+Attempting to configure device 'cd0'
+Method: /usr/lib/methods/cfgscsicd not in boot image, configure in phase 2
+----------------
+Time: 1714482604	LEDS: 0x538
+Invoking top level program -- "/usr/lib/methods/deflvm"
+ cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/deflvm ){1311028,1048884}
+exec(/usr/lib/methods/deflvm){1311028,1048884}
+ cfgmgr 
+0539Time: 1714482604	LEDS: 0x539
+Return code = 0
+***** stdout *****
+lvdd
+
+*** no stderr ****
+----------------
+Attempting to configure device 'lvdd'
+ cfgmgr 
+0591Time: 1714482604	LEDS: 0x591
+Invoking /usr/lib/methods/cfglvdd -1 -l lvdd 
+exec(/bin/sh,-c,/usr/lib/methods/cfglvdd -1 -l lvdd){1311030,1048884}
+exec(/usr/lib/methods/cfglvdd,-1,-l,lvdd){1311030,1048884}
+Number of running methods: 1
+----------------
+Completed method for: lvdd, Elapsed time = 0
+Return code = 0
+*** no stdout ****
+*** no stderr ****
+----------------
+Time: 1714482604	LEDS: 0x539
+Number of running methods: 0
+ cfgmgr 
+0539 cfgmgr 
+Configuration time: 1714482604 seconds
++ bootinfo -i
+exec(/usr/sbin/bootinfo,-i){1048886,983330}
+exec(/usr/lib/boot/bin/bootinfo_chrp,-i){1048886,983330}
++ [ 0 -eq 1 ]
++ /usr/lib/methods/showled 0x511 DEV CFG 1 END
+exec(/usr/lib/methods/showled,0x511,DEV CFG 1 END){1048888,983330}
+ showled 
+0511+ + bootinfo -b
+exec(/usr/sbin/bootinfo,-b){1048890,983330}
+exec(/usr/lib/boot/bin/bootinfo_chrp,-b){1048890,983330}
+dvc=hdisk0
++ [ ! hdisk0 ]
++ echo rc.boot: boot device is hdisk0
++ 1>> /tmp/boot_log
++ ln /dev/rhdisk0 /dev/ipldevice
+exec(/usr/bin/ln,/dev/rhdisk0,/dev/ipldevice){1048892,983330}
++ exit 0
+
+INIT: EXITING /sbin/rc.boot 1
+
+INIT: EXECUTING /sbin/rc.boot 2
+exec(/usr/bin/sh,-c,/sbin/rc.boot 2){1048894,1}
+exec(/sbin/rc.boot,/sbin/rc.boot,2){1048894,1}
++ PHASE=2
++ + bootinfo -p
+exec(/usr/sbin/bootinfo,-p){1311032,1048894}
+PLATFORM=chrp
++ [ ! -x /usr/lib/boot/bin/bootinfo_chrp ]
++ [ 2 -eq 1 ]
++ + bootinfo -t
+exec(/usr/sbin/bootinfo,-t){1311034,1048894}
+BOOTYPE=1
++ [ 0 -ne 0 ]
++ [ -z 1 ]
++ unset pdev_to_ldev native_netboot_cfg
++ unset disknet_odm_init config_ATM
++ /usr/lib/methods/showled 0x551 VARYON IPL DEV
+exec(/usr/lib/methods/showled,0x551,VARYON IPL DEV){1311036,1048894}
+ showled 
+0551+ echo rc.boot: executing "ipl_varyon -v"
++ 1>> /tmp/boot_log
++ ipl_varyon -v
+exec(/usr/sbin/ipl_varyon,-v){1311038,1048894}
+[S 1311038 1048894 04/30/24-13:12:38:890 ipl_varyon.c 1320] ipl_varyon -v 
+ipl_varyon enter_dbg value = 0x42
+Starting device is ipldevice
+Starting device's PVID: 000000002ea1de240000000000000000
+Root VGID: 00000000000000000000018f2ea1e30b
+	hdisk0 is in boot disk's VGDA
+ghostdev value is null
+Number of PVs: 1
+[3 1311038 0:141 verify.c 1895] lvm_readpvs: inpv->lvm_rec->da_psn = 136, 2242
+[3 1311038 0:142 verify.c 2048] lvm_readpvs: inpv->da_psn[0]=136
+[3 1311038 0:142 verify.c 2048] lvm_readpvs: inpv->da_psn[1]=2242
+[3 1311038 0:194 verify.c 1396] lvm_getdainfo: pvindex=0, index_newestda=0
+[3 1311038 0:306 utilities.c 3405] lvm_get_odm_pbuf(rootvg,vg_pbufs_ppv)
+[3 1311038 0:307 utilities.c 3405] lvm_get_odm_pbuf(rootvg,gbl_pbufs_pvg)
+[3 1311038 0:308 utilities.c 3405] lvm_get_odm_pbuf(rootvg,workQ_size)
+[E 1311038 0:309 ipl_varyon.c 1590] ipl_varyon: exited with rc=0
++ rc=0
++ ln /usr/sbin/mount /etc/umount
+exec(/usr/bin/ln,/usr/sbin/mount,/etc/umount){1311040,1048894}
++ /usr/lib/methods/showled 0x517 MOUNT ROOT
+exec(/usr/lib/methods/showled,0x517,MOUNT ROOT){1311042,1048894}
+ showled 
+0517+ echo rc.boot: executing "fsck -fp /"
++ 1>> /tmp/boot_log
++ fsck -fp /
++ 2>& 1
+exec(/usr/sbin/fsck,-fp,/){1245484,1311044}
+exec(/sbin/helpers/jfs2/fsck,-fp,/dev/rhd4){1179948,1245484}
++ tee -a /tmp/boot_log
+exec(/usr/bin/tee,-a,/tmp/boot_log){1114420,1048894}
+exec(/sbin/helpers/jfs2/logredo,/dev/hd4){1507634,1179948}
+J2_LOGREDO:log redo processing for /dev/hd4                         
+
+The current volume is: /dev/hd4
+Primary superblock is valid.
+Primary superblock is valid.
++ print 0
++ 1> /tmp/rc
+
+
++ read rc
++ 0< /tmp/rc
++ [ 0 -ne 0 ]
++ echo rc.boot: executing "mount /"
++ 1>> /tmp/boot_log
++ mount -f /
++ 2>& 1
+exec(/usr/sbin/mount,-f,/){1245486,1114422}
++ tee -a /../tmp/boot_log
+exec(/usr/bin/tee,-a,/../tmp/boot_log){1179950,1048894}
+exec(/sbin/helpers/jfs2/mount,-V,jfs2,-o,rw,log=/dev/hd8,/dev/hd4,/){1311046,1245486}
++ print 0
++ 1> /../tmp/rc
++ read rc
++ 0< /../tmp/rc
++ [ 0 -ne 0 ]
++ [ -d /dev.org ]
++ /usr/lib/boot/mergedev
++ 2>& 1
+exec(/usr/lib/boot/mergedev){1179952,1048894}
++ /../usr/bin/tee -a /../tmp/boot_log
+exec(/../usr/bin/tee,-a,/../tmp/boot_log){1245488,1048894}
+mergedev replaced 0 files in the hardfile /dev directory
++ /../usr/lib/methods/showled 0x517 MOUNT /USR
+exec(/../usr/lib/methods/showled,0x517,MOUNT /USR){1245490,1048894}
+ showled 
+0517+ echo rc.boot: executing "fsck -fp /usr"
++ 1>> /../tmp/boot_log
++ /../usr/sbin/fsck -fp /usr
++ 2>& 1
+exec(/../usr/sbin/fsck,-fp,/usr){1245492,1048894}
+exec(/../sbin/helpers/jfs2/fsck,-fp,/dev/rhd2){1311050,1245492}
++ /../usr/bin/tee -a /../tmp/boot_log
+exec(/../usr/bin/tee,-a,/../tmp/boot_log){1704248,1048894}
+
+The current volume is: /dev/hd2
+Primary superblock is valid.
+
+
++ echo rc.boot: executing "mount /usr"
++ 1>> /../tmp/boot_log
++ /../usr/sbin/mount /usr
++ 2>& 1
+exec(/../usr/sbin/mount,/usr){1245494,1704250}
+exec(/sbin/helpers/jfs2/mount,-V,jfs2,-o,rw,log=/dev/hd8,/dev/hd2,/usr){1311052,1245494}
++ /../usr/bin/tee -a /../tmp/boot_log
+exec(/../usr/bin/tee,-a,/../tmp/boot_log){1114424,1048894}
+exec(/usr/bin/sh,-c,/usr/sbin/wlmcntrl -u -d "" > /dev/null 2>&1){1311054,1245494}
+exec(/usr/sbin/wlmcntrl,-u,-d,){1311054,1245494}
++ print 0
++ 1> /../tmp/rc
++ read rc
++ 0< /../tmp/rc
++ [ 0 -ne 0 ]
++ /usr/sbin/trustchk -b 4
++ LIBPATH=/usr/ccs/lib:/usr/lib
+exec(/usr/sbin/trustchk,-b,4){1114426,1048894}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdyIeqea){1704252,1114426}
+exec(/usr/bin/rm,-rf,/tmp/tsdyIeqea){1704252,1114426}
++ bootinfo -V
+exec(/usr/sbin/bootinfo,-V){1114428,1048894}
++ [ 0 -eq 1 -a -f /../etc/rc.teboot ]
++ date
+exec(/usr/bin/date){1114430,1048894}
++ echo The "date" command is now available:  Tue Apr 30 13:12:43 UTC 2024
++ 1>> /../tmp/boot_log
++ [ -f /etc/rc.B1 ]
++ /usr/lib/methods/showled 0x517 MOUNT /VAR
+exec(/usr/lib/methods/showled,0x517,MOUNT /VAR){1114432,1048894}
+ showled 
+0517+ echo rc.boot: executing "fsck -fp /var"
++ 1>> /../tmp/boot_log
++ /usr/sbin/fsck -fp /var
++ 2>& 1
+exec(/usr/sbin/fsck,-fp,/var){1114434,1048894}
++ tee -a /../tmp/boot_log
+exec(/usr/bin/tee,-a,/../tmp/boot_log){1704254,1048894}
+exec(/sbin/helpers/jfs2/fsck64,-fp,/dev/rhd9var){1245496,1114434}
+Could not load program /sbin/helpers/jfs2/fsck64:
+Cannot run a 64-bit program until the 64-bit
+	environment has been configured. See the system administrator.
+exec(/sbin/helpers/jfs2/fsck,-fp,/dev/rhd9var){1245498,1114434}
+
+The current volume is: /dev/hd9var
+Primary superblock is valid.
+
+
++ echo rc.boot: executing "mount /var"
++ 1>> /../tmp/boot_log
++ mount /var
++ 2>& 1
+exec(/usr/sbin/mount,/var){1245500,1704256}
++ tee -a /../tmp/boot_log
+exec(/usr/bin/tee,-a,/../tmp/boot_log){1311056,1048894}
+exec(/sbin/helpers/jfs2/mount,-V,jfs2,-o,rw,log=/dev/hd8,/dev/hd9var,/var){1114436,1245500}
+exec(/usr/bin/sh,-c,/usr/sbin/wlmcntrl -u -d "" > /dev/null 2>&1){1114438,1245500}
+exec(/usr/sbin/wlmcntrl,-u,-d,){1114438,1245500}
++ print 0
++ 1> /../tmp/rc
++ read rc
++ 0< /../tmp/rc
++ [ 0 -ne 0 ]
++ echo rc.boot: executing "copycore"
++ 1>> /../tmp/boot_log
++ copycore
+exec(/usr/sbin/copycore){1311058,1048894}
++ umount /var
+exec(/usr/sbin/umount,/var){1311060,1048894}
+exec(/sbin/helpers/jfs2/umount,-V,jfs2,/dev/hd9var){1704258,1311060}
++ [ -f /../no_sbase ]
++ cp /../etc/vg/* /etc/vg
++ 2> /dev/null
+exec(/usr/bin/cp,/../etc/vg/*,/etc/vg){1311062,1048894}
++ cp /../etc/objrepos/CuAt /../etc/objrepos/CuAt.vc /../etc/objrepos/CuAtDef /../etc/objrepos/CuAtDef.vc /../etc/objrepos/CuData /../etc/objrepos/CuData.vc /../etc/objrepos/CuDep /../etc/objrepos/CuDv /../etc/objrepos/CuDvDr /../etc/objrepos/CuPath /../etc/objrepos/CuPath.vc /../etc/objrepos/CuPathAt /../etc/objrepos/CuPathAt.vc /../etc/objrepos/CuVPD /etc/objrepos
+exec(/usr/bin/cp,/../etc/objrepos/CuAt,/../etc/objrepos/CuAt.vc,/../etc/objrepos/CuAtDef,/../etc/objrepos/CuAtDef.vc,/../etc/objrepos/CuData,/../etc/objrepos/CuData.vc,/../etc/objrepos/CuDep,/../etc/objrepos/CuDv,/../etc/objrepos/CuDvDr,/../etc/objrepos/CuPath,/../etc/objrepos/CuPath.vc,/../etc/objrepos/CuPathAt,/../etc/objrepos/CuPathAt.vc,/../etc/objrepos/CuVPD,/etc/objrepos){1311064,1048894}
++ odmdelete -o CuAtSav
++ 1> /dev/null 2>& 1
+exec(/usr/bin/odmdelete,-o,CuAtSav){1311066,1048894}
++ lsps -t lv
+exec(/usr/sbin/lsps,-t,lv){1311068,1048894}
++ read lvname junk vgname junk junk junk autoflag junk
+exec(/usr/bin/sh,-c,/usr/sbin/getlvodm -l hd6){1704260,1311068}
+exec(/usr/sbin/getlvodm,-l,hd6){1704260,1311068}
+exec(/usr/bin/sh,-c,/usr/sbin/lslv -L -m 00000000000000000000018f2ea1e30b.2 | /usr/bin/sed '1,2d' | /usr/bin/awk '{print $3}' | /usr/bin/sort |  /usr/bin/uniq -c |/usr/bin/awk '{printf("%s %03d\n",$2,$1)}'){1704262,1311068}
+exec(/usr/sbin/lslv,-L,-m,00000000000000000000018f2ea1e30b.2){1245502,1704262}
+exec(/usr/bin/sed,1,2d){1114440,1704262}
+exec(/usr/bin/awk,{print $3}){1835324,1704262}
+exec(/usr/bin/sort){1900862,1704262}
+exec(/usr/bin/uniq,-c){1966400,1704262}
+exec(/usr/bin/awk,{printf("%s %03d\n",$2,$1)}){1704262,1311068}
+exec(/usr/bin/sh,-c,/usr/sbin/getlvodm -b 00000000000000000000018f2ea1e30b.2){1114442,1311068}
+exec(/usr/sbin/getlvodm,-b,00000000000000000000018f2ea1e30b.2){1114442,1311068}
+exec(/usr/bin/sh,-c,/usr/sbin/lquerylv -L 00000000000000000000018f2ea1e30b.2 -s){1114444,1311068}
+exec(/usr/sbin/lquerylv,-L,00000000000000000000018f2ea1e30b.2,-s){1114444,1311068}
+exec(/usr/bin/sh,-c,/usr/sbin/getlvodm -l hd6){1114446,1311068}
+exec(/usr/sbin/getlvodm,-l,hd6){1114446,1311068}
++ [ Physical = rootvg -a Size = yes ]
++ read lvname junk vgname junk junk junk autoflag junk
++ [ rootvg = rootvg -a yes = yes ]
++ break
++ [ -z hd6 ]
++ + bootinfo -A
+exec(/usr/sbin/bootinfo,-A){1311070,1048894}
+PGSP_SZ=32
++ lslv -L hd6
+exec(/usr/sbin/lslv,-L,hd6){1311072,1048894}
++ awk 
+				$4 == "PP" && $5 == "SIZE:" && $6 ~ /^[0-9]+$/ {
+					PPSZ=$6
+				}
+				$1 == "LPs:" && $2 ~ /^[0-9]+$/ {
+					LPC=$2
+				}
+			END { print PPSZ " " LPC }
+			
+exec(/usr/bin/awk,
+				$4 == "PP" && $5 == "SIZE:" && $6 ~ /^[0-9]+$/ {
+					PPSZ=$6
+				}
+				$1 == "LPs:" && $2 ~ /^[0-9]+$/ {
+					LPC=$2
+				}
+			END { print PPSZ " " LPC }
+			){1704264,1048894}
++ read PART_SZ PART_CNT
++ [ 32 -a 32 -a 16 ]
++ [ 32 -gt 512 ]
++ [ ! -f /needcopydump ]
++ swapon /dev/hd6
++ 2>& 1
+exec(/usr/sbin/swapon,/dev/hd6){1704266,1048894}
++ tee -a /../tmp/boot_log
+exec(/usr/bin/tee,-a,/../tmp/boot_log){1114448,1048894}
++ ls32 -i /dev/ipl_blv
++ 2> /dev/null
+exec(/usr/bin/ls32,-i,/dev/ipl_blv){1114450,1048894}
++ read PREV_BLV_INODE junk
++ + bootinfo -v
+exec(/usr/sbin/bootinfo,-v){1114452,1048894}
+exec(/usr/lib/boot/bin/bootinfo_chrp,-v){1114452,1048894}
+BOOTLV=/dev/rhd5
++ ls32 -i /dev/rhd5
++ 2> /dev/null
+exec(/usr/bin/ls32,-i,/dev/rhd5){1114454,1048894}
++ read CURR_BLV_INODE junk
++ [ 419 -ne 419 ]
++ sync
+exec(/usr/sbin/sync){1114456,1048894}
++ sync
+exec(/usr/sbin/sync){1114458,1048894}
++ sync
+exec(/usr/sbin/sync){1114460,1048894}
++ + odmget -qattribute=keylock and value=service CuAt
+exec(/usr/bin/odmget,-qattribute=keylock and value=service,CuAt){1114462,1048894}
+KEYPOS=
++ [ -n  -o -f /needcopydump ]
++ [ -f /etc/rc.update ]
++ /usr/lib/methods/showled 0x517 MOUNT /VAR
+exec(/usr/lib/methods/showled,0x517,MOUNT /VAR){1114464,1048894}
+ showled 
+0517+ echo rc.boot: run time mount of /var
++ 1>> /../tmp/boot_log
++ mount /var
++ 2>& 1
+exec(/usr/sbin/mount,/var){1704268,1114466}
+exec(/sbin/helpers/jfs2/mount,-V,jfs2,-o,rw,log=/dev/hd8,/dev/hd9var,/var){1311074,1704268}
++ tee -a /../tmp/boot_log
+exec(/usr/bin/tee,-a,/../tmp/boot_log){1245504,1048894}
+exec(/usr/bin/sh,-c,/usr/sbin/wlmcntrl -u -d "" > /dev/null 2>&1){1311076,1704268}
+exec(/usr/sbin/wlmcntrl,-u,-d,){1311076,1704268}
++ print 0
++ 1> /../tmp/rc
++ read rc
++ 0< /../tmp/rc
++ [ 0 -ne 0 ]
++ /usr/sbin/trustchk -b 5
+exec(/usr/sbin/trustchk,-b,5){1245506,1048894}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdtIeMea){1114468,1245506}
+exec(/usr/bin/rm,-rf,/tmp/tsdtIeMea){1114468,1245506}
++ cat /../tmp/boot_log
+exec(/usr/bin/cat,/../tmp/boot_log){1245508,1048894}
++ alog -q -t boot
+exec(/usr/bin/alog,-q,-t,boot){1245510,1048894}
++ rm -f /../tmp/boot_log
+exec(/usr/bin/rm,-f,/../tmp/boot_log){1245512,1048894}
++ chmod go-w,g+r /var/adm/ras/bootlog
+exec(/usr/bin/chmod,go-w,g+r,/var/adm/ras/bootlog){1245514,1048894}
++ [ -f /../tmp/teboot_log ]
++ cat /../tmp/cfg_log
+exec(/usr/bin/cat,/../tmp/cfg_log){1245516,1048894}
++ alog -q -t cfg
+exec(/usr/bin/alog,-q,-t,cfg){1245518,1048894}
++ alog -of /../tmp/cfglog
+exec(/usr/bin/alog,-of,/../tmp/cfglog){1245520,1048894}
++ alog -q -t cfg
+exec(/usr/bin/alog,-q,-t,cfg){1114470,1048894}
++ rm -f /../tmp/cfg_log /../tmp/cfglog
+exec(/usr/bin/rm,-f,/../tmp/cfg_log,/../tmp/cfglog){1114472,1048894}
++ chmod go-w,g+r /var/adm/ras/cfglog
+exec(/usr/bin/chmod,go-w,g+r,/var/adm/ras/cfglog){1114474,1048894}
++ date -u +%D %r %Z
+exec(/usr/bin/date,-u,+%D %r %Z){1245522,1114476}
++ echo B1 04/30/24 01:12:53 PM GMT Disk Boot Phase 1 Complete
++ alog -q -t cfg
+exec(/usr/bin/alog,-q,-t,cfg){1114478,1048894}
++ undolt
+exec(/usr/bin/chmod,u+x,/sbin/rc.boot,/usr/sbin/init){1114480,1048894}
++ busy_timeout=250
++ [ 250 -gt 0 -a -f /../busy/* ]
++ /usr/lib/methods/showled 0x553 PHASE 1 COMPLETE
+exec(/usr/lib/methods/showled,0x553,PHASE 1 COMPLETE){1114482,1048894}
+ showled 
+0553+ exit 0
+
+INIT: EXITING /sbin/rc.boot 2
+exec(/etc/init){1,0}
+
+INIT: Initialized. Console defined.
+exec(/usr/bin/sh,-c,exec /sbin/rc.boot 3 >/dev/console 2>&1 # Phase 3 of system boot){1114484,1}
+exec(/sbin/rc.boot,/sbin/rc.boot,3){1114484,1}
++ PHASE=3
++ + bootinfo -p
+exec(/usr/sbin/bootinfo,-p){1245524,1114484}
+PLATFORM=chrp
++ [ ! -x /usr/lib/boot/bin/bootinfo_chrp ]
++ [ 3 -eq 1 ]
++ + bootinfo -t
+exec(/usr/sbin/bootinfo,-t){1245526,1114484}
+exec(/usr/lib/boot/bin/bootinfo_chrp,-t){1245526,1114484}
+BOOTYPE=1
++ [ 0 -ne 0 ]
++ [ -z 1 ]
++ unset pdev_to_ldev native_netboot_cfg
++ unset disknet_odm_init config_ATM
++ echo rc.boot: run time mount of /tmp
++ alog -q -t boot
+exec(/usr/bin/alog,-q,-t,boot){1245530,1114484}
++ /usr/lib/methods/showled 0x517 MOUNT /TMP
+exec(/usr/lib/methods/showled,0x517,MOUNT /TMP){1245532,1114484}
+ showled 
+0517+ [ -r /etc/filesystems ]
++ fsck -fp /tmp
+exec(/usr/sbin/fsck,-fp,/tmp){1245534,1114484}
+exec(/sbin/helpers/jfs2/fsck64,-fp,/dev/rhd3){1704270,1245534}
+exec(): 0509-036 Cannot load program /sbin/helpers/jfs2/fsck64 because of the following errors:
+	0509-033 Cannot run a 64-bit program until the 64-bit
+	environment has been configured. See the system administrator.
+exec(/sbin/helpers/jfs2/fsck,-fp,/dev/rhd3){1704272,1245534}
+
+The current volume is: /dev/hd3
+Primary superblock is valid.
+
+
++ mount /tmp
+exec(/usr/sbin/mount,/tmp){1245536,1114484}
+exec(/sbin/helpers/jfs2/mount,-V,jfs2,-o,rw,log=/dev/hd8,/dev/hd3,/tmp){1704274,1245536}
+exec(/usr/bin/sh,-c,/usr/sbin/wlmcntrl -u -d "" > /dev/null 2>&1){1704276,1245536}
+exec(/usr/sbin/wlmcntrl,-u,-d,){1704276,1245536}
++ [ 0 -ne 0 ]
++ + bootinfo -v
+exec(/usr/sbin/bootinfo,-v){1245538,1114484}
+exec(/usr/lib/boot/bin/bootinfo_chrp,-v){1245538,1114484}
+primary_bootlv=hd5
++ lsvg -l rootvg
+exec(/usr/sbin/lsvg,-l,rootvg){1245540,1114484}
++ read lvname lvtype junk
++ [  = boot -a rootvg: != hd5 ]
++ read lvname lvtype junk
++ [ NAME = boot -a LV != hd5 ]
++ read lvname lvtype junk
++ [ boot = boot -a hd5 != hd5 ]
++ read lvname lvtype junk
++ [ paging = boot -a hd6 != hd5 ]
++ read lvname lvtype junk
++ [ jfs2log = boot -a hd8 != hd5 ]
++ read lvname lvtype junk
++ [ jfs2 = boot -a hd4 != hd5 ]
++ read lvname lvtype junk
++ [ jfs2 = boot -a hd2 != hd5 ]
++ read lvname lvtype junk
++ [ jfs2 = boot -a hd9var != hd5 ]
++ read lvname lvtype junk
++ [ jfs2 = boot -a hd3 != hd5 ]
++ read lvname lvtype junk
++ [ jfs2 = boot -a hd1 != hd5 ]
++ read lvname lvtype junk
++ [ jfs2 = boot -a hd10opt != hd5 ]
++ read lvname lvtype junk
++ [ jfs2 = boot -a hd11admin != hd5 ]
++ read lvname lvtype junk
++ [ sysdump = boot -a lg_dumplv != hd5 ]
++ read lvname lvtype junk
++ [ jfs2 = boot -a livedump != hd5 ]
++ read lvname lvtype junk
++ chlv -L primary_bootlv hd5
+exec(/usr/sbin/chlv,/usr/sbin/chlv,-L,primary_bootlv,hd5){1245542,1114484}
+exec(/usr/bin/basename,/usr/sbin/chlv){1704278,1245542}
+exec(/usr/sbin/lvmt,-s,-f,chlv.sh,-l,541,-p,1114484,chlv,-L,primary_bootlv,hd5){1704280,1245542}
+exec(/usr/bin/getopt,n:a:e:u:s:b:d:p:r:t:v:w:x:L:U:G:P:o:T:m:M:O:R:,-L,primary_bootlv,hd5){1704282,1245542}
+exec(/usr/lib/instl/libinst_mkworkdir){1704284,1245542}
+exec(/usr/bin/expr,X--,:,X-*){1704286,1245542}
+exec(/usr/bin/wc,-m){1704288,1245542}
+exec(/usr/sbin/clust_chk){1704290,1245542}
+exec(/usr/sbin/getlvodm,-l,hd5){1704292,1245542}
+exec(/usr/bin/cut,-f1,-d.){1704294,1245542}
+exec(/usr/sbin/lqueryvg,-g,00000000000000000000018f2ea1e30b,-CNRbimfjkK){1704296,1245542}
+exec(/usr/sbin/lquerylv,-L,00000000000000000000018f2ea1e30b.1,-bBCocwP){1704298,1245542}
+exec(/usr/sbin/getlvodm,-R){1704300,1245542}
+exec(/usr/sbin/getlvodm,-c,00000000000000000000018f2ea1e30b.1){1704302,1245542}
+exec(/usr/bin/cut,-f1,-d.){1704304,1245542}
+exec(/usr/sbin/getlvodm,-d,00000000000000000000018f2ea1e30b){1704306,1245542}
+exec(/usr/bin/cut,-f2,-d.){1704308,1245542}
+exec(/usr/sbin/getlvodm,-e,00000000000000000000018f2ea1e30b.1){1704310,1245542}
+exec(/usr/sbin/putlvodm,-k,00000000000000000000018f2ea1e30b,-X,0){1704312,1245542}
+exec(/usr/sbin/putlvodm,00000000000000000000018f2ea1e30b.1,-B,primary_bootlv){1704314,1245542}
+exec(/usr/bin/sh,-c,/usr/sbin/savebase){1835334,1704314}
+exec(/usr/sbin/savebase){1835334,1704314}
+CS 1835334 1704314 /usr/sbin/savebase
+C4 1835334 AIX_NO_SAVEBASE ENV variable is set. So exiting!
+exec(/usr/sbin/putlvcb,-i,00000000000000000000018f2ea1e30b.1,hd5,-L,primary_bootlv){1704316,1245542}
+exec(/usr/bin/id,-u){1704318,1245542}
+exec(/usr/bin/ckauth,aix.lvm.manage.change){1704320,1245542}
+exec(/usr/sbin/lqueryvg,-g,00000000000000000000018f2ea1e30b,-T){1704322,1245542}
+exec(/usr/sbin/putlvodm,-T,6630deb92c3bd90f,00000000000000000000018f2ea1e30b){1704324,1245542}
+exec(/usr/bin/sh,-c,/usr/sbin/savebase){1835336,1704324}
+exec(/usr/sbin/savebase){1835336,1704324}
+CS 1835336 1704324 /usr/sbin/savebase
+C4 1835336 AIX_NO_SAVEBASE ENV variable is set. So exiting!
+exec(/usr/sbin/putlvodm,-K,00000000000000000000018f2ea1e30b,-X,0){1704326,1245542}
+exec(/usr/bin/rm,-f,/tmp/.workdir.1704284.1245542_1/qpvmap1245542){1704328,1245542}
+exec(/usr/bin/rm,-f,/tmp/.workdir.1704284.1245542_1/disks_used1245542){1704330,1245542}
+exec(/usr/bin/rm,-rf,/tmp/.workdir.1704284.1245542_1){1704332,1245542}
+exec(/usr/sbin/getlvodm,-R){1704334,1245542}
+exec(/usr/sbin/savebase){1704336,1245542}
+CS 1704336 1245542 savebase
+C4 1704336 AIX_NO_SAVEBASE ENV variable is set. So exiting!
+exec(/usr/sbin/lvmt,-e,-f,chlv.sh,-l,23,-p,1114484,chlv,0){1704338,1245542}
+exec(/usr/bin/sh,-c,/usr/bin/alog -t lvmcfg -o > /dev/null 2>&1){1835338,1704338}
+exec(/usr/bin/alog,-t,lvmcfg,-o){1835338,1704338}
+exec(/bin/ksh,/usr/bin/alog -t lvmcfg -o | /usr/bin/grep "^\[S 1245542" | /usr/bin/cut -f 4 -d " " | /usr/bin/tail -n 1){1835340,1704338}
+exec(/usr/bin/alog,-t,lvmcfg,-o){1966402,1835340}
+exec(/usr/bin/grep,^\[S 1245542){1966404,1835340}
+exec(/usr/bin/cut,-f,4,-d, ){1966406,1835340}
+exec(/usr/bin/tail,-n,1){1835340,1704338}
++ /usr/bin/odmdelete -o CuWxt
++ ODMDIR=/etc/objrepos
+exec(/usr/bin/odmdelete,-o,CuWxt){1245544,1114484}
+0518-307 odmdelete: 0 objects deleted.
++ /usr/lib/methods/showled 0x517 SYNCVG ROOTVG
+exec(/usr/lib/methods/showled,0x517,SYNCVG ROOTVG){1245546,1114484}
+ showled 
+0517+ syncvg -v rootvg
++ LVMTMPPVDIR=/tmp
+exec(/usr/sbin/syncvg,/usr/sbin/syncvg,-v,rootvg){1245548,1114484}
++ unset SYSCFG_PHASE
++ echo rc.boot: checking free space in /tmp
+exec(/usr/sbin/lvmt,-s,-f,syncvg.sh,-l,558,-p,1114484,/usr/sbin/syncvg,-v,rootvg){1704340,1245548}
+exec(/usr/bin/getopt,a:r:t:n:qQjP:HfivlpT:d:,-v,rootvg){1704342,1245548}
+exec(/usr/lib/instl/libinst_mkworkdir){1704344,1245548}
++ alog -q -t boot
+exec(/usr/bin/alog,-q,-t,boot){1835344,1114484}
++ /usr/lib/boot/bootutil -d /tmp -s 1024
+exec(/usr/lib/boot/bootutil,-d,/tmp,-s,1024){1835346,1114484}
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){1835348,1114484}
+exec(/usr/sbin/getlvodm,-v,rootvg){1704346,1245548}
+exec(/usr/sbin/lqueryvg,-g,00000000000000000000018f2ea1e30b,-niCRX){1704348,1245548}
++ echo rc.boot: executing "strload"
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){1835352,1114484}
+rc.boot: executing "strload"
++ strload
++ 2>& 1
+exec(/usr/sbin/strload){1835354,1114484}
+exec(/usr/sbin/lqueryvg,-g,00000000000000000000018f2ea1e30b,-L){1704350,1245548}
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){2097476,1114484}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/clone > /dev/null 2>&1){2163014,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/clone){2163014,1835354}
+exec(/usr/bin/awk,$3>1{print $1},/tmp/.workdir.1704344.1245548_1/pvinfo1245548){1704352,1245548}
+exec(/usr/bin/rm,-f,/tmp/.workdir.1704344.1245548_1/pvids1245548,/tmp/.workdir.1704344.1245548_1/pvinfo1245548){1704354,1245548}
+exec(/usr/bin/rm,-rf,/tmp/.workdir.1704344.1245548_1){1704356,1245548}
+exec(/usr/sbin/lvmt,-e,-f,syncvg.sh,-l,19,-p,1114484,/usr/sbin/syncvg,0){1704358,1245548}
+exec(/usr/bin/sh,-c,/usr/bin/alog -t lvmcfg -o > /dev/null 2>&1){2228552,1704358}
+exec(/usr/bin/alog,-t,lvmcfg,-o){2228552,1704358}
+exec(/bin/ksh,/usr/bin/alog -t lvmcfg -o | /usr/bin/grep "^\[S 1245548" | /usr/bin/cut -f 4 -d " " | /usr/bin/tail -n 1){2228554,1704358}
+exec(/usr/bin/alog,-t,lvmcfg,-o){2294090,2228554}
+exec(/usr/bin/grep,^\[S 1245548){2294092,2228554}
+exec(/usr/bin/cut,-f,4,-d, ){2294094,2228554}
+exec(/usr/bin/tail,-n,1){2228554,1704358}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdZEiqea){1245550,2163014}
+exec(/usr/bin/rm,-rf,/tmp/tsdZEiqea){1245550,2163014}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/sad > /dev/null 2>&1){2163016,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/sad){2163016,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdsmiqea){1245552,2163016}
+exec(/usr/bin/rm,-rf,/tmp/tsdsmiqea){1245552,2163016}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/slog > /dev/null 2>&1){2163018,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/slog){2163018,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsd7Yiqea){1245554,2163018}
+exec(/usr/bin/rm,-rf,/tmp/tsd7Yiqea){1245554,2163018}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/echo > /dev/null 2>&1){2163020,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/echo){2163020,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdLAiqea){1245556,2163020}
+exec(/usr/bin/rm,-rf,/tmp/tsdLAiqea){1245556,2163020}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/nuls > /dev/null 2>&1){2163022,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/nuls){2163022,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsd_iiqea){1245558,2163022}
+exec(/usr/bin/rm,-rf,/tmp/tsd_iiqea){1245558,2163022}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/spx > /dev/null 2>&1){2163024,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/spx){2163024,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdmQiqea){1245560,2163024}
+exec(/usr/bin/rm,-rf,/tmp/tsdmQiqea){1245560,2163024}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/xti/unixdg > /dev/null 2>&1){2163026,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/xti/unixdg){2163026,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsd2Qiqea){1245562,2163026}
+exec(/usr/bin/rm,-rf,/tmp/tsd2Qiqea){1245562,2163026}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/xti/unixst > /dev/null 2>&1){2163028,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/xti/unixst){2163028,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdG3iqea){1245564,2163028}
+exec(/usr/bin/rm,-rf,/tmp/tsdG3iqea){1245564,2163028}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/xti/udp > /dev/null 2>&1){2163030,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/xti/udp){2163030,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdVeiqea){1245566,2163030}
+exec(/usr/bin/rm,-rf,/tmp/tsdVeiqea){1245566,2163030}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/xti/tcp > /dev/null 2>&1){2163032,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/xti/tcp){2163032,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdhEiqea){1245568,2163032}
+exec(/usr/bin/rm,-rf,/tmp/tsdhEiqea){1245568,2163032}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/xti/udp6 > /dev/null 2>&1){2163034,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/xti/udp6){2163034,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdwyiqea){1245570,2163034}
+exec(/usr/bin/rm,-rf,/tmp/tsdwyiqea){1245570,2163034}
+exec(/usr/bin/sh,-c,/usr/sbin/trustchk -a /dev/xti/tcp6 > /dev/null 2>&1){2163036,1835354}
+exec(/usr/sbin/trustchk,-a,/dev/xti/tcp6){2163036,1835354}
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdBeiqea){1245572,2163036}
+exec(/usr/bin/rm,-rf,/tmp/tsdBeiqea){1245572,2163036}
++ [ 1 -eq 5 -a -n  ]
++ dumpparm=
++ + odmget -q attribute = 'tsecondary' SWservAt
+exec(/usr/bin/odmget,-q,attribute = 'tsecondary',SWservAt){1835356,2097478}
++ awk -F" /value/ {print $2}
+exec(/usr/bin/awk,-F",/value/ {print $2}){2097478,1114484}
+dev=/dev/sysdumpnull
++ [[ -n /dev/sysdumpnull ]]
++ + basename /dev/sysdumpnull
+exec(/usr/bin/basename,/dev/sysdumpnull){2097480,1114484}
+dev=sysdumpnull
++ [[ -n sysdumpnull ]]
++ [[ sysdumpnull != hd6 ]]
++ lsps sysdumpnull
++ 1> /dev/null 2>& 1
+exec(/usr/sbin/lsps,sysdumpnull){2097482,1114484}
+exec(/usr/bin/sh,-c,/usr/sbin/getlvodm -l sysdumpnull){1835358,2097482}
+exec(/usr/sbin/getlvodm,-l,sysdumpnull){1835358,2097482}
++ [[ 1 = 0 ]]
++ + odmget -q attribute = 'primary' SWservAt
++ awk -F" /value/ {sub(/\/dev\//, ""); print $2}
+exec(/usr/bin/awk,-F",/value/ {sub(/\/dev\//, ""); print $2}){2097484,1114484}
+exec(/usr/bin/odmget,-q,attribute = 'primary',SWservAt){1835360,2097484}
+primary=lg_dumplv
++ + lsdev -l lg_dumplv -c disk -s iscsi
+exec(/usr/sbin/lsdev,-l,lg_dumplv,-c,disk,-s,iscsi){2097486,1114484}
+found=
++ [ -n  ]
++ sysdumpdev -q
+exec(/usr/bin/sysdumpdev,-q){2097488,1114484}
+exec(/usr/bin/sh,-c,/usr/sbin/lquerylv -L `/usr/sbin/getlvodm -l lg_dumplv 2>/dev/null` -N lg_dumplv 2>/dev/null 1>/dev/null){1835362,2097488}
+exec(/usr/sbin/getlvodm,-l,lg_dumplv){1966410,1835362}
+exec(/usr/sbin/lquerylv,-L,00000000000000000000018f2ea1e30b.11,-N,lg_dumplv){1835362,2097488}
+exec(/usr/sbin/savebase){1835364,2097488}
+exec(/usr/sbin/savebase){1835366,2097488}
+exec(/usr/sbin/savebase){1835368,2097488}
++ echo rc.boot: allow 64-bit apps
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){2097492,1114484}
+rc.boot: allow 64-bit apps
++ /usr/lib/methods/cfg64
+exec(/usr/lib/methods/cfg64){2097494,1114484}
+exec(/usr/ccs/bin/shlap64){1835370,2097494}
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){2097496,1114484}
++ echo rc.boot: executing "cfglivedump -c"
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){2097500,1114484}
+rc.boot: executing "cfglivedump -c"
++ /usr/lib/methods/cfglivedump -c
+exec(/usr/lib/methods/cfglivedump,-c){2097502,1114484}
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){1966412,1114484}
++ /usr/sbin/copy_inmem_dump -f
+exec(/usr/sbin/copy_inmem_dump,-f){1966414,1114484}
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){2097504,1114484}
++ echo rc.boot: executing "cfgmgr"
++ alog -t boot
+exec(/usr/bin/alog,-t,boot){2097508,1114484}
+rc.boot: executing "cfgmgr"
++ /usr/bin/rm -f /.bootsequence /etc/locks/fs
++ 1> /dev/null 2>& 1
+exec(/usr/bin/rm,-f,/.bootsequence,/etc/locks/fs){2097510,1114484}
+exec(/usr/bin/odmget,-qattribute=keylock and value=service,CuAt){2097512,1114484}
+exec(/usr/sbin/cfgmgr,-p2,-v){2097514,1114484}
+ cfgmgr 
+0538exec(/bin/sh,-c,/etc/methods/cfgprobe -c /etc/drivers/coreprobe.ext ){1966416,2097514}
+exec(/etc/methods/cfgprobe,-c,/etc/drivers/coreprobe.ext){1966416,2097514}
+exec(/usr/bin/alog,-t,boot){1966418,1114484}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/cfgrule_vrtcore ){2163038,2097514}
+exec(/usr/lib/methods/cfgrule_vrtcore){2163038,2097514}
+ cfgmgr 
+0539 cfgmgr 
+2070exec(/bin/sh,-c,/usr/lib/methods/cfgvrtcore -2 -l virtio0){2163040,2097514}
+exec(/usr/lib/methods/cfgvrtcore,-2,-l,virtio0){2163040,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/storfworkrule -b ){2163042,2097514}
+exec(/usr/lib/methods/storfworkrule,-b){2163042,2097514}
+ cfgmgr 
+0539 cfgmgr 
+270bexec(/bin/sh,-c,/usr/lib/methods/cfgstorfwork -2 -l sfw0){2163044,2097514}
+exec(/usr/lib/methods/cfgstorfwork,-2,-l,sfw0){2163044,2097514}
+Preserving 146160 bytes of symbol table [/usr/lib/drivers/storfwork]
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/etc/methods/defsys ){2163046,2097514}
+exec(/etc/methods/defsys){2163046,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0811exec(/bin/sh,-c,/usr/lib/methods/cfgsys_chrp -2 -l sys0){2163048,2097514}
+exec(/usr/lib/methods/cfgsys_chrp,-2,-l,sys0){2163048,2097514}
+exec(/usr/bin/sh,-c,/usr/sbin/lsitab ha_star){2228556,2163048}
+exec(/usr/sbin/lsitab,ha_star){2228556,2163048}
+ cfgmgr 
+0539 cfgmgr 
+0811exec(/bin/sh,-c,/usr/lib/methods/cfgsysplanar_chrp -2 -l sysplanar0){2163050,2097514}
+exec(/usr/lib/methods/cfgsysplanar_chrp,-2,-l,sysplanar0){2163050,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0812exec(/bin/sh,-c,/usr/lib/methods/cfgmem_chrp -2 -l mem0){2163052,2097514}
+exec(/usr/lib/methods/cfgmem_chrp,-2,-l,mem0){2163052,2097514}
+ cfgmgr 
+0708exec(/bin/sh,-c,/usr/lib/methods/cfgL2cache_chrp -2 -l L2cache0){2228558,2097514}
+exec(/usr/lib/methods/cfgL2cache_chrp,-2,-l,L2cache0){2228558,2097514}
+ cfgmgr 
+0811exec(/bin/sh,-c,/usr/lib/methods/cfgproc_chrp -2 -l proc0){2294096,2097514}
+exec(/usr/lib/methods/cfgproc_chrp,-2,-l,proc0){2294096,2097514}
+ cfgmgr 
+078cexec(/bin/sh,-c,/usr/lib/methods/cfgbus_pcic -2 -l pci0){2359628,2097514}
+exec(/usr/lib/methods/cfgbus_pcic,-2,-l,pci0){2359628,2097514}
+ cfgmgr 
+25b6exec(/bin/sh,-c,/usr/lib/methods/cfgbus_vdevice -2 -l vio0){2425166,2097514}
+exec(/usr/lib/methods/cfgbus_vdevice,-2,-l,vio0){2425166,2097514}
+ cfgmgr 
+25b6 cfgmgr 
+25b6 cfgmgr 
+25b6cfgmgr is running in phase 2
+----------------
+Time: 0	LEDS: 0x538
+invoking top level program -- "/etc/methods/cfgprobe -c /etc/drivers/coreprobe.ext"
+Time: 0	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Skipping duplicate rule
+----------------
+Time: 0	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/cfgrule_vrtcore"
+Time: 0	LEDS: 0x539
+return code = 0
+****************** stdout ***********
+virtio0
+
+****************** no stderr ***********
+----------------
+attempting to configure device 'virtio0'
+Time: 0	LEDS: 0x2070
+invoking /usr/lib/methods/cfgvrtcore -2 -l virtio0 
+Number of running methods: 1
+----------------
+Completed method for: virtio0, Elapsed time = 1
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 1	LEDS: 0x539
+Number of running methods: 0
+----------------
+Time: 1	LEDS: 0x538
+invoking top level program -- "/us cfgmgr 
+25b6 cfgmgr 
+2071exec(/bin/sh,-c,/usr/lib/methods/cfgvrtscsi -2 -l scsi0){2359630,2097514}
+exec(/usr/lib/methods/cfgvrtscsi,-2,-l,scsi0){2359630,2097514}
+r/lib/methods/storfworkrule -b"
+Time: 1	LEDS: 0x539
+return code = 0
+****************** stdout ***********
+sfw0
+
+****************** no stderr ***********
+----------------
+attempting to configure device 'sfw0'
+Time: 1	LEDS: 0x270b
+invoking /usr/lib/methods/cfgstorfwork -2 -l sfw0 
+Number of running methods: 1
+----------------
+Completed method for: sfw0, Elapsed time = 0
+return code = 0
+*********** cfgmgr 
+2071 cfgmgr 
+04eeexec(/bin/sh,-c,/etc/methods/cfgvcon -2 -l vsa0){2425168,2097514}
+exec(/etc/methods/cfgvcon,-2,-l,vsa0){2425168,2097514}
+ cfgmgr 
+25b2exec(/bin/sh,-c,/usr/lib/methods/cfgvioent -2 -l ent0){2294098,2097514}
+exec(/usr/lib/methods/cfgvioent,-2,-l,ent0){2294098,2097514}
+Preserving 27751 bytes of symbol table [/usr/lib/drivers/vioentdd]
+ cfgmgr 
+25b2 cfgmgr 
+0727******* no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 1	LEDS: 0x539
+Number of running methods: 0
+----------------
+Time: 1	LEDS: 0x538
+invoking top level prograexec(/bin/sh,-c,/etc/methods/cfgtty -2 -l vty0){2425170,2097514}
+exec(/etc/methods/cfgtty,-2,-l,vty0){2425170,2097514}
+exec(/bin/sh,-c,/usr/sbin/mkitab "vty0:2:off:/usr/sbin/getty /dev/vty0"){2163054,2425170}
+exec(/usr/sbin/mkitab,vty0:2:off:/usr/sbin/getty /dev/vty0){2163054,2425170}
+exec(/bin/sh,-c,/usr/lib/methods/cfgdmxeth  0 ent0 0 ){2228562,2294098}
+exec(/usr/lib/methods/cfgdmxeth,0,ent0,0){2228562,2294098}
+m -- "/etc/methods/defsys"
+Time: 1	LEDS: 0x539
+return code = 0
+****************** stdout ***********
+sys0
+
+****************** no stderr ***********
+----------------
+attempting to configure device 'sy cfgmgr 
+25b2s0'
+Time: 1	LEDS: 0x811
+invoking /usr/lib/methods/cfgsys_chrp -2 -l sys0 
+Number of running methods: 1
+----------------
+Completed method for: sys0, Elapsed time = 0
+return code = 0
+****************** cfgmgr 
+2071 stdout ***********
+sysplanar0
+
+****************** no stderr ***********
+----------------
+Time: 1	LEDS: 0x539
+Number of running methods: 0
+----------------
+attempting to configure device 'sysplanar0'
+Time: 1	LEDS: 0x811
+invoking /usr/lib/methods/cfgsysplanar_chrp -2 -l sysplanar0 
+Number of running methods: 1
+----------------
+Completed method for: sysplanar0, Elapsed time = 0
+return code = 0
+****************** stdout ***********
+mem0
+L2cache0
+proc0
+pci0
+vio0
+
+****************** no stderr ***********
+----------------
+Time: 1	LEDS: 0x539
+Number of running methods: 0
+----------------
+attempting to configure device 'mem0'
+Time: 1	LEDS: 0x812
+invoking /usr/lib/methods/cfgmem_chrp -2 -l mem0 
+Number of running methods: 1
+----------------
+attempting to configure device 'L2cache0'
+Time: 1	LEDS: 0x708
+invoking /usr/lib/methods/cfgL2cache_chrp -2 -l L2cache0 
+Number of running methods: 2
+----------------
+attempting to configure device 'proc0'
+Time: 1	LEDS: 0x811
+invoking /usr/lib/methods/cfgproc_chrp -2 -l proc0 
+Number of running methods: 3
+----------------
+attempting to configure device 'pci0'
+Time: 1	LEDS: 0x78a
+invoking /usr/lib/methods/cfgbus_pcic -2 -l pci0 
+Number of running methods: 4
+----------------
+attempting to configure device 'vio0'
+Time: 2	LEDS: 0x25b6
+invoking /usr/lib/methods/cfgbus_vdevice -2 -l vio0 
+Number of running methods: 5
+----------------
+Completed method cfgmgr 
+0539 cfgmgr 
+25b3exec(/bin/sh,-c,/usr/lib/methods/cfg_vclient -2 -l vscsi0){2359632,2097514}
+exec(/usr/lib/methods/cfg_vclient,-2,-l,vscsi0){2359632,2097514}
+ for: mem0, Elapsed time = 1
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 2	LEDS: 0x25b6 for vio0
+Number of running methods: 4
+----------------
+Completed method for: L2cache0, Elapsed time = 1
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 2	LEDS: 0x25b6 for vio0
+Number of running methods: 3
+----------------
+Completed method for: proc0, Elapsed time = 1
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 2	LEDS: 0x25b6 for vio0
+Number of running methods: 2
+----------------
+Completed method cfgmgr 
+0539 cfgmgr 
+25b5exec(/bin/sh,-c,/usr/lib/methods/cfgscsicd -2 -l cd0){2359634,2097514}
+exec(/usr/lib/methods/cfgscsicd,-2,-l,cd0){2359634,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/deflvm ){2359636,2097514}
+exec(/usr/lib/methods/deflvm){2359636,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/loadkclic -l ){2359638,2097514}
+exec(/usr/lib/methods/loadkclic,-l){2359638,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/hcnrmhcn -v ){2359640,2097514}
+exec(/usr/lib/methods/hcnrmhcn,-v){2359640,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/cfgrule_pkcs11 ){2359642,2097514}
+exec(/usr/lib/methods/cfgrule_pkcs11){2359642,2097514}
+ cfgmgr 
+0539 cfgmgr 
+7000exec(/bin/sh,-c,/usr/lib/methods/cfgpkcs11 -2 -l pkcs11){2359644,2097514}
+exec(/usr/lib/methods/cfgpkcs11,-2,-l,pkcs11){2359644,2097514}
+Preserving 998476 bytes of symbol table [/usr/lib/drivers/pkcs11]
+(T35017F:P24015C) 00 PKCS#11 pseudo-device driver built on Mar 31 2020 : 12:33:03
+ cfgmgr 
+0539 cfgmgr 
+0538 for: pci0, Elapsed time = 1
+return code = 0
+****************** stdout ***********
+:devices.pci.vga:devices.pci.qemu.std-vga
+:devices.pci.usb-xhci:devices.pci.f41a0011
+scsi0
+
+****************** no stexec(/bin/sh,-c,/etc/methods/cfgvlan -2 ){2359646,2097514}
+derr ***********
+----------------
+Time: 2	LEDS: 0x25b6 for vio0
+Number of running methods: 1
+----------------
+attempting to configure device 'scsi0'
+Time: 2	LEDS: 0x2071
+invoking /usr/lib/methods/cfgvrtscsi -2 -l scsi0 
+Number of running methods: 2
+----------------
+Completed method for: vio0, Elapsed time = 0
+return code = 0
+****************** stdout ***********
+vsa0
+:devices.vdevice.nvram:devices.vdevice.qemu.spapr-nvram
+ent0
+vscsi0
+
+****************** no stderr ***********
+----------------
+Time: 2	LEDS: 0x2071 for scsi0
+Number of running methods: 1
+----------------
+attempting to configure device 'vsa0'
+Time: 2	LEDS: 0x4ee
+invoking /etc/methods/cfgvcon -2 -l vsa0 
+Number of running methods: 2
+----------------
+attempting to configure device 'ent0'
+Time: 2	LEDS: 0x25b2
+invoking /usr/libexec(/etc/methods/cfgvlan,-2){2359646,2097514}
+/methods/cfgvioent -2 -l ent0 
+Number of running methods: 3
+----------------
+Completed method for: vsa0, Elapsed time = 0
+return code = 0
+****************** stdout ***********
+vty0
+
+****************** no stderr ***********
+----------------
+Time: 2	LEDS: 0x25b2 for ent0
+Number of running methods: 2
+----------------
+attempting to configure device 'vty0'
+Time: 2	LEDS: 0x727
+invoking /etc/methods/cfgtty -2 -l vty0 
+Number of running methods: 3
+----------------
+Completed method for: vty0, Elapsed time = 1
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***** cfgvlan 
+0581 cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/sbin/lsdev -Cc ipsec -r name ){2359648,2097514}
+exec(/usr/sbin/lsdev,-Cc,ipsec,-r,name){2359648,2097514}
+******
+----------------
+Time: 3	LEDS: 0x25b2 for ent0
+Number of running methods: 2
+----------------
+Completed method for: ent0, Elapsed time = 1
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 3	LEDS: 0x2071 for scsi0
+Number of running methods: 1
+----------------
+Completed method for: scsi0, Elapsed time = 1
+return code = 0 cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/cfgrcnet ){2359650,2097514}
+exec(/usr/lib/methods/cfgrcnet){2359650,2097514}
+exec(/usr/bin/sh,-c,/usr/lib/methods/definet > /dev/null){2228564,2359650}
+exec(/usr/lib/methods/definet){2228564,2359650}
+exec(/usr/bin/sh,-c,/etc/rc.net -2){2228566,2359650}
+exec(/etc/rc.net,/etc/rc.net,-2){2228566,2359650}
+exec(/bin/rm,-f,/tmp/rc.net.out){2425172,2228566}
+
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 3	LEDS: 0x539
+Number of running methods: 0
+----------------
+attempting to configure device 'vscsi0'
+Time: 3	LEDS: 0x25b3
+invoking /usr/lib/methods/cfg_vclient -2 -l vscsi0 
+Number of running methods: 1
+----------------
+Completed method for: vscsi0, Elapsed time = 1
+return code = 0
+**********exec(/usr/sbin/lsdev,-C,-S1,-F,name,-l,inet0){2425174,2228566}
+exec(/usr/lib/methods/defif){2425176,2228566}
+exec(/usr/lib/methods/cfgif,-2){2425178,2228566}
+ cfgif 
+0581******** stdout ***********
+cd0 
+****************** no stderr ***********
+----------------
+Time: 4	LEDS: 0x539
+Number of running methods: 0
+----------------
+attempting to configure device 'cd0'
+Time:exec(/usr/sbin/ifconfig,lo0,inet,127.0.0.1,mtu,16896,up){2163056,2425178}
+ 4	LEDS: 0x25b5
+invoking /usr/lib/methods/cfgscsicd -2 -l cd0 
+Number of running methods: 1
+----------------
+Completed method for: cd0, Elapsed time = 0
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 4	LEDS: 0x539
+Number of running methods: 0
+----------------
+Time: 4	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/deflvm"
+Time: 4	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 4	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/loadkclic -l"
+Time: 9	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 9	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/hcnrmhcn -v"
+Time: 9	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 9	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/cfgrule_pkcs11"
+Time: 9	LEDS: 0x539
+return code = 0
+****************** stdout ***********
+pkcs11
+
+****************** no stderr ***********
+----------------
+attempting to configure device 'pkcs11'
+Time: 9	LEDS: 0x7fff
+invoking /usr/lib/methods/cfgpkcs11 -2 -l pkcs11 
+Number of running methods: 1
+----------------
+Completed method for: pkcs11, Elapsed time = 5
+return code = 0
+****************** no stdout ***********
+****************** stderr ***********
+cfgpkcs1exec(/usr/sbin/ifconfig,lo0,inet6,::1,mtu,16896,up){2163058,2425178}
+exec(/usr/sbin/ifconfig,lo0,rfc1323,1,-tcp_mssdflt,-tcp_nodelay,tcp_sendspace,131072,tcp_recvspace,131072){2163060,2425178}
+exec(/usr/bin/sh,-c,/usr/sbin/mktun -v4 -i >/dev/null 2>&1){2163062,2425178}
+exec(/usr/sbin/mktun,-v4,-i){2163062,2425178}
+exec(/usr/lib/methods/definet){2425180,2228566}
+exec(/usr/lib/methods/cfginet){2425182,2228566}
+exec(/usr/bin/sh,-c,/etc/methods/cfgech -2){2163064,2425182}
+exec(/etc/methods/cfgech,-2){2163064,2425182}
+ cfgech 
+0581exec(/usr/bin/sh,-c,/usr/lib/methods/defif){2163066,2425182}
+exec(/usr/lib/methods/defif){2163066,2425182}
+exec(/usr/bin/sh,-c,AIX_CFGMGR_MODE=1 /etc/methods/cfgif){2163068,2425182}
+exec(/etc/methods/cfgif){2163068,2425182}
+exec(/usr/bin/sh,-c,/usr/sbin/mktun -v4 -i >/dev/null 2>&1){2556242,2163068}
+exec(/usr/sbin/mktun,-v4,-i){2556242,2163068}
+exec(/usr/bin/hostname){2425184,2228566}
+exec(/usr/sbin/hostid,localhost){2425186,2228566}
+exec(/usr/bin/sed,s/\..*$//){2425188,2228566}
+exec(/usr/bin/hostname){2163070,2425188}
+exec(/bin/uname,-Slocalhost){2425190,2228566}
+exec(/etc/rc.net.serial,/etc/rc.net.serial){2425192,2228566}
+exec(/usr/bin/rm,-f,/tmp/rc.net.serial.out){2163072,2425192}
+exec(/usr/bin/touch,/tmp/rc.net.serial.out){2163074,2425192}
+exec(/usr/bin/grep,slattach){2621780,2163076}
+exec(/usr/bin/ps,-ef){2556244,2163076}
+exec(/usr/bin/awk,{ print $9 }){2163076,2425192}
+exec(/usr/bin/awk,{ print $1 }){2163078,2425192}
+exec(/usr/sbin/lsdev,-C,-c,if,-s,SL,-t,sl,-S,available){2621782,2163078}
+exec(/usr/sbin/no,-o,extendednetstats=0){2425194,2228566}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/etc/methods/ptynode ){2359652,2097514}
+exec(/etc/methods/ptynode){2359652,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0731exec(/bin/sh,-c,/etc/methods/cfgpty -2 -l pty0){2359654,2097514}
+exec(/etc/methods/cfgpty,-2,-l,pty0){2359654,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/perf/cfg_perfstat load ){2359656,2097514}
+exec(/usr/lib/perf/cfg_perfstat,load){2359656,2097514}
+Preserving 34702 bytes of symbol table [/usr/lib/perf/perfstat]
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/perf/cfg_pmsvcs load ){2359658,2097514}
+exec(/usr/lib/perf/cfg_pmsvcs,load){2359658,2097514}
+Preserving 51697 bytes of symbol table [/usr/pmapi/etc/pmsvcs]
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/perf/cfg_perfvmmstat load ){2359660,2097514}
+exec(/usr/lib/perf/cfg_perfvmmstat,load){2359660,2097514}
+Preserving 17749 bytes of symbol table [/usr/lib/drivers/perfvmmstat]
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/storfworkrule -c ){2359662,2097514}
+exec(/usr/lib/methods/storfworkrule,-c){2359662,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/defaio ){2359664,2097514}
+exec(/usr/lib/methods/defaio){2359664,2097514}
+Preserving 38222 bytes of symbol table [/usr/lib/drivers/aio.ext]
+Preserving 12452 bytes of symbol table [/usr/lib/drivers/aiopin]
+Preserving 38936 bytes of symbol table [/usr/lib/drivers/posix_aio.ext]
+Preserving 12886 bytes of symbol table [/usr/lib/drivers/posix_aiopin]
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/loopnode ){2359666,2097514}
+exec(/usr/lib/methods/loopnode){2359666,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/cfgvfcmap ){2359668,2097514}
+exec(/usr/lib/methods/cfgvfcmap){2359668,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/cfgvtdev ){2359670,2097514}
+exec(/usr/lib/methods/cfgvtdev){2359670,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,cache_mgt config init 1>&2 ){2359672,2097514}
+exec(/usr/sbin/cache_mgt,config,init){2359672,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/defiocp ){2359674,2097514}
+exec(/usr/lib/methods/defiocp){2359674,2097514}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/tapnode ){2359676,2097514}
+1: configure driver
+cfgpkcs11: retrieving CuAt and PdAt attributes
+cfgpkcs11: Failed to query Y4 device, driver is NOT loaded (pci/y4cryptdd)
+cfgpkcs11: errno = 109
+cfgpkcs11: Failed to query Sentry exec(/usr/lib/methods/tapnode,/usr/lib/methods/tapnode){2359676,2097514}
+device, driver is NOT loaded (pci/sncryptdd)
+cfgpkcs11: errno = 109
+cfgpkcs11: kernel module id = 901a5000
+cfgpkcs11: Calling genmajor()
+cfgpkcs11: Returned major number: 22
+cfgpkcs11: Calling getminor()
+cfgpkcs11: minor number: 0
+cfgpkcs11: Calling mk_sp_file()
+cfgpkcs11: Returned from mk_sp_file()
+cfgpkcs11: Pass DDS to driver via sysconfig()
+cfgpkcs11: pkcs11 status = AVAILABLE
+
+-------------exec(/usr/sbin/lsdev,-C,-c,adapter,-s,pseudo,-t,tapent,-F,name){2425196,2359676}
+---
+Time: 14	LEDS: 0x539
+Number of running methods: 0
+----------------
+Time: 14	LEDS: 0x538
+invoking top level program -- "/etc/methods/cfgvlan -2"
+Time: 14	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 14	LEDS: 0x538
+invoking top level program -- "/usr/sbin/lsdev -Cc ipsec -r name"
+Time: 14	LEDS: 0x539
+returnexec(/usr/sbin/lsdev,-C,-c,if,-s,EN,-t,tap,-F,name){2425198,2359676}
+ cfgmgr 
+0539 cfgmgr 
+0538exec(/bin/sh,-c,/usr/lib/methods/cfgrule_cluster ){2359678,2097514}
+exec(/usr/lib/methods/cfgrule_cluster){2359678,2097514}
+ cfgmgr 
+0539 cfgmgr 
+2028exec(/bin/sh,-c,/usr/lib/methods/cfgcluster -2 -l cluster0){2359680,2097514}
+exec(/usr/lib/methods/cfgcluster,-2,-l,cluster0){2359680,2097514}
+Preserving 97515 bytes of symbol table [/usr/lib/drivers/cluster]
+ code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 14	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/cfgrcnet"
+Time: 22	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 22	LEDS: 0x538
+invoking top level program -- "/etc/methods/ptynode"
+Time: 22	LEDS: 0x539
+return code = 0
+****************** stdout ***********
+pty0
+
+****************** no stderr ***********
+----------------
+attempting to configure device 'pty0'
+Time: 22	LEDS: 0x731
+invoking /etc/methods/cfgpty -2 -l pty0 
+Number of running methods: 1
+----------------
+Completed method for: pty0, Elapsed time = 0
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 22	LEDS: 0x539
+Number of running methods: 0
+----------------
+Time: 22	LEDS: 0x538
+invoking top level program -- "/usr/lib/perf/cfg_perfstat load"
+Time: 23	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 23	LEDS: 0x538
+invoking top level program -- "/usr/lib/perf/cfg_pmsvcs load"
+Time: 23	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 23	LEDS: 0x538
+invoking top level program -- "/usr/lib/perf/cfg_perfvmmstat load"
+Time: 23	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 23	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/storfworkrule -c"
+Time: 23	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 23	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/defaio"
+Time: 24	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 24	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/loopnode"
+Time: 24	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no  cfgmgr 
+0539exec(/bin/sh,-c,/usr/sbin/savebase ){2359682,2097514}
+exec(/usr/sbin/savebase){2359682,2097514}
+ cfgmgr 
+stderr ***********
+----------------
+Time: 24	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/cfgvfcmap"
+Time: 24	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 24	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/cfgvtdev"
+Time: 24	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 24	LEDS: 0x538
+invoking top level program -- "cache_mgt config init 1>&2"
+Time: 24	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 24	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/defiocp"
+Time: 24	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 24	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/tapnode"
+Time: 25	LEDS: 0x539
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 25	LEDS: 0x538
+invoking top level program -- "/usr/lib/methods/cfgrule_cluster"
+Time: 25	LEDS: 0x539
+return code = 0
+****************** stdout ***********
+cluster0
+
+****************** no stderr ***********
+----------------
+attempting to configure device 'cluster0'
+Time: 25	LEDS: 0x2028
+invoking /usr/lib/methods/cfgcluster -2 -l cluster0 
+Number of running methods: 1
+----------------
+Completed method for: cluster0, Elapsed time = 0
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+----------------
+Time: 25	LEDS: 0x539
+Number of running methods: 0
+----------------
+calling savebase
+return code = 0
+****************** no stdout ***********
+****************** no stderr ***********
+cfgmgr: 0514-621 WARNING: The following device packages are required for
+	device support but are not currently installed.
+devices.pci.usb-xhci:devices.pci.f41a0011
+devices.pci.vga:devices.pci.qemu.std-vga
+devices.vdevice.nvram:devices.vdevice.qemu.spapr-nvram
+Configuration time: 25 seconds
+exec(/usr/lib/methods/cfgcon){1966420,1114484}
+ cfgcon 
+0c33exec(/bin/sh,-c,chitab "cons:0123456789:respawn:/usr/sbin/getty /dev/console"){2097516,1966420}
+exec(/usr/sbin/chitab,cons:0123456789:respawn:/usr/sbin/getty /dev/console){2097516,1966420}
+exec(/usr/sbin/swcons,-c){1966422,1114484}
+exec(/usr/bin/odmget,-q,attribute=sh_pp,SWservAt){2097518,1966424}
+exec(/usr/bin/awk,-F",/value/ {print $2}){1966424,1114484}
+exec(/usr/bin/awk,-F",/value/ {print $2}){1966426,1114484}
+exec(/usr/bin/odmget,-q,attribute=sh_pp_login,SWservAt){2097520,1966426}
+exec(/usr/bin/cat,/etc/.init.state){1966428,1114484}
+exec(/usr/bin/grep,^dt:,/etc/inittab){2097522,1966430}
+exec(/usr/bin/cut,-d:,-f2){1966430,1114484}
+exec(/usr/bin/grep,^dt:,/etc/inittab){2359684,1966432}
+exec(/usr/bin/cut,-d:,-f3){1966432,1114484}
+exec(/usr/lib/boot/bootutil,-p){1966434,1114484}
+exec(/usr/bin/sysdumpdev,-q){1966436,1114484}
+exec(/usr/bin/sh,-c,/usr/sbin/lquerylv -L `/usr/sbin/getlvodm -l lg_dumplv 2>/dev/null` -N lg_dumplv 2>/dev/null 1>/dev/null){2359686,1966436}
+exec(/usr/sbin/getlvodm,-l,lg_dumplv){2097524,2359686}
+exec(/usr/sbin/lquerylv,-L,00000000000000000000018f2ea1e30b.11,-N,lg_dumplv){2359686,1966436}
+exec(/usr/sbin/savebase){2359688,1966436}
+exec(/usr/sbin/savebase){2359690,1966436}
+exec(/usr/sbin/savebase){2359692,1966436}
+exec(/usr/bin/alog,-t,boot){1966440,1114484}
+
+Saving Base Customize Data to boot disk
+exec(/usr/sbin/savebase){1966442,1114484}
+exec(/usr/bin/compress){2359694,1966442}
+exec(/usr/lib/methods/cleantty){1966444,1114484}
+exec(/bin/sh,-c,lsitab cons){2359696,1966444}
+exec(/usr/sbin/lsitab,cons){2359696,1966444}
+exec(/bin/sh,-c,rmitab vty0){2359698,1966444}
+exec(/usr/sbin/rmitab,vty0){2359698,1966444}
+exec(/usr/sbin/sync){1966446,1114484}
+exec(/usr/sbin/sync){1966448,1114484}
+exec(/usr/bin/alog,-t,boot){1966452,1114484}
+Starting the sync daemon
+exec(/usr/bin/nohup,/usr/sbin/syncd,60){1966454,1114484}
+exec(/usr/sbin/syncd,60){1966454,1114484}
+exec(/usr/bin/odmdelete,-o,errnotify,-q,en_persistenceflg=0){2359700,1114484}
+exec(/usr/bin/touch,/etc/lpp/diagnostics/data/diagSE_queue){2359702,1114484}
+exec(/usr/bin/odmget,-q,attribute = 'fwdump_dir',SWservAt){2097526,2359704}
+exec(/usr/bin/awk,-F",/value/ {print $2}){2359704,1114484}
+exec(/usr/sbin/lsfs,/var/adm/ras/platform){2359706,1114484}
+exec(/usr/bin/alog,-t,boot){2359710,1114484}
+Starting the error daemon
+exec(/usr/bin/rm,-f,/tmp/errdemon.1114484){2359712,1114484}
+exec(/usr/lib/errdemon){2359714,1114484}
+exec(/usr/bin/rm,-f,/tmp/errdemon.1114484){2359716,1114484}
+exec(/usr/bin/sh,-c,/usr/lib/physloc errdemon){2883932,2097528}
+exec(/usr/lib/physloc,errdemon){2883932,2097528}
+exec(/usr/bin/probevctrl,-i){2359718,1114484}
+exec(/usr/bin/alog,-t,boot){2359720,1114484}
+exec(/usr/lib/methods/showled,0xFFF){2359722,1114484}
+ showled 
+exec(/usr/bin/rm,-f,/etc/nologin){2359724,1114484}
+exec(/usr/sbin/platform_dump,-SL){2949470,2097528}
+exec(/usr/lib/boot/bin/platform_dump_chrp,-SL){2949470,2097528}
+exec(/usr/bin/sh,-c,/usr/lib/physloc minidump){3015008,2097528}
+exec(/usr/lib/physloc,minidump){3015008,2097528}
+exec(/usr/sbin/bootinfo,-M){2359726,1114484}
+exec(/usr/lib/boot/bin/bootinfo_chrp,-M){2359726,1114484}
+exec(/usr/lib/boot/bootutil,-e){2359728,1114484}
+exec(/etc/rc.powerfail,/etc/rc.powerfail,-p){2359730,1114484}
+exec(/usr/sbin/sync){3015010,2359730}
+exec(/usr/bin/odmget,-q,attribute=SEC_NLSPATH,PdAt){2883934,2949472}
+exec(/usr/bin/awk,-F,",/deflt/ {print $2}){2949472,1114484}
+exec(/usr/sbin/sync){3015012,2359730}
+exec(/usr/bin/sh,-c,/usr/lib/physloc SYSPROC){2883936,2097528}
+exec(/usr/lib/physloc,SYSPROC){2883936,2097528}
+exec(/usr/sbin/sync){3015014,2359730}
+exec(/etc/rc.powerfail,/etc/rc.powerfail,_!.!.!.!.,-p){2359730,1114484}
+exec(/usr/sbin/copy_inmem_dump,-s){3015016,1114484}
+exec(/usr/bin/sysdumpdev,-q){3015018,1114484}
+exec(/usr/bin/sh,-c,/usr/sbin/lquerylv -L `/usr/sbin/getlvodm -l lg_dumplv 2>/dev/null` -N lg_dumplv 2>/dev/null 1>/dev/null){3080546,3015018}
+exec(/usr/sbin/getlvodm,-l,lg_dumplv){3146084,3080546}
+exec(/usr/sbin/lquerylv,-L,00000000000000000000018f2ea1e30b.11,-N,lg_dumplv){3080546,3015018}
+exec(/usr/sbin/sync){2949474,2359730}
+exec(/usr/bin/sh,-c,/usr/lib/physloc SYSPROC){3146086,2097528}
+exec(/usr/lib/physloc,SYSPROC){3146086,2097528}
+exec(/usr/sbin/sync){2949476,2359730}
+exec(/usr/sbin/sync){2949478,2359730}
+exec(/usr/sbin/bootinfo,-p){2949480,2359730}
+exec(/usr/lib/boot/bin/rc.powerfail_chrp,/usr/lib/boot/bin/rc.powerfail_chrp,-p){2949482,2359730}
+exec(/usr/sbin/machstat,-f){3211622,2949482}
+exec(/usr/lib/boot/bin/machstat_chrp,-f){3211622,2949482}
+exec(/usr/bin/cut,-f1,-d ){3211624,2949482}
+exec(/usr/bin/cut,-f2,-d ){3211626,2949482}
+exec(/usr/bin/cut,-f3,-d ){3211628,2949482}
+exec(/usr/sbin/sync){3211630,2949482}
+exec(/usr/bin/sh,-c,/usr/lib/physloc SYSERRLG){3277166,2097528}
+exec(/usr/lib/physloc,SYSERRLG){3277166,2097528}
+exec(/usr/sbin/sync){3211632,2949482}
+exec(/usr/sbin/savebase){3080548,3015018}
+exec(/usr/bin/compress){3211634,3080548}
+exec(/usr/sbin/savebase){3080550,3015018}
+exec(/usr/bin/compress){3211636,3080550}
+exec(/usr/sbin/savebase){3080552,3015018}
+exec(/usr/bin/compress){3211638,3080552}
+exec(/usr/bin/alog,-t,boot){3015022,1114484}
+System initialization completed.
+exec(/usr/bin/date,-u,+%D %r %Z){3277168,3015024}
+exec(/usr/bin/alog,-qt,cfg){3015026,1114484}
+exec(/usr/bin/sh,-c,exec /etc/rc.security.boot > /dev/console 2>&1){3015028,1}
+exec(/etc/rc.security.boot,/etc/rc.security.boot){3015028,1}
+exec(/usr/sbin/trustchk,-b,3){3277170,3015028}
+TE=OFF
+CHKEXEC=OFF
+CHKSHLIB=OFF
+CHKSCRIPT=OFF
+CHKKERNEXT=OFF
+STOP_UNTRUSTD=OFF
+STOP_ON_CHKFAIL=OFF
+LOCK_KERN_POLICIES=OFF
+TSD_FILES_LOCK=OFF
+TSD_LOCK=OFF
+TEP=OFF
+TLP=OFF
+exec(/usr/bin/sh,-c,/usr/bin/rm -rf /tmp/tsdkAm7ea){3080554,3277170}
+exec(/usr/bin/rm,-rf,/tmp/tsdkAm7ea){3080554,3277170}
+exec(/usr/sbin/setkst,-x,-q){3277172,3015028}
+Successfully updated the Kernel Authorization Table.
+Successfully updated the Kernel Role Table.
+Successfully updated the Kernel Command Table.
+Successfully updated the Kernel Device Table.
+Successfully updated the Kernel Object Domain Table.
+Successfully updated the Kernel Domains Table.
+Successfully updated the Kernel RBAC log level. 
+exec(/usr/sbin/setkst,-l){3277174,3015028}
+Successfully updated the Kernel RBAC log level. 
+exec(/usr/sbin/setsecconf,-o){3277176,3015028}
+OPERATIONAL MODE Security Flags
+ROOT                      :    ENABLED
+TRACEAUTH                 :   DISABLED
+exec(/usr/sbin/setrunmode,-o){3277178,3015028}
+System runtime mode is now OPERATIONAL MODE.
+exec(/usr/bin/sh,-c,exec /usr/sbin/tunrestore -R > /dev/console 2>&1 # Set tunables){3015030,1}
+exec(/usr/sbin/tunrestore,/usr/sbin/tunrestore,-R){3015030,1}
+exec(/usr/bin/basename,/usr/sbin/tunrestore){3277180,3015030}
+exec(/usr/bin/uname,-W){3277182,3015030}
+exec(/usr/lib/perf/set_phase,0){3277184,3015030}
+exec(/usr/bin/rm,-f,/etc/tunables/lastboot.log){3277186,3015030}
+exec(/usr/bin/touch,/etc/tunables/lastboot.log){3277188,3015030}
+exec(/usr/sbin/mount,-v,procfs,/proc,/proc){3277190,3015030}
+exec(/usr/bin/sh,-c,/usr/sbin/wlmcntrl -u -d "" > /dev/null 2>&1){3080556,3277190}
+exec(/usr/sbin/wlmcntrl,-u,-d,){3080556,3277190}
+exec(/usr/lib/perf/get_compat){3277192,3015030}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,16,Setting tunable parameters...){3277194,3015030}
+Setting tunable parameters...exec(/usr/bin/awk,-v,CMDDIR=/usr/sbin,-v,CMDLST=schedo vmo ioo raso no nfso asoo,-v,DSPMSG=/usr/bin/dspmsg,-v,MSGSET=2,-v,MSGCAT=tunrestore.cat,-v,LOGFILE=/etc/tunables/lastboot.log,-v,NOLOG=/etc/tunables/no.log,-v,WARN=,-v,TUNERRLOG=/usr/lib/perf/tunerrlog,
+BEGIN {
+    # Tunables that should be ignored for now (will be restored later, 
+    # outside tunrestore) are in the IGNORE array
+    IGNORE["nfso", "lockd_debug_level"]
+    IGNORE["nfso", "statd_debug_level"]
+    IGNORE["nfso", "statd_max_threads"]
+    # Tunables for which default value checking should be bypassed
+    # (for restricted tunables) are in the IGNORE_1 array
+    IGNORE_1["vmo", "kernel_psize"]
+    IGNORE_1["vmo", "kernel_heap_psize"]
+    IGNORE_1["vmo", "mbuf_heap_psize"]
+    IGNORE_1["vmo", "vmm_mpsize_support"]
+    IGNORE_1["vmo", "vmm_klock_mode"]
+    IGNORE_1["vmo", "relalias_nlocks"]
+    IGNORE_1["vmo", "vmm_stripe_size"]
+    IGNORE_1["vmo", "slb_mode"]
+    IGNORE_1["vmo", "vm_mmap_areload"){3277196,3015030}
+exec(/usr/bin/sh,-c,/usr/sbin/schedo -Fx){3080558,3277196}
+exec(/usr/sbin/schedo,-Fx){3080558,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t schedo 2>/dev/null){3211640,3080558}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,schedo){3211640,3080558}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){2359732,3211640}
+exec(/usr/bin/basename,nextboot){2359734,3211640}
+exec(/usr/bin/grep,-Eq,(^|[ \t])schedo([ \t]|$)){2359736,3211640}
+exec(/usr/bin/awk,-v,STANZA=schedo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){2359738,3211640}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 15 "Warning: parameter %1\$s of type %2\$s should already be set to %3\$s but is actually set to %4\$s
+" allow_tm BOSBOOT 1 0 >> /etc/tunables/lastboot.log){3211642,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,15,Warning: parameter %1$s of type %2$s should already be set to %3$s but is actually set to %4$s
+,allow_tm,BOSBOOT,1,0){3211642,3277196}
+exec(/usr/bin/sh,-c,/usr/sbin/vmo -Fx){3080560,3277196}
+exec(/usr/sbin/vmo,-Fx){3080560,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t vmo 2>/dev/null){3211644,3080560}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,vmo){3211644,3080560}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){2359740,3211644}
+exec(/usr/bin/basename,nextboot){2359742,3211644}
+exec(/usr/bin/grep,-Eq,(^|[ \t])vmo([ \t]|$)){2359744,3211644}
+exec(/usr/bin/awk,-v,STANZA=vmo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){2359746,3211644}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 15 "Warning: parameter %1\$s of type %2\$s should already be set to %3\$s but is actually set to %4\$s
+" enhanced_memory_affinity BOSBOOT 1 0 >> /etc/tunables/lastboot.log){3211646,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,15,Warning: parameter %1$s of type %2$s should already be set to %3$s but is actually set to %4$s
+,enhanced_memory_affinity,BOSBOOT,1,0){3211646,3277196}
+exec(/usr/bin/sh,-c,/usr/sbin/ioo -Fx){3080562,3277196}
+exec(/usr/sbin/ioo,-Fx){3080562,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t ioo 2>/dev/null){3211648,3080562}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,ioo){3211648,3080562}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){2359748,3211648}
+exec(/usr/bin/basename,nextboot){2359750,3211648}
+exec(/usr/bin/grep,-Eq,(^|[ \t])ioo([ \t]|$)){2359752,3211648}
+exec(/usr/bin/awk,-v,STANZA=ioo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){2359754,3211648}
+exec(/usr/bin/sh,-c,/usr/sbin/raso -Fx){3080564,3277196}
+exec(/usr/sbin/raso,-Fx){3080564,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t raso 2>/dev/null){3211650,3080564}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,raso){3211650,3080564}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){2359756,3211650}
+exec(/usr/bin/basename,nextboot){2359758,3211650}
+exec(/usr/bin/grep,-Eq,(^|[ \t])raso([ \t]|$)){2359760,3211650}
+exec(/usr/bin/awk,-v,STANZA=raso,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){2359762,3211650}
+exec(/usr/bin/sh,-c,/usr/sbin/no -Fx){3080566,3277196}
+exec(/usr/sbin/no,-Fx){3080566,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t no 2> /dev/null){3211652,3080566}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,no){3211652,3080566}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){2359764,3211652}
+exec(/usr/bin/basename,nextboot){2359766,3211652}
+exec(/usr/bin/grep,-Eq,(^|[ \t])no([ \t]|$)){2359768,3211652}
+exec(/usr/bin/awk,-v,STANZA=no,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){2359770,3211652}
+exec(/usr/bin/sh,-c,/usr/sbin/nfso -Fx){3080568,3277196}
+exec(/usr/sbin/nfso,-Fx){3080568,3277196}
+Preserving 97866 bytes of symbol table [/usr/lib/drivers/krpc.ext]
+Preserving 309060 bytes of symbol table [/usr/lib/drivers/nfs.ext]
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t nfso 2> /dev/null){3473774,3080568}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,nfso){3473774,3080568}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3539312,3473774}
+exec(/usr/bin/basename,nextboot){3539314,3473774}
+exec(/usr/bin/grep,-Eq,(^|[ \t])nfso([ \t]|$)){3539316,3473774}
+exec(/usr/bin/awk,-v,STANZA=nfso,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3539318,3473774}
+exec(/usr/bin/sh,-c,/usr/sbin/asoo -Fx){3080570,3277196}
+exec(/usr/sbin/asoo,-Fx){3080570,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t asoo 2>/dev/null){3473776,3080570}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,asoo){3473776,3080570}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3539320,3473776}
+exec(/usr/bin/basename,nextboot){3539322,3473776}
+exec(/usr/bin/grep,-Eq,(^|[ \t])asoo([ \t]|$)){3539324,3473776}
+exec(/usr/bin/awk,-v,STANZA=asoo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3539326,3473776}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 20 "Restoring %1\$s values
+" schedo){3080572,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,20,Restoring %1$s values
+,schedo){3080572,3277196}
+exec(/usr/bin/sh,-c,/usr/sbin/schedo  -o "maxspin=16384" >> /etc/tunables/lastboot.log 2>&1){3080574,3277196}
+exec(/usr/sbin/schedo,-o,maxspin=16384){3080574,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t schedo 2>/dev/null){3473778,3080574}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,schedo){3473778,3080574}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3539328,3473778}
+exec(/usr/bin/basename,nextboot){3539330,3473778}
+exec(/usr/bin/grep,-Eq,(^|[ \t])schedo([ \t]|$)){3539332,3473778}
+exec(/usr/bin/awk,-v,STANZA=schedo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3539334,3473778}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 20 "Restoring %1\$s values
+" vmo){3080576,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,20,Restoring %1$s values
+,vmo){3080576,3277196}
+exec(/usr/bin/sh,-c,/usr/sbin/vmo  -o "pgz_lpgrow=3" -o "pgz_mode=3" -o "vm_mmap_areload=-1" >> /etc/tunables/lastboot.log 2>&1){3080578,3277196}
+exec(/usr/sbin/vmo,-o,pgz_lpgrow=3,-o,pgz_mode=3,-o,vm_mmap_areload=-1){3080578,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t vmo 2>/dev/null){3473780,3080578}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,vmo){3473780,3080578}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3539336,3473780}
+exec(/usr/bin/basename,nextboot){3539338,3473780}
+exec(/usr/bin/grep,-Eq,(^|[ \t])vmo([ \t]|$)){3539340,3473780}
+exec(/usr/bin/awk,-v,STANZA=vmo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3539342,3473780}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 20 "Restoring %1\$s values
+" ioo){3080580,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,20,Restoring %1$s values
+,ioo){3080580,3277196}
+exec(/usr/bin/sh,-c,/usr/sbin/ioo  -o "j2_syncPageLimit=16" >> /etc/tunables/lastboot.log 2>&1){3080582,3277196}
+exec(/usr/sbin/ioo,-o,j2_syncPageLimit=16){3080582,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t ioo 2>/dev/null){3473782,3080582}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,ioo){3473782,3080582}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3539344,3473782}
+exec(/usr/bin/basename,nextboot){3539346,3473782}
+exec(/usr/bin/grep,-Eq,(^|[ \t])ioo([ \t]|$)){3539348,3473782}
+exec(/usr/bin/awk,-v,STANZA=ioo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3539350,3473782}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 20 "Restoring %1\$s values
+" raso){3080584,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,20,Restoring %1$s values
+,raso){3080584,3277196}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 20 "Restoring %1\$s values
+" no){3080586,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,20,Restoring %1$s values
+,no){3080586,3277196}
+exec(/usr/bin/sh,-c,[ -r /etc/tunables/no.log ] && cat /etc/tunables/no.log >> /etc/tunables/lastboot.log){3080588,3277196}
+exec(/usr/bin/cat,/etc/tunables/no.log){3080588,3277196}
+exec(/usr/bin/sh,-c,/usr/sbin/no  -o "tcp_fastlo=0" >> /etc/tunables/lastboot.log 2>&1){3080590,3277196}
+exec(/usr/sbin/no,-o,tcp_fastlo=0){3080590,3277196}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 20 "Restoring %1\$s values
+" nfso){3080592,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,20,Restoring %1$s values
+,nfso){3080592,3277196}
+exec(/usr/bin/sh,-c,/usr/bin/dspmsg -s 2 tunrestore.cat 20 "Restoring %1\$s values
+" asoo){3080594,3277196}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,20,Restoring %1$s values
+,asoo){3080594,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tunerrlog "schedo, vmo"){3080596,3277196}
+exec(/usr/lib/perf/tunerrlog,schedo, vmo){3080596,3277196}
+exec(/usr/bin/sh,-c,/usr/lib/physloc perftune){3473784,2097528}
+exec(/usr/lib/physloc,perftune){3473784,2097528}
+exec(/usr/bin/rm,-f,/etc/tunables/no.log){3277198,3015030}
+exec(/usr/sbin/tunsave,/usr/sbin/tunsave,-AF,lastboot,-d,Full set of tunable parameters after last boot){3277200,3015030}
+exec(/usr/bin/basename,/usr/sbin/tunsave){3080598,3277200}
+exec(/usr/bin/basename,lastboot){3080600,3277200}
+exec(/usr/lib/perf/get_phase){3080602,3277200}
+exec(/usr/bin/touch,/etc/tunables/lastboot){3080604,3277200}
+exec(/usr/lib/perf/whatkernel){3080606,3277200}
+exec(/usr/bin/tr,MPU,mpu){3080608,3277200}
+exec(/usr/bin/lslpp,-Lqc,bos.mp64){3473788,3080610}
+exec(/usr/bin/cut,-d:,-f3){3080610,3277200}
+exec(/usr/bin/sh,-c,/usr/bin/rpm -q --queryformat                          '%{NAME}
+                          %{VERSION}
+                          %{RELEASE}
+                          %{INSTALLTIME:date}
+                          %{GROUP}
+                          %{SIZE}
+                          %{VENDOR}
+                          %{BUILDTIME:date}
+                          %{BUILDHOST}
+                          %{SOURCERPM}
+                          %{LICENSE}
+			  %{INSTPREFIXES}
+                          %{SUMMARY}
+' -a){3539352,3473788}
+exec(/usr/bin/rpm,/usr/bin/rpm,-q,--queryformat,%{NAME}
+                          %{VERSION}
+                          %{RELEASE}
+                          %{INSTALLTIME:date}
+                          %{GROUP}
+                          %{SIZE}
+                          %{VENDOR}
+                          %{BUILDTIME:date}
+                          %{BUILDHOST}
+                          %{SOURCERPM}
+                          %{LICENSE}
+			  %{INSTPREFIXES}
+                          %{SUMMARY}
+,-a){3539352,3473788}
+exec(/usr/bin/cut,-c1-2){3604860,3539352}
+exec(/usr/bin/cut,-c1-2){3604862,3539352}
+exec(/usr/bin/cut,-c1-2){3604864,3539352}
+exec(/usr/bin/cut,-c1-2){3604866,3539352}
+exec(/usr/bin/cut,-c1-2){3604868,3539352}
+exec(/usr/bin/uname,-v){3604870,3539352}
+exec(/usr/sbin/rpm_share,/usr/sbin/rpm_share,-q,--queryformat,%{NAME}
+                          %{VERSION}
+                          %{RELEASE}
+                          %{INSTALLTIME:date}
+                          %{GROUP}
+                          %{SIZE}
+                          %{VENDOR}
+                          %{BUILDTIME:date}
+                          %{BUILDHOST}
+                          %{SOURCERPM}
+                          %{LICENSE}
+			  %{INSTPREFIXES}
+                          %{SUMMARY}
+,-a){3539352,3473788}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604872,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604874,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604876,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604878,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604880,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604882,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604884,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604886,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604888,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604890,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604892,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604894,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604896,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604898,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604900,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604902,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604904,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604906,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604908,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604910,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604912,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604914,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604916,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604918,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604920,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604922,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604924,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604926,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604928,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604930,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604932,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604934,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604936,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604938,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604940,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604942,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604944,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604946,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604948,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604950,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604952,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604954,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604956,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604958,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604960,3539352}
+exec(/usr/bin/id,-u){3604962,3539352}
+exec(/usr/bin/uname){3604964,3539352}
+exec(/usr/bin/uname,-v){3604966,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604968,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604970,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604972,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604974,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604976,3539352}
+exec(/usr/bin/odmget,-q,lpp_name=rpm.rte,product){3670498,3604978}
+exec(/usr/bin/awk,{print $3}){3604978,3539352}
+exec(/usr/bin/grep,ver){3735926,3604978}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604980,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604982,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604984,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604986,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604988,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604990,3539352}
+exec(/usr/bin/tr,-A,[:lower:],[:upper:]){3604736,3539352}
+exec(/usr/lib/instl/libinst_whichfs,/tmp){3670514,3604738}
+exec(/usr/lib/instl/libinst_getfsinfo,-f/tmp,-eB){3670516,3604740}
+exec(/usr/lib/instl/libinst_mkworkdir){3604742,3539352}
+exec(/usr/lib/instl/libinst_whichfs,/tmp/.workdir.3604742.3539352_1){3670518,3604744}
+exec(/usr/lib/instl/libinst_getfsinfo,-f/tmp,-eB){3670520,3604746}
+exec(/usr/lib/instl/libinst_whichfs,/opt){3670522,3604748}
+exec(/usr/lib/instl/libinst_getfsinfo,-f/,-eB){3670524,3604750}
+exec(/usr/bin/rm,-rf,/tmp/.workdir.3604742.3539352_1){3604754,3539352}
+exec(/usr/bin/date,+%Y-%m-%d %H:%M:%S %Z){3080612,3277200}
+exec(/usr/sbin/schedo,-Fx){3080614,3277200}
+exec(/usr/bin/awk,-v,STANZA=schedo,-v,UAFLAG=1,-v,LAFLAG=,
+BEGIN {
+    FS  = "[ \t]*,[ \t]*"
+    restrictflg = 0
+}
+
+match($1, "^##") {
+    restrictflg = 1
+    next
+}
+
+$2 != "n/a" {
+    # Deprecated tunables
+    if ($8 == "d") {
+	next
+    }
+    # Static tunables
+    if ($8 == "S") {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"STATIC\""), "# value was " $2 " (never restored)"
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# STATIC (never restored)"
+	}
+	next
+    }
+
+    # Tunables set to their default value
+    if ($2 == $3) {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"DEFAULT\""), "# value was " $2
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# DEFAULT VALUE"
+	}
+	next
+    }
+
+    # Must indicate retricted tunables which are not at default value
+    # and boot value not at default value, indicating a user change 
+    if (restrictflg == 1 && $4 != $3) {
+	printf "\t%-30s  ){3473790,3277200}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t schedo 2>/dev/null){3539354,3080614}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,schedo){3539354,3080614}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3604756,3539354}
+exec(/usr/bin/basename,nextboot){3604758,3539354}
+exec(/usr/bin/grep,-Eq,(^|[ \t])schedo([ \t]|$)){3604760,3539354}
+exec(/usr/bin/awk,-v,STANZA=schedo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3604762,3539354}
+exec(/usr/sbin/vmo,-Fx){3473792,3277200}
+exec(/usr/bin/awk,-v,STANZA=vmo,-v,UAFLAG=1,-v,LAFLAG=,
+BEGIN {
+    FS  = "[ \t]*,[ \t]*"
+    restrictflg = 0
+}
+
+match($1, "^##") {
+    restrictflg = 1
+    next
+}
+
+$2 != "n/a" {
+    # Deprecated tunables
+    if ($8 == "d") {
+	next
+    }
+    # Static tunables
+    if ($8 == "S") {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"STATIC\""), "# value was " $2 " (never restored)"
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# STATIC (never restored)"
+	}
+	next
+    }
+
+    # Tunables set to their default value
+    if ($2 == $3) {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"DEFAULT\""), "# value was " $2
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# DEFAULT VALUE"
+	}
+	next
+    }
+
+    # Must indicate retricted tunables which are not at default value
+    # and boot value not at default value, indicating a user change 
+    if (restrictflg == 1 && $4 != $3) {
+	printf "\t%-30s  %s\){3080616,3277200}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t vmo 2>/dev/null){3539356,3473792}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,vmo){3539356,3473792}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3604764,3539356}
+exec(/usr/bin/basename,nextboot){3604766,3539356}
+exec(/usr/bin/grep,-Eq,(^|[ \t])vmo([ \t]|$)){3604768,3539356}
+exec(/usr/bin/awk,-v,STANZA=vmo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3604770,3539356}
+exec(/usr/sbin/ioo,-Fx){3080618,3277200}
+exec(/usr/bin/awk,-v,STANZA=ioo,-v,UAFLAG=1,-v,LAFLAG=,
+BEGIN {
+    FS  = "[ \t]*,[ \t]*"
+    restrictflg = 0
+}
+
+match($1, "^##") {
+    restrictflg = 1
+    next
+}
+
+$2 != "n/a" {
+    # Deprecated tunables
+    if ($8 == "d") {
+	next
+    }
+    # Static tunables
+    if ($8 == "S") {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"STATIC\""), "# value was " $2 " (never restored)"
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# STATIC (never restored)"
+	}
+	next
+    }
+
+    # Tunables set to their default value
+    if ($2 == $3) {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"DEFAULT\""), "# value was " $2
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# DEFAULT VALUE"
+	}
+	next
+    }
+
+    # Must indicate retricted tunables which are not at default value
+    # and boot value not at default value, indicating a user change 
+    if (restrictflg == 1 && $4 != $3) {
+	printf "\t%-30s  %s\){3473794,3277200}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t ioo 2>/dev/null){3539358,3080618}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,ioo){3539358,3080618}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3604772,3539358}
+exec(/usr/bin/basename,nextboot){3604774,3539358}
+exec(/usr/bin/grep,-Eq,(^|[ \t])ioo([ \t]|$)){3604776,3539358}
+exec(/usr/bin/awk,-v,STANZA=ioo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3604778,3539358}
+exec(/usr/sbin/raso,-Fx){3473796,3277200}
+exec(/usr/bin/awk,-v,STANZA=raso,-v,UAFLAG=1,-v,LAFLAG=,
+BEGIN {
+    FS  = "[ \t]*,[ \t]*"
+    restrictflg = 0
+}
+
+match($1, "^##") {
+    restrictflg = 1
+    next
+}
+
+$2 != "n/a" {
+    # Deprecated tunables
+    if ($8 == "d") {
+	next
+    }
+    # Static tunables
+    if ($8 == "S") {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"STATIC\""), "# value was " $2 " (never restored)"
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# STATIC (never restored)"
+	}
+	next
+    }
+
+    # Tunables set to their default value
+    if ($2 == $3) {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"DEFAULT\""), "# value was " $2
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# DEFAULT VALUE"
+	}
+	next
+    }
+
+    # Must indicate retricted tunables which are not at default value
+    # and boot value not at default value, indicating a user change 
+    if (restrictflg == 1 && $4 != $3) {
+	printf "\t%-30s  %s){3539360,3277200}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t raso 2>/dev/null){3080620,3473796}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,raso){3080620,3473796}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3604780,3080620}
+exec(/usr/bin/basename,nextboot){3604782,3080620}
+exec(/usr/bin/grep,-Eq,(^|[ \t])raso([ \t]|$)){3604784,3080620}
+exec(/usr/bin/awk,-v,STANZA=raso,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3604786,3080620}
+exec(/usr/sbin/no,-Fx){3539362,3277200}
+exec(/usr/bin/awk,-v,STANZA=no,-v,UAFLAG=1,-v,LAFLAG=,
+BEGIN {
+    FS  = "[ \t]*,[ \t]*"
+    restrictflg = 0
+}
+
+match($1, "^##") {
+    restrictflg = 1
+    next
+}
+
+$2 != "n/a" {
+    # Deprecated tunables
+    if ($8 == "d") {
+	next
+    }
+    # Static tunables
+    if ($8 == "S") {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"STATIC\""), "# value was " $2 " (never restored)"
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# STATIC (never restored)"
+	}
+	next
+    }
+
+    # Tunables set to their default value
+    if ($2 == $3) {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"DEFAULT\""), "# value was " $2
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# DEFAULT VALUE"
+	}
+	next
+    }
+
+    # Must indicate retricted tunables which are not at default value
+    # and boot value not at default value, indicating a user change 
+    if (restrictflg == 1 && $4 != $3) {
+	printf "\t%-30s  %s\n){3473798,3277200}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t no 2> /dev/null){3080622,3539362}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,no){3080622,3539362}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3604788,3080622}
+exec(/usr/bin/basename,nextboot){3604790,3080622}
+exec(/usr/bin/grep,-Eq,(^|[ \t])no([ \t]|$)){3604792,3080622}
+exec(/usr/bin/awk,-v,STANZA=no,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3604794,3080622}
+exec(/usr/sbin/nfso,-Fx){3473800,3277200}
+exec(/usr/bin/awk,-v,STANZA=nfso,-v,UAFLAG=1,-v,LAFLAG=,
+BEGIN {
+    FS  = "[ \t]*,[ \t]*"
+    restrictflg = 0
+}
+
+match($1, "^##") {
+    restrictflg = 1
+    next
+}
+
+$2 != "n/a" {
+    # Deprecated tunables
+    if ($8 == "d") {
+	next
+    }
+    # Static tunables
+    if ($8 == "S") {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"STATIC\""), "# value was " $2 " (never restored)"
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# STATIC (never restored)"
+	}
+	next
+    }
+
+    # Tunables set to their default value
+    if ($2 == $3) {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"DEFAULT\""), "# value was " $2
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# DEFAULT VALUE"
+	}
+	next
+    }
+
+    # Must indicate retricted tunables which are not at default value
+    # and boot value not at default value, indicating a user change 
+    if (restrictflg == 1 && $4 != $3) {
+	printf "\t%-30s  %s){3539364,3277200}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t nfso 2> /dev/null){3080624,3473800}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,nfso){3080624,3473800}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3604796,3080624}
+exec(/usr/bin/basename,nextboot){3604798,3080624}
+exec(/usr/bin/grep,-Eq,(^|[ \t])nfso([ \t]|$)){3604800,3080624}
+exec(/usr/bin/awk,-v,STANZA=nfso,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3604802,3080624}
+exec(/usr/sbin/asoo,-Fx){3539366,3277200}
+exec(/usr/bin/sh,-c,/usr/lib/perf/tundisplay -f nextboot -t asoo 2>/dev/null){3473802,3539366}
+exec(/usr/lib/perf/tundisplay,/usr/lib/perf/tundisplay,-f,nextboot,-t,asoo){3473802,3539366}
+exec(/usr/bin/awk,-v,STANZA=asoo,-v,UAFLAG=1,-v,LAFLAG=,
+BEGIN {
+    FS  = "[ \t]*,[ \t]*"
+    restrictflg = 0
+}
+
+match($1, "^##") {
+    restrictflg = 1
+    next
+}
+
+$2 != "n/a" {
+    # Deprecated tunables
+    if ($8 == "d") {
+	next
+    }
+    # Static tunables
+    if ($8 == "S") {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"STATIC\""), "# value was " $2 " (never restored)"
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# STATIC (never restored)"
+	}
+	next
+    }
+
+    # Tunables set to their default value
+    if ($2 == $3) {
+	if (LAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"DEFAULT\""), "# value was " $2
+	}
+	else if (UAFLAG == 1) {
+	    printf "\t%-30s  %s\n", ($1 " = \"" $2 "\""), "# DEFAULT VALUE"
+	}
+	next
+    }
+
+    # Must indicate retricted tunables which are not at default value
+    # and boot value not at default value, indicating a user change 
+    if (restrictflg == 1 && $4 != $3) {
+	printf "\t%-30s  %s){3604804,3277200}
+exec(/usr/bin/basename,/usr/lib/perf/tundisplay){3080626,3473802}
+exec(/usr/bin/basename,nextboot){3080628,3473802}
+exec(/usr/bin/grep,-Eq,(^|[ \t])asoo([ \t]|$)){3080630,3473802}
+exec(/usr/bin/awk,-v,STANZA=asoo,-v,CMDDIR=,-v,CMDLST=schedo vmo ioo raso no nfso asoo,
+BEGIN {
+    # Initialize input file processing
+    FS = "[ \t]*=[ \t]*"
+    START = "^" STANZA "[ \t]*:$"
+    IN = 0
+}
+
+# Pre-format the line
+{
+    sub(/#.*$/, "")       # Remove comments
+    sub(/^[ \t]*/, "")    # Remove heading spaces
+    sub(/[ \t]*$/, "")    # Remove trailing spaces
+}
+
+# Skip empty lines
+/^$/ {
+    next
+}
+
+# Signal the start of a relevant section
+$0 ~ START {
+    IN = 1
+    next
+}
+
+# Signals the start of a section (an irrelevant section since not
+# mathed by the rule above)
+/:$/ {
+    IN = 0
+    next
+}
+
+# Read the value
+IN == 1 {
+    key = $1
+    if (!(key in READ)) {
+	READ[key]
+	value = $2
+
+	# Remove quotes if present
+	if (sub(/^\"/, "", value)) {
+	    sub(/\"$/, "", value)
+	}
+
+	if (value != "DEFAULT" && value != "STATIC") {
+	    print key
+	    print value
+	}
+    }
+}
+,/etc/tunables/nextboot){3080632,3473802}
+exec(/usr/bin/cut,-d ,-f1){3277202,3015030}
+exec(/usr/bin/cksum,/etc/tunables/lastboot.log){3604806,3277202}
+exec(/usr/sbin/tunchange,/usr/sbin/tunchange,-f,lastboot,-t,info,-o,Logfile_checksum=1896368574){3277204,3015030}
+exec(/usr/bin/basename,/usr/sbin/tunchange){3604808,3277204}
+exec(/usr/bin/basename,lastboot){3604810,3277204}
+exec(/usr/bin/cut,-d=,-f1){3604812,3277204}
+exec(/usr/bin/cut,-d=,-f2-,-s){3604814,3277204}
+exec(/usr/bin/grep,-Eq,(^|[ \t])info([ \t]|$)){3604816,3277204}
+exec(/usr/bin/ps,-ef){3604818,3277204}
+exec(/usr/bin/grep,-v,grep){3539374,3277204}
+exec(/usr/bin/grep,init s){3473804,3277204}
+exec(/usr/lib/perf/get_phase){3473806,3277204}
+exec(/usr/bin/mv,/etc/tunables/lastboot,/tmp/tunchange.0){3539376,3277204}
+exec(/usr/bin/awk,-v,STANZA=info,-v,LSTSEP=_#_,
+BEGIN {
+    FS = "[ \t]*=[ \t]*"
+    START = ("^[ \t]*" STANZA "[ \t]*:[ \t]*(#.*)?$")
+    IN = 0
+    NB_OUT = 0
+    STANZA_LINE = 0
+    END_PROLOG = 0
+    PSTR = ENVIRON["PSTR"]
+    VSTR = ENVIRON["VSTR"]
+    sub(("^" LSTSEP), "", PSTR)
+    sub(("^" LSTSEP), "", VSTR)
+    NB_PARAM = split(PSTR, PLST, LSTSEP)
+    split(VSTR, vlst, LSTSEP)
+    for (i=1; i<=NB_PARAM; i++) {
+	VALUE[PLST[i]] = vlst[i]
+    }
+}
+
+# Keep commented lines untouched
+/^[ \t]*#/ {
+    # remember the line marking the end of the prolog
+    split($0, comments, " ")
+    if (comments[2] == "IBM_PROLOG_END_TAG") {
+	END_PROLOG = NB_OUT + 1
+    }
+
+    # skip the line anyway
+    OUT[++NB_OUT] = $0
+    next
+}
+
+# Signal the start of a relevant stanza
+$0 ~ START {
+    IN = 1
+    OUT[++NB_OUT] = $0
+    if (STANZA_LINE == 0) {
+	STANZA_LINE = NB_OUT
+    }
+    next
+}
+
+# Start of a non-relevant stanza, since not matched by the rule above
+/:[ \t]*(#.*)?$/ {
+    I){3539378,3277204}
+exec(/usr/bin/chgrp,system,/etc/tunables/lastboot){3539380,3277204}
+exec(/usr/bin/rm,-f,/tmp/tunchange.0){3539382,3277204}
+exec(/usr/bin/dspmsg,-s,2,tunrestore.cat,17,complete\n){3277206,3015030}
+complete
+exec(/usr/sbin/umount,/proc){3277208,3015030}
+exec(/usr/lib/perf/set_phase,1){3277210,3015030}
+exec(/usr/bin/sh,-c,exec /etc/rc 2>&1 | /usr/bin/alog -tboot > /dev/console # Multi-User checks){3277212,1}
+exec(/etc/rc,/etc/rc){3539384,3277212}
+exec(/usr/bin/dspmsg,rc.cat,1,Starting Multi-user Initialization\n){3473808,3539384}
+exec(/usr/bin/awk,
+  $1 == "value" {
+	gsub("\"","",$3)
+	print $3}){3473810,3539384}
+exec(/usr/bin/odmget,-q,attribute = 'livedump_dir',SWservAt){3080634,3473810}
+exec(/usr/bin/alog,-tboot){3277212,1}
+exec(/usr/bin/dspmsg,rc.cat,2, Performing auto-varyon of Volume Groups \n){3473812,3539384}
+exec(/usr/sbin/cfgvg){3473814,3539384}
+exec(/usr/bin/dspmsg,rc.cat,3, Activating all paging spaces \n){3473816,3539384}
+exec(/usr/sbin/swapon,-a){3473818,3539384}
+Starting Multi-user Initialization
+ Performing auto-varyon of Volume Groups 
+exec(/usr/bin/sysdumpdev,-q){3473820,3539384}
+exec(/usr/bin/sh,-c,/usr/sbin/lquerylv -L `/usr/sbin/getlvodm -l lg_dumplv 2>/dev/null` -N lg_dumplv 2>/dev/null 1>/dev/null){3080636,3473820}
+exec(/usr/sbin/getlvodm,-l,lg_dumplv){3670284,3080636}
+exec(/usr/sbin/lquerylv,-L,00000000000000000000018f2ea1e30b.11,-N,lg_dumplv){3080636,3473820}
+ Activating all paging spaces 
+0517-075 swapon: Paging device /dev/hd6 is already active.
+exec(/usr/sbin/savebase){3080638,3473820}
+exec(/usr/bin/compress){3670286,3080638}
+exec(/usr/sbin/savebase){3080640,3473820}
+exec(/usr/bin/compress){3670288,3080640}
+exec(/usr/bin/sh,-c,/usr/lib/physloc SYSPROC){3080642,2097528}
+exec(/usr/lib/physloc,SYSPROC){3080642,2097528}
+exec(/usr/sbin/savebase){3604820,3473820}
+exec(/usr/bin/compress){3080644,3604820}
+exec(/usr/sbin/fsck,-fp){3473822,3539384}
+exec(/sbin/helpers/jfs2/fsck64,-fp,/dev/rhd1,/dev/rhd10opt){3604822,3473822}

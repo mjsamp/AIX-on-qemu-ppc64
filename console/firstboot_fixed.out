@@ -1,0 +1,676 @@
+
+
+SLOF[0m[?25l **********************************************************************
+[1mQEMU Starting
+[0m Build Date = Jan 31 2020 20:27:09
+ FW Version = buildd@ release 20191209
+ Press "s" to enter Open Firmware.
+
+[0m[?25hC0000C0100C0120C0140C0200C0240C0260C02E0C0300C0320C0340C0360C0370C0380C0371C0373C0374C03F0C0400C0480C04C0C04D0C0500Populating /vdevice methods
+Populating /vdevice/vty@71000000
+Populating /vdevice/nvram@71000001
+Populating /vdevice/l-lan@71000002
+Populating /vdevice/v-scsi@71000003
+       SCSI: Looking for devices
+          8200000000000000 CD-ROM   : "QEMU     QEMU CD-ROM      2.5+"
+C05A0Populating /pci@800000020000000
+                     00 0000 (D) : 1234 1111    qemu vga
+                     00 0800 (D) : 1033 0194    serial bus [ usb-xhci ]
+                     00 1000 (D) : 1af4 1004    virtio [ scsi ]
+Populating /pci@800000020000000/scsi@2
+       SCSI: Looking for devices
+          100000000000000 DISK     : "QEMU     QEMU HARDDISK    2.5+"
+C0600C06C0C0700C0800C0880C0890C08A0C08A8Installing QEMU fb
+
+
+
+C08B0Scanning USB 
+  XHCI: Initializing
+    USB Keyboard 
+    USB mouse 
+C08C0C08D0No console specified using screen & keyboard
+User selected input-device console: /vdevice/vty@71000000
+User selected output-device console: /vdevice/vty@71000000
+C08E0C08E8C08FF     
+  Welcome to Open Firmware
+
+  Copyright (c) 2004, 2017 IBM Corporation All rights reserved.
+  This program and the accompanying materials are made available
+  under the terms of the BSD License available at
+  http://www.opensource.org/licenses/bsd-license.php
+
+
+Trying to load:  from: /pci@800000020000000/scsi@2/disk@100000000000000: ...   Successfully loaded
+
+                        ---> qemu,pseries detected <---
+
+                 ---> Press '6' to enter Single User Mode <---
+
+
+
+get-property for ibm,hypertas-functions on zero phandle
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+                                Welcome to AIX.
+                   boot image timestamp: 13:32:21 04/30/2024
+        processor count: 1;  memory size: 4096MB;  kernel size: 45422126
+         boot device: /pci@800000020000000/scsi@2/disk@100000000000000
+AIX vm,uuid property contains invalid data
+processing splpar characteristic: MaxEntCap
+processing splpar characteristic: DesMem
+processing splpar characteristic: DesProcs
+processing splpar characteristic: MaxPlatProcs
+processing splpar characteristic: HostThrs
+
+AKVM: hcall-multi-tce detected but overridden, allow with "multce" boot argument
+-------------------------------------------------------------------------------
+Star
+0539
+0811
+0539
+0812
+0708
+0811
+078c
+25b6
+25b6
+25b6
+25b6
+078c
+0539
+2071
+0539
+2073
+0539
+25b3
+0539
+0538
+0539
+0591
+0539
+
+0511
+0551
+0517
+0517
+0517
+0517
+0553
+0517
+0517
+0538
+0539
+0538
+0539
+2070
+0539
+0538
+0539
+270b
+0539
+0538
+0539
+0811
+0539
+0811
+0539
+0812
+0708
+0811
+078c
+25b6
+25b6
+25b6
+25b6
+25b6
+2071
+2071
+04ee
+25b2
+25b2
+0727
+0727
+2071
+0539
+25b3
+0539
+25b5
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+7000
+0539
+0538
+0581
+0539
+0538
+0539
+0538
+0581
+0581
+0539
+0538
+0539
+0731
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+2028
+0539
+
+0c33
+Saving Base Customize Data to boot disk
+Starting the sync daemon
+Starting the error daemon
+
+System initialization completed.
+TE=OFF
+CHKEXEC=OFF
+CHKSHLIB=OFF
+CHKSCRIPT=OFF
+CHKKERNEXT=OFF
+STOP_UNTRUSTD=OFF
+STOP_ON_CHKFAIL=OFF
+LOCK_KERN_POLICIES=OFF
+TSD_FILES_LOCK=OFF
+TSD_LOCK=OFF
+TEP=OFF
+TLP=OFF
+Successfully updated the Kernel Authorization Table.
+Successfully updated the Kernel Role Table.
+Successfully updated the Kernel Command Table.
+Successfully updated the Kernel Device Table.
+Successfully updated the Kernel Object Domain Table.
+Successfully updated the Kernel Domains Table.
+Successfully updated the Kernel RBAC log level. 
+Successfully updated the Kernel RBAC log level. 
+OPERATIONAL MODE Security Flags
+ROOT                      :    ENABLED
+TRACEAUTH                 :   DISABLED
+System runtime mode is now OPERATIONAL MODE.
+Setting tunable parameters...complete
+Starting Multi-user Initialization
+ Performing auto-varyon of Volume Groups 
+ Activating all paging spaces 
+0517-075 swapon: Paging device /dev/hd6 is already active.
+
+The current volume is: /dev/hd1
+Primary superblock is valid.
+
+The current volume is: /dev/hd10opt
+Primary superblock is valid.
+ Performing all automatic mounts 
+Multi-user initialization completed
+Starting tcpip daemons:
+0821-600 /usr/sbin/syslogd: continuing without SRC support
+        syslogd
+        sendmail
+        portmap
+        inetd
+        snmpd
+/etc/rc.tcpip: 4129164 Memory fault: A memory image file is created as "core".
+        hostmibd
+        snmpmibd
+/etc/rc.tcpip: 4129172 Memory fault: A memory image file is created as "core".
+        aixmibd
+Finished starting tcpip daemons.
+Starting NFS services:
+[STOP] DSO is not supported on KVM systems
+/usr/sbin/tunchange[200]: 4981178 Segmentation fault
+Completed NFS services.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            Set Terminal Type 
+The terminal is not properly initialized.  Please enter a terminal type 
+and press Enter.  Some terminal types are not supported in 
+non-English languages. 
+
+     ibm3101          tvi912          vt330          aixterm
+     ibm3151          tvi920          vt340          dtterm
+     ibm3161          tvi925          wyse30         xterm
+     ibm3162          tvi950          wyse50         lft
+     ibm3163          vs100           wyse60         sun
+     ibm3164          vt100           wyse100 
+     ibmpc            vt320           wyse350 
+
+                      +-----------------------Messages------------------------
+                      | If the next screen is unreadable, press Break (Ctrl-c)
+    88  Help ?        | to return to this screen.
+                      | 
+>>> Choice []: xterm
+[?1049h(B[m[?1h=[H[2J[22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Initializing SMIT ...[22;13H                                                        
+[12C                       [32C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H                                                        
+[12C                     [34C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H                                                        
+[12C                     [34C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;27HSoftware License Agreements[H
+
+Move cursor to desired item and press Enter.
+
+  [7mShow Installed License Agreements[6;3H(B[mAccept License Agreements[22;13H                                                        [12C[K
+F1=Help[5C        F2=Refresh   [7CF3=Cancel[11CF8=Image
+F9=Shell[4C        F10=Exit            Enter=Do                    [5;2H Show Installed License Agreements
+  [7mAccept License Agreements[C(B[m[23;21H          [10C         [11C        
+[20C        [12C        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;27H Accept License Agreements [K[H
+
+Type or select values in entry fields.      [K
+Press Enter AFTER making all desired changes.
+                                     [K
+                         [29C[Entry Fields]
+  [7mACCEPT Installed License Agreements[17C(B[mno[21C+[22;1HF1=Help[5C        F2=Refresh          F3=Cancel           F4=List [K
+F5=Reset[4C        F6=Command   [7CF7=Edit[13CF8=Image
+[12C        F10=Exit            Enter=Do                    [7;55H[22;3H     [13C          [10C         [11C       
+[2C      [12C          [10C       [13C        
+[2C      [12C        [12C        [13;3H+--------------------------------------------------------------------------+
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C+--------------------------------------------------------------------------+[13;3H
+[20CACCEPT Installed License Agreements[16;5HMove cursor to desired item and press Enter.[21;5HF1=Help[17CF2=Refresh[14CF3=Cancel
+[4CF8=Image[16CF10=Exit[16CEnter=Do
+[4C/=Find[18Cn=Find Next[13;3H[18;7H[7mno
+(B[myes[18;6H no
+[7myes(B[m[13;3H                                                                              [K
+ [19C                                   [20C   [K
+ [74C   [K
+                                              [29C   [K
+ [74C   [K
+      [69C   [K
+       [68C   [K
+ [74C   [K
+         [17C          [14C         [16C   [K
+=Help     [8CF2=Refresh      [4CF3=Cancel           F4=List[10C 
+F5=Reset  [10CF6=Command          F7=Edit[13CF8=Image[9C 
+F9=Shell            F10=Exit            Enter=Do                              [7;55H[7myes(B[m[22;21H          [10C         [11C       
+[20C          [10C       [13C        
+[20C        [12C        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Running command...[22;13H[H[2J[33CCOMMAND STATUS[H
+
+Command: [7mrunning[7C(B[mstdout: no[12Cstderr: no
+
+Before command completion, additional instructions may appear below.
+
+[?1l>[?1049l[?1h=[H[2J[22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;34HCOMMAND STATUS[H
+
+Command: [7mOK[12C(B[mstdout: no[12Cstderr: no
+
+Before command completion, additional instructions may appear below.[22;1HF1=Help[5C        F2=Refresh          F3=Cancel           F6=Command
+F8=Image[4C        F9=Shell     [7CF10=Exit[12C/=Find  [K
+n=Find Next                                                         [7;1H[H[2J[24;1H[?1049l[?1l>[?1049l[?1049h(B[m[?1h=[H[2J[22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Initializing SMIT ...[22;13H                                                        
+[12C                       [32C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H                                                        
+[12C                     [34C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H                                                        
+[12C                     [34C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;26HSoftware Maintenance Agreement[H
+
+Move cursor to desired item and press Enter.
+
+  [7mView Software Maintenance Terms and Conditions[6;3H(B[mAccept Software Maintenance Terms and Conditions[22;13H                                                        [12C[K
+F1=Help[5C        F2=Refresh   [7CF3=Cancel[11CF8=Image
+F9=Shell[4C        F10=Exit            Enter=Do                    [5;2H View Software Maintenance Terms and Conditions
+  [7mAccept Software Maintenance Terms and Conditions[C(B[m[23;21H          [10C         [11C        
+[20C        [12C        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;17HAccept Software Maintenance Terms and Conditions[H
+
+Type or select values in entry fields.      [K
+Press Enter AFTER making all desired changes.
+                                                  [K
+                                                [6C[Entry Fields]
+  [7mACCEPT Software Maintenance Agreements?[13C(B[myes[20C+[22;1HF1=Help[5C        F2=Refresh          F3=Cancel           F4=List [K
+F5=Reset[4C        F6=Command   [7CF7=Edit[13CF8=Image
+[12C        F10=Exit            Enter=Do                    [7;55H[22;3H     [13C          [10C         [11C       
+[2C      [12C          [10C       [13C        
+[2C      [12C        [12C        [13;3H+--------------------------------------------------------------------------+
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C|[74C|
+[2C+--------------------------------------------------------------------------+[13;3H
+[18CACCEPT Software Maintenance Agreements?[16;5HMove cursor to desired item and press Enter.[21;5HF1=Help[17CF2=Refresh[14CF3=Cancel
+[4CF8=Image[16CF10=Exit[16CEnter=Do
+[4C/=Find[18Cn=Find Next[13;3H[18;7H[7mno
+(B[myes[18;6H no
+[7myes(B[m[13;3H                                                                              [K
+ [17C                                       [18C   [K
+ [74C   [K
+                                              [29C   [K
+ [74C   [K
+      [69C   [K
+       [68C   [K
+ [74C   [K
+         [17C          [14C         [16C   [K
+=Help     [8CF2=Refresh      [4CF3=Cancel           F4=List[10C 
+F5=Reset  [10CF6=Command          F7=Edit[13CF8=Image[9C 
+F9=Shell            F10=Exit            Enter=Do                              [7;55H[22;21H          [10C         [11C       
+[20C          [10C       [13C        
+[20C        [12C        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Running command...[22;13H[H[2J[33CCOMMAND STATUS[H
+
+Command: [7mrunning[7C(B[mstdout: no[12Cstderr: no
+
+Before command completion, additional instructions may appear below.
+
+[?1l>[?1049l[?1h=[H[2J[22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;34HCOMMAND STATUS[H
+
+Command: [7mOK[12C(B[mstdout: no[12Cstderr: no
+
+Before command completion, additional instructions may appear below.[22;1HF1=Help[5C        F2=Refresh          F3=Cancel           F6=Command
+F8=Image[4C        F9=Shell     [7CF10=Exit[12C/=Find  [K
+n=Find Next                                                         [7;1H[H[2J[24;1H[?1049l[?1l>[?1049l[?1049h(B[m[?1h=[H[2J[22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Initializing SMIT ...[22;13H                                                        
+[12C                       [32C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H                                                        
+[12C                     [34C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H                                                        
+[12C                     [34C 
+[12C                                                        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;30HInstallation Assistant[H
+
+Move cursor to desired item and press Enter.
+
+  [7mSet Date and Time[6;3H(B[mSet root Password
+  Configure Network Communications
+  Install Software Applications
+  System Workload Partition Software Maintenance
+  Using SMIT (information only)
+  Tasks Completed - Exit to Login[22;13H                                                        [12C[K
+F1=Help[5C        F2=Refresh   [7CF3=Cancel[11CF8=Image
+F9=Shell[4C        F10=Exit            Enter=Do                    [5;2H[23;21H          [10C         [11C        
+[20C        [12C        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;30H  Set Date and Time   [K[5;3H[7mChange / Show Date & Time[6;3H(B[mChange Time Zone Using System Defined Values
+  Change Time Zone Using User Inputted Values
+                                 [K
+                                                [K
+                               [K
+                                 [K[22;13H                                                        [12C[K
+        F2=Refresh   [7CF3=Cancel[11CF8=Image
+[12C        F10=Exit            Enter=Do                    [5;2H[23;21H          [10C         [11C        
+[20C        [12C        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;28HChange / Show Day and Time[H
+
+Type or select values in entry fields.      [K
+Press Enter AFTER making all desired changes.
+                             [K
+                                            [10C[Entry Fields]
+  [7mYEAR (00-99)(B[m                               [8C[24][21C#
+  MONTH (01-12)[38C[04][21C#
+  DAY (1-31)[41C[30][21C#
+  HOUR (00-23)[39C[08][21C#
+  MINUTES (00-59)[36C[48][21C#
+  SECONDS (00-59)[36C[41][21C#[22;1HF1=Help[5C        F2=Refresh          F3=Cancel           F4=List [K
+F5=Reset[4C        F6=Command   [7CF7=Edit[13CF8=Image
+[12C        F10=Exit            Enter=Do                    [7;55H  YEAR (00-99)
+  [7mMONTH (01-12)[39C(B[m  MONTH (01-12)
+  [7mDAY (1-31)[42C(B[m  DAY (1-31)
+  [7mHOUR (00-23)[40C(B[m[7m18(B[m[7m0(B[m  HOUR (00-23)
+  [7mMINUTES (00-59)[37C(B[m4[7m49(B[m  MINUTES (00-59)
+  [7mSECONDS (00-59)[37C(B[m[7m11(B[m[7m0(B[m[22;21H          [10C         [11C       
+[20C          [10C       [13C        
+[20C        [12C        [22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Running command...[22;13H[H[2J[33CCOMMAND STATUS[H
+
+Command: [7mrunning[7C(B[mstdout: no[12Cstderr: no
+
+Before command completion, additional instructions may appear below.
+
+[?1l>[?1049l[?1h=[3;32Hyes
+
+
+
+date: connect: The socket name is not available on this system.
+[?1l>[?1049l[?1h=Tue Apr 30 10:49:10 CDT 2024
+[?1l>[?1049l[?1h=[H[2J[22;13H+------------------------------------------------------+
+[12C|[54C|
+[12C+------------------------------------------------------+[22;13H
+| Processing data ...[22;13H[1;34HCOMMAND STATUS[H
+
+Command: [7mOK[12C(B[mstdout: yes[11Cstderr: no
+
+Before command completion, additional instructions may appear below.
+
+date: connect: The socket name is not available on this system.
+Tue Apr 30 10:49:10 CDT 2024[22;1HF1=Help[5C        F2=Refresh          F3=Cancel           F6=Command
+F8=Image[4C        F9=Shell     [7CF10=Exit[12C/=Find  [K
+n=Find Next                                                         [7;1H[H[2J[24;1H[?1049l[?1l>[?1049l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AIX Version 7
+Copyright IBM Corporation, 1982, 2020.
+Console login: root
+
+The '/usr/lpp/diagnostics/bin/diagd' command is not supported on this system.
+
+
+*******************************************************************************
+*                                                                             *
+*                                                                             *
+*  Welcome to AIX Version 7.2!                                                *
+*                                                                             *
+*                                                                             *
+*  Please see the README file in /usr/lpp/bos for information pertinent to    *
+*  this release of the AIX Operating System.                                  *
+*                                                                             *
+*                                                                             *
+*******************************************************************************
+
+# 0513-059 The lldpd Subsystem has been started. Subsystem PID is 4325670.
+0513-059 The ecpvdpd Subsystem has been started. Subsystem PID is 4129096.
+
+# set -o vi
+# ps -ef
+Segmentation fault(coredump)
+# crontab
+Segmentation fault(coredump)
+# cron
+Segmentation fault(coredump)
+# lslpp -w /usr/sysv/bin/ps
+  File                                        Fileset               Type
+  ----------------------------------------------------------------------------
+  /usr/sysv/bin/ps                            bos.rte.control       File
+# lslpp -l bos.rte.control
+  Fileset                      Level  State      Description         
+  ----------------------------------------------------------------------------
+Path: /usr/lib/objrepos
+  bos.rte.control            7.2.4.1  COMMITTED  System Control Commands
+
+Path: /etc/objrepos
+  bos.rte.control            7.2.4.1  COMMITTED  System Control Commands
+# which ps
+/usr/bin/ps
+# mv /usr/bin/ps /usr/bin/ps.old
+# ln -s /usr/sysv/bin/ps /usr/bin/ps
+# ps -ef
+     UID     PID    PPID   C    STIME    TTY   TIME CMD
+    root       1       0   0 08:45:52      -   0:01 /etc/init 
+    root 1966470       1   0 08:46:52      -   0:00 /usr/sbin/syncd 60 
+    root 2031978       1   0 08:46:26      -   0:00 /usr/ccs/bin/shlap64 
+    root 2359688       1   0 08:46:53      -   0:00 /usr/lib/errdemon 
+    root 3146218       1   0 08:47:15      -   0:00 /usr/sbin/portmap 
+    root 3670346       1   0 08:47:09      -   0:00 /usr/sbin/srcmstr 
+    root 3932504 3670346   0 10:49:14      -   0:00 /usr/sbin/qdaemon 
+    root 3998084       1   0 08:47:15      -   0:00 sendmail: accepting connecti
+ons 
+    root 4063616       1   0 08:47:14      -   0:00 /usr/sbin/syslogd 
+    root 4129096 3670346   0 10:49:25      -   0:00 /usr/sbin/ecpvdpd 
+    root 4194692       1   0 08:47:15      -   0:00 /usr/sbin/inetd 
+    root 4260230       1   0 08:47:15      -   0:00 /usr/sbin/snmpd 
+    root 4325670 3670346   0 10:49:25      -   0:00 /usr/sbin/lldpd 
+    root 4391332 3670346   0 10:49:22      -   0:00 /usr/sbin/sshd 
+    root 4522410 3670346  74 10:49:23      -   1:19 /usr/sbin/pfcdaemon 
+    root 4587974 3670346   0 10:49:15      -   0:00 /usr/sbin/writesrv 
+    root 4719006       1   0 08:47:21      -   0:00 /usr/sbin/biod 6 
+    root 4784630 3670346   0 10:50:33      -   0:00 /opt/rsct/bin/IBM.AuditRMd 
+    root 4850128       1  74 08:47:28      -   2:45 /usr/sbin/cron 
+    root 4915680       1   0 08:47:27      -   0:00 /usr/sbin/rpc.lockd -d 0 
+    root 4980996 3670346   0 08:47:34      -   0:00 /usr/sbin/clcomd -d 
+    root 5177772       1   1 10:49:14   vty0   0:00 -ksh 
+    root 5243310       1   0 10:49:15      -   0:00 /usr/sbin/uprintfd 
+    root 5505452 3670346   0 10:49:26      -   0:13 /opt/rsct/bin/rmcd -a IBM.LP
+Commands -r -S 1500 
+    root 5636542 5177772   8 10:53:26   vty0   0:00 ps -ef 
+    root 5702070 3670346   0 10:50:08      -   0:02 /opt/rsct/bin/IBM.MgmtDomain
+RMd 
+    root 5767500 3670346   0 10:50:08      -   0:01 /opt/rsct/bin/IBM.DRMd 
+    root 5833142       1   0 10:49:29      -   0:00 /usr/bin/topasrec  -L -s 300
+ -R 1 -r 6 -o /var/perf/daily/ -ypersistent=1 -O typ
+    root 5898690 3670346   0 10:49:34      -   0:00 /var/perf/pm/bin/pmperfrec 
+    root 5964252 5505452   0 10:49:59      -   0:00 [trspoolm]
+    root 6029792 3670346   0 10:50:09      -   0:01 /opt/rsct/bin/IBM.ServiceRMd
+ 
+    root 6160882 3670346   0 10:50:28      -   0:01 /opt/rsct/bin/IBM.ERrmd 
+    root 6422984 3670346   0 10:50:08      -   0:00 /opt/rsct/bin/IBM.HostRMd 
+    root 6488522 3670346   0 10:50:08      -   0:02 /opt/rsct/bin/IBM.ConfigRMd 
+# ifconfig -a
+lo0: flags=e08084b,c0<UP,BROADCAST,LOOPBACK,RUNNING,SIMPLEX,MULTICAST,GROUPRT,64BIT,LARGESEND,CHAIN>
+        inet 127.0.0.1 netmask 0xff000000 broadcast 127.255.255.255
+        inet6 ::1%1/64
+         tcp_sendspace 131072 tcp_recvspace 131072 rfc1323 1
+# lsdev -c^?

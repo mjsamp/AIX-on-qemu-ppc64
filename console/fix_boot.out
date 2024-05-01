@@ -1,0 +1,596 @@
+
+
+SLOF[0m[?25l **********************************************************************
+[1mQEMU Starting
+[0m Build Date = Jan 31 2020 20:27:09
+ FW Version = buildd@ release 20191209
+ Press "s" to enter Open Firmware.
+
+[0m[?25hC0000C0100C0120C0140C0200C0240C0260C02E0C0300C0320C0340C0360C0370C0380C0371C0373C0374C03F0C0400C0480C04C0C04D0C0500Populating /vdevice methods
+Populating /vdevice/vty@71000000
+Populating /vdevice/nvram@71000001
+Populating /vdevice/l-lan@71000002
+Populating /vdevice/v-scsi@71000003
+       SCSI: Looking for devices
+          8200000000000000 CD-ROM   : "QEMU     QEMU CD-ROM      2.5+"
+C05A0Populating /pci@800000020000000
+                     00 0000 (D) : 1234 1111    qemu vga
+                     00 0800 (D) : 1033 0194    serial bus [ usb-xhci ]
+                     00 1000 (D) : 1af4 1004    virtio [ scsi ]
+Populating /pci@800000020000000/scsi@2
+       SCSI: Looking for devices
+          100000000000000 DISK     : "QEMU     QEMU HARDDISK    2.5+"
+C0600C06C0C0700C0800C0880C0890C08A0C08A8Installing QEMU fb
+
+
+
+C08B0Scanning USB 
+  XHCI: Initializing
+    USB Keyboard 
+    USB mouse 
+C08C0C08D0No console specified using screen & keyboard
+User selected input-device console: /vdevice/vty@71000000
+User selected output-device console: /vdevice/vty@71000000
+C08E0C08E8C08FF     
+  Welcome to Open Firmware
+
+  Copyright (c) 2004, 2017 IBM Corporation All rights reserved.
+  This program and the accompanying materials are made available
+  under the terms of the BSD License available at
+  http://www.opensource.org/licenses/bsd-license.php
+
+
+Trying to load:  from: /vdevice/v-scsi@71000003/disk@8200000000000000: ...   Successfully loaded
+
+                        ---> qemu,pseries detected <---
+
+                 ---> Press '6' to enter Single User Mode <---
+
+
+
+get-property for ibm,hypertas-functions on zero phandle
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+                                Welcome to AIX.
+                   boot image timestamp: 16:47:29 06/08/2020
+        processor count: 1;  memory size: 4096MB;  kernel size: 45422126
+boot device: /vdevice/v-scsi@71000003/disk@8200000000000000:\ppc\chrp\bootfile.exe
+AIX vm,uuid property contains invalid data
+processing splpar characteristic: MaxEntCap
+processing splpar characteristic: DesMem
+processing splpar characteristic: DesProcs
+processing splpar characteristic: MaxPlatProcs
+processing splpar characteristic: HostThrs
+
+AKVM: hcall-multi-tce detected but overridden, allow with "multce" boot argument
+-------------------------------------------------------------------------------
+Star
+0539
+0811
+0539
+0812
+0708
+0811
+078c
+25b6
+25b6
+25b6
+25b6
+078c
+0539
+078c
+0539
+25b6
+0539
+25b3
+0539
+25b5
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+
+0517
+0512
+0510
+0538
+0539
+0811
+0539
+0811
+0539
+0812
+0708
+0811
+078c
+25b6
+25b6
+25b6
+25b6
+078c
+04ee
+25b2
+25b2
+2071
+2071
+2071
+0539
+2071
+0539
+04ee
+0539
+25b3
+0539
+2073
+0727
+2073
+0539
+0538
+0539
+0591
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+0538
+0539
+
+0511
+0513
+0c46
+0c40
+0c42
+
+ ******* Please define the System Console. *******
+
+Type a 1 and press Enter to use this terminal as the
+  system console.
+Pour definir ce terminal comme console systeme, appuyez
+  sur 1 puis sur Entree.
+Taste 1 und anschliessend die Eingabetaste druecken, um
+  diese Datenstation als Systemkonsole zu verwenden.
+Premere il tasto 1 ed Invio per usare questo terminal
+  come console.
+Escriba 1 y pulse Intro para utilizar esta terminal como
+  consola del sistema.
+Escriviu 1 1 i premeu Intro per utilitzar aquest
+  terminal com a consola del sistema.
+Digite um 1 e pressione Enter para utilizar este terminal
+  como console do sistema.
+
+
+
+
+
+0c31
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ HARDWARE SYSTEM MICROCODE
+ Licensed Internal Code - Property of IBM 
+ (C) Copyright IBM Corp. 1990, 1994.
+ All rights reserved.
+
+ US Government Users Restricted Rights -
+ Use, duplication or disclosure restricted
+ by GSA ADP Schedule Contract with IBM Corp.
+
+
+
+0c33\
+0c44|/-\|
+0c46/-\|/-\|
+   
+0c48
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+>>>  1 Type 1 and press Enter to have English during install.
+     2 Entreu 2 i premeu Intro per veure la instal·lació en català.
+     3 Entrez 3 pour effectuer l'installation en français.
+     4 Für Installation in deutscher Sprache 4 eingeben
+        und die Eingabetaste drücken.
+     5 Immettere 5 e premere Invio per l'installazione in Italiano.
+     6 Digite 6 e pressione Enter para usar Português na instalação.
+     7 Escriba 7 y pulse Intro para la instalación en español.
+
+
+
+
+
+
+
+
+
+
+
+    88  Help ?
+
+
+>>> Choice [1]: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      Welcome to Base Operating System
+                      Installation and Maintenance
+
+Type the number of your choice and press Enter.  Choice is indicated by >>>.
+
+>>> 1 Start Install Now with Default Settings
+
+    2 Change/Show Installation Settings and Install
+
+    3 Start Maintenance Mode for System Recovery
+
+    4 Make Additional Disks Available
+
+    5 Select Storage Adapters
+
+
+
+
+
+
+    88  Help ?
+    99  Previous Menu
+
+>>> Choice [1]:    3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    Maintenance 
+
+Type the number of your choice and press Enter.
+
+>>> 1 Access a Root Volume Group 
+    2 Copy a System Dump to Removable Media
+    3 Access Advanced Maintenance Functions
+    4 Erase Disks
+    5 Configure Network Disks (iSCSI)
+    6 Select Storage Adapters
+    7 Install from a System Backup
+
+
+
+
+
+
+
+
+
+    88  Help ?
+    99  Previous Menu
+
+>>> Choice [1]: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  Warning:
+
+If you choose to access a root volume group, you will not be able to return
+to the Base Operating System Installation menus without rebooting.
+
+
+Type the number of your choice and press Enter.
+
+    0 Continue
+
+
+
+
+
+
+
+
+
+
+
+    88  Help ?
+>>> 99  Previous Menu
+
+>>> Choice [99]:    0
+
+
+
+
+                           Access a Root Volume Group
+
+Type the number for a volume group to display the logical volume information
+and press Enter.
+
+   1)   Volume Group 00000000000000000000018f2ea1e30b contains these disks:
+          hdisk0  20480        00-10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   Choice: 1
+
+
+
+
+                           Volume Group Information
+
+ ------------------------------------------------------------------------------
+    Volume Group ID 00000000000000000000018f2ea1e30b includes the following
+    logical volumes:
+
+         hd5         hd6         hd8         hd4         hd2      hd9var
+         hd3         hd1     hd10opt   hd11admin   lg_dumplv    livedump
+
+ ------------------------------------------------------------------------------
+
+
+
+
+
+
+
+Type the number of your choice and press Enter.
+
+   1) Access this Volume Group and start a shell
+   2) Access this Volume Group and start a shell before mounting filesystems
+
+  99) Previous Menu
+
+    Choice [99]: 1
+Importing Volume Group...
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+Write failed
+rootvg
+Write failed
+Checking the / filesystem.
+
+
+
+The current volume is: /dev/hd4
+Primary superblock is valid.
+J2_LOGREDO:log redo processing for /dev/hd4                         
+Primary superblock is valid.
+Checking the /usr filesystem.
+
+
+
+The current volume is: /dev/hd2
+Primary superblock is valid.
+Saving special files and device configuration information.
+Unable to stat /dev directory on disk
+Recreating /dev directory on disk
+Changed: console
+Changed: error
+Changed: errorctl
+Changed: kmem
+Changed: mem
+Changed: pmem
+Changed: null
+Changed: nvram
+Changed: sysdump
+Changed: sysdumpctl
+Changed: sysdumpfile
+Changed: sysdumpnull
+Changed: tty
+Changed: virtio0
+Changed: vio0
+Changed: pci0
+Changed: vscsi0
+Changed: rcd0
+Changed: cd0
+Changed: clone
+Changed: sad
+Changed: slog
+Changed: scsi0
+Changed: vty0
+Changed: hdisk0
+Changed: rhdisk0
+Changed: rootvg
+Changed: IPL_rootvg
+Changed: __vg10
+Changed: rhd5
+Changed: hd5
+Changed: rhd6
+Changed: hd6
+Changed: rhd8
+Changed: hd8
+Changed: rhd4
+Changed: hd4
+Changed: rhd2
+Changed: hd2
+Changed: rhd9var
+Changed: hd9var
+Changed: rhd3
+Changed: hd3
+Changed: rhd1
+Changed: hd1
+Changed: rhd10opt
+Changed: hd10opt
+Changed: rhd11admin
+Changed: hd11admin
+Changed: rlg_dumplv
+Changed: lg_dumplv
+Changed: rlivedump
+Changed: livedump
+Changed: ipl_blv
+Changed: ipldevice
+mergedev replaced 55 files in the hardfile /dev directory
+Checking and mounting the /tmp filesystem.
+
+
+
+The current volume is: /dev/hd3
+Primary superblock is valid.
+Checking and mounting the /var filesystem.
+
+
+
+The current volume is: /dev/hd9var
+Primary superblock is valid.
+Checking and mounting the /opt filesystem.
+
+
+
+The current volume is: /dev/hd10opt
+Primary superblock is valid.
+Filesystems mounted for maintenance work.
+# set -o vi
+# cd /sbin/helpers/jfs2/
+# ls
+backbyinode  defragfs     fsck64       logform      mount        rollback
+backsnap     diskusg      fscklog      logredo      ncheck       rrestore
+chfs         dumpfs       fsdb         logredo64    quotacheck   snapshot
+chfs64       ff           fstype       lsfs         rdump        statfs64
+crfs         fsck         istat        mkfs         restbyinode  umount
+# mv fsck64 fsck64.old
+# ln -s fsck fsck64
+# mv logredo64 logredo64.old
+# ln -s logredo logredo64
+# halt
+....Halt completed....
