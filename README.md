@@ -97,7 +97,7 @@ rmitab rcnfs
 
 cron and crontab didn't work also and there is no alternative version.
 
-The only solution is to compile it your self.
+The only solution is to compile it yourself.
 
 If you don't want to download xlc and compile them you just need to copy the binaries (see binaries folder) to the server and replace the old ones with them.
 
