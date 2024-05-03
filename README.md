@@ -36,7 +36,7 @@ mv /sbin/helpers/jfs2/fsck64 sbin/helpers/jfs2/fsck64.old
 
 then create a link to the 32 bits fsck
 ```bash
-ln -s /sbin/helpers/jfs2/fsck64 /sbin/helpers/jfs2/fsck
+ln -s /sbin/helpers/jfs2/fsck /sbin/helpers/jfs2/fsck64
 ```
 Do the same for logredo64 because it also hangs while moving a shared VG to another node (yes, PowerHA 6.1 worked on it after some issues fixed) so the varyon failed.
 
