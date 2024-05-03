@@ -65,7 +65,7 @@ move or remove the old one
 then link it to the one that works
 
 ```bash
-ln -s /usr/bin/ps /usr/sysv/bin/ps
+ln -s /usr/sysv/bin/ps /usr/bin/ps
 
 # ps -eo %c
 ps: Flag -o was used with invalid list
