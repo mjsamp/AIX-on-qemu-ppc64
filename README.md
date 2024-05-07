@@ -13,6 +13,11 @@ AIX aix_7200-04-02-2027_1of2_072020.iso
 
 ## Installation
 
+Create a qcow2 disk:
+```bash
+qemu-img create -f qcow2 hdisk0.qcow2 20G
+```
+
 Run the following command to install AIX from the iso:
 
 ```bash
