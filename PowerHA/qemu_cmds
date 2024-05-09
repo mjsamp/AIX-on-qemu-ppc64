@@ -1,0 +1,10 @@
+
+
+Node 01
+
+qemu-system-ppc64 -cpu POWER9 -machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off -m 2048 -overcommit mem-lock=off -realtime mlock=off -smp 2,sockets=2,cores=1,threads=1 -serial mon:stdio -drive file=hdisk0.qcow2,if=none,id=drive-virtio-disk0 -device scsi-hd,drive=drive-virtio-disk0 -drive file=01_shared_pv.qcow2,file.locking=off,if=none,id=drive-virtio-disk1 -device scsi-hd,drive=drive-virtio-disk1 -device virtio-scsi-pci,id=scsi -cdrom aix_7200-04-02-2027_1of2_072020.iso -prom-env "boot-command=boot disk:" -prom-env "input-device=/vdevice/vty@71000000" -prom-env "output-device=/vdevice/vty@71000000" -net nic,macaddr=56:44:45:30:31:31 -net nic,macaddr=56:44:45:30:31:32 -net nic,macaddr=56:44:45:30:31:33 -net nic,macaddr=56:44:45:30:31:34 -net nic,macaddr=56:44:45:30:31:35 -net tap,script=no,ifname=tap0 -nographic
+
+
+Node 02
+
+qemu-system-ppc64 -cpu POWER9 -machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off -m 2048 -overcommit mem-lock=off -realtime mlock=off -smp 2,sockets=2,cores=1,threads=1 -serial mon:stdio -drive file=hdisk1.qcow2,if=none,id=drive-virtio-disk0 -device scsi-hd,drive=drive-virtio-disk0 -drive file=01_shared_pv.qcow2,file.locking=off,if=none,id=drive-virtio-disk1 -device scsi-hd,drive=drive-virtio-disk1 -device virtio-scsi-pci,id=scsi -cdrom aix_7200-04-02-2027_1of2_072020.iso -prom-env "boot-command=boot disk:" -prom-env "input-device=/vdevice/vty@71000000" -prom-env "output-device=/vdevice/vty@71000000" -net nic,macaddr=56:44:45:30:31:36 -net nic,macaddr=56:44:45:30:31:37 -net nic,macaddr=56:44:45:30:31:38 -net nic,macaddr=56:44:45:30:31:39 -net nic,macaddr=56:44:45:30:31:40 -net tap,script=no,ifname=tap1 -nographic

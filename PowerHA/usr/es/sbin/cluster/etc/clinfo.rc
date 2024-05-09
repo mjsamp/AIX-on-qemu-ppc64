@@ -1,0 +1,406 @@
+#!/bin/ksh
+# IBM_PROLOG_BEGIN_TAG 
+# This is an automatically generated prolog. 
+#  
+#  
+#  
+# Licensed Materials - Property of IBM 
+#  
+# (C) COPYRIGHT International Business Machines Corp. 1990,2006 
+# All Rights Reserved 
+#  
+# US Government Users Restricted Rights - Use, duplication or 
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
+#  
+# IBM_PROLOG_END_TAG 
+# @(#)67  1.22  src/43haes/usr/sbin/cluster/events/clinfo.rc.sh, hacmp.events, 52haes_r540, r5400622c 3/17/06 16:27:42
+
+##############################################################################
+#
+#   COMPONENT_NAME: EVENTS
+#
+#   FUNCTIONS: none
+#
+##############################################################################
+
+##############################################################################
+# This shell script may run either on cluster nodes or on client systems
+# that are running the clinfo daemon.  The shell script is invoked by
+# the clinfo daemon in response to certain cluster events.  See the clinfo.rc
+# man page for documentation of the parameters passed to the shell script and
+# the events that will cause it to be invoked.
+
+# Please note that cluster nodes must be running the clinfo daemon in order
+# for this shell script to be invoked automatically in response to cluster
+# events.
+
+# The local ARP cache on clients not running clinfo can be updated by
+# pinging the client from a cluster node.  Add the IP label or IP address of
+# clients you want to notify to the PING_CLIENT_LIST, or to a similar
+# shell variable in /etc/cluster/ping_client_list.
+
+# All addresses in the ping client list must be on the same logical subnet as
+# some cluster node service address for their ARP caches to be updated.
+# Please note that IP routers are, in some sense, clients of the HACMP
+# cluster, and their IP addresses should be added to PING_CLIENT_LIST, but
+# only if they are on the same logical subnet as a cluster node.
+
+# Those addresses that are not on the same logical subnet as some cluster 
+# node service address will still be pinged, but this operation will not 
+# update their ARP cache entry for the cluster node service address, and may 
+# generate unnecessary network traffic and script processing.  
+##############################################################################
+
+# Example:
+#
+#  PING_CLIENT_LIST="host_a host_b 1.1.1.3"
+#
+PING_CLIENT_LIST=""
+
+TOTAL_CLIENT_LIST="${PING_CLIENT_LIST}"
+
+if [[ -s /etc/cluster/ping_client_list ]] ; then
+	#
+	#  The file "/etc/ping_client_list" should contain only a line
+	#  setting the variable "PING_CLIENT_LIST" in the form given 
+	#  in the example above.  This allows the client list to be 
+	#  kept in a file that is not altered when maintenance is 
+	#  applied to clinfo.rc.
+	#
+	. /etc/cluster/ping_client_list
+
+	TOTAL_CLIENT_LIST="${TOTAL_CLIENT_LIST} ${PING_CLIENT_LIST}"
+fi
+
+#
+# WARNING!!!  For this shell script to work properly, ALL entries in
+# the TOTAL_CLIENT_LIST must resolve properly to IP addresses or hostnames 
+# (must be found in /etc/hosts, DNS, or NIS).  This is crucial.
+
+# Implementation notes:
+#
+# 1. The ARP command shipped with AIX (/usr/sbin/arp) can delete ARP
+#    cache entries associated with the SP Switch.  It is not necessary to invoke
+#    /usr/lpp/ssp/css/arp as a special case when the SP Switch is involved.
+#
+#    When configuring IP address takeover on the SP Switch, care must be taken to
+#    obey the injunction in the HACMP Planning and Install Guide, under
+#    Configuring Installed Hardware -> Configuring an SP Switch Configuration.
+#    "HACMP SP Switch Base and service IP labels are alias addresses on the
+#    SP Switch css0 IP interface.  The css0 base IP address is unused and 
+#    should not be configured for IP Address Takeover via IP Replacement.
+#    However, for IPAT via IP Aliases, the css0 base IP address should be
+#    configured as an HACMP base address.  Non-service IP labels are not 
+#    allowed for SP Switch IP address takeover."
+#
+#
+# 2. An HACMP ATM network is typically configured as a switched virtual circuit
+#    (SVC) network.  A SVC network requires that a system on the network be
+#    configured as an ARP server.
+#
+#    Please note that an HACMP cluster node can NOT act as an ARP server. 
+#
+#    One might suppose that, with an ARP server, there is a single ARP cache
+#    shared by all systems on the ATM network.  An implication would then be
+#    that one could delete an ARP cache entry only once, from any system on
+#    the ATM network, and then the cache would be refreshed for all clients
+#    simultaneously.  This is NOT, in fact, the case.  Every client has its
+#    own local ARP cache in addition to the ARP cache that exists on the ARP 
+#    server.  Additionally, a client node must use the -t atm flag on the 
+#    ARP command even to manipulate its own local ARP cache.
+#
+# 3. When clinfo spawns multiple copies of clinfo.rc (one for each interface
+#    whose status has changed) as it usually does, standard out from all copies
+#    is directed to file /tmp/clinfo.rc.out.  As a result, this file usually
+#    ends up corrupted.  This shell script has been implemented such that, when
+#    logging is enabled by uncommenting the line that defines the logfile
+#    environment variable, it synchronizes execution with all other copies of
+#    itself and prevents the /tmp/clinfo.rc.out file from becoming corrupted.
+#
+# 4. Special considerations when using switched ethernet with IP MAC address
+#    takover and especially when using ATM:
+#
+#    In a node that acts as a backup, its local service address should be
+#    added to its own PING_CLIENT_LIST so that when a failover is perfomed
+#    the arp cache associated with its local service address will be updated 
+#    correctly with the new entry for the service address that the backup
+#    node has just acquired.  Otherwise the two service addresses may not
+#    be able to communicate with each other.
+
+PROGNAME=$(basename ${0})
+export PATH="$($(dirname ${0})/../utilities/cl_get_path all)"
+[[ "$VERBOSE_LOGGING" = "high" ]] && set -x
+[[ "$VERBOSE_LOGGING" = "high" ]] && version='1.22'
+HA_DIR="$(cl_get_path)"
+
+#
+# Get name of this shell script and parameters passed to it
+#
+#scrname=${0##*/}
+scrname=$(basename ${0})
+event=$1	# Event that occurred (join, fail, or swap)
+label=$2	# Service adapter IP label for which event occurred
+if [ -z "$label" ]
+then
+  print -u2 "$scrname: Second parameter is null!"
+  echo "$scrname: Second parameter is null!" >/dev/console
+  errlogger "$scrname: Second parameter is null!"
+  exit 1
+fi
+
+
+cllsif -Sn $label | \
+    read adaptername adaprole adapnet nettype pubpriv adapnode adapipaddr rest
+if [ "$nettype" = "rs232" -o "$nettype" = "tmscsi" -o "$nettype" = "tmssa" -o "$nettype" = "diskhb" ]
+then
+  exit 0;
+fi
+
+#
+# Define useful variables
+#
+outfile=/tmp/$scrname.out	# Log captured by HACMP each time clinfo.rc runs
+
+#
+# Uncomment the following line to enable logging.  Please note that the
+# resulting /tmp/clinfo.rc.log file will grow without limit and must be
+# periodically pruned to avoid filling up the /tmp filesystem.
+# This may be helpful if for some reason the arp cache on
+# non-clinfo clients is not updated to reflect the new adapter
+# hardware address after a takeover event has occurred.
+#
+#logfile=/tmp/$scrname.log
+
+#
+# If logging is enabled, log start and wait for our turn to run
+#
+if [ -n "$logfile" ]
+then
+  echo "$(date +"%b %d at %T"): $scrname invoked with parms $*." >>$logfile
+  #
+  # Wait until we are child process with smallest process ID number
+  #
+  while true
+  do
+    sleep 1		# Let all children get started or wait for one to finish
+    ps -eo pid,ppid,args | grep $PPID | sort -nrk1 | \
+    while read pid ppid args
+    do
+      if [ $ppid != $PPID ]
+      then
+        continue
+      fi
+      echo "$args" | read shell shcmd rest
+      if [ $shcmd != $0 ]
+      then
+        if [ $pid = $$ ]
+        then
+          echo "Process $pid (child of $ppid) is running shell script $shcmd, not $0!" >>$logfile
+        else
+          echo "Ignoring process $pid (child of $ppid) running command '$args'." >>$logfile
+          continue
+        fi
+      fi
+      lastpid=$pid
+    done
+    if [ "$lastpid" = $$ ]
+    then break		# We are child process with smallest process ID number
+    fi
+  done
+  echo "$(date +"%b %d at %T"): $scrname running with parms $*." >>$logfile
+  cp /dev/null $outfile		# Prune HACMP log file
+fi
+
+#
+#  Uncomment to turn on debugging.
+#
+#set -x
+
+#
+# If clgetif is executable, then the
+# cluster.es.server.utils fileset is installed, and we can assume we are
+# running on a cluster node.
+#
+if [ -x /usr/${HA_DIR}/sbin/cluster/utilities/clgetif ]
+then
+
+  #
+  # Get affected adapter's IP address, role, and subnet mask
+  #
+  cllsif -Sn $label | \
+    read adaptername adaprole adapnet nettype pubpriv adapnode adapipaddr rest
+  if [ "$pubpriv" = "serial" ]
+  then
+    exit 0;
+  fi
+  netmask=$(clgetif -n $adapipaddr 2>/dev/null)
+
+  #
+  # If netmask is not null (so affected adapter is on our system) and
+  # if adapter is a service adapter, then ping clients
+  #
+  if [ -n "$netmask" ] && [ "$adaprole" = "service" ]
+  then
+
+    #
+    # Get address of network affected adapter is on and get adapter interface
+    #
+    adapnetwork=$(clgetnet $adapipaddr $netmask)
+    interface=$(clgetif -a $adapipaddr 2>/dev/null)
+
+    #
+    # Ping clients that are on the same logical subnet as the affected adapter
+    #
+    for host in $TOTAL_CLIENT_LIST
+    do
+      #
+      # Get IP address associated with client host name
+      #
+      clientipaddr=$(host $host)
+      if [ $? -eq 1 ]
+      then
+          print -u2 "ERROR: Client $host cannot be resolved."
+          echo "ERROR: Client $host cannot be resolved." >/dev/console
+          errlogger "Client $host: cannot be resolved."
+          continue;
+      fi
+      clientipaddr=${clientipaddr%%,*}
+      clientipaddr=${clientipaddr##* }
+
+      #
+      # Get address of network client is on
+      #
+      clientnetwork=$(clgetnet $clientipaddr $netmask)
+      #
+      # If affected adapter and client are not on same network, 
+      # just ping the client 
+      #
+      if [ "$adapnetwork" != "$clientnetwork" ]
+      then
+        echo "client $host is not on the same subnet as affected adapter" 
+        ping -c1 $host
+        continue
+      fi
+      #
+      # If affected adapter ip address is in TOTAL_CLIENT_LIST, skip this
+      # client.  With ATM this is unavoidable because on a failover the local 
+      # service address needs to be pinged by the newly failed over service 
+      # address in which case the adapter ip address will be different.  
+      # However when HACMP is first brought up or a node is reintegrated 
+      # then the following case will be true.
+      #
+      if [ $adapipaddr = $clientipaddr ]
+      then
+        echo "IP addr $adapipaddr is on local interface $interface.  Skipping."
+        continue
+      fi
+
+      #
+      # Add temporary route so ping flows through affected adapter
+      #
+
+      route add -host $clientipaddr -interface $adapipaddr
+
+      #
+      # Delete any ARP cache entry for the client, including any "hip-pocket"
+      # entries kept in the network interfaces
+      #
+      if [ "${interface#at}" = "${interface}" ]
+      then
+        arp -d $clientipaddr		# Intf name does not begin 'at'
+      else
+	lsattr -El $interface | grep svc && \
+            arp -t atm -d $clientipaddr	# Intf name begins 'at'
+      fi
+      #
+      # Ping the client twice
+      #
+      echo "Pinging client $host..."
+      ping -c2 $host
+      #
+      # Remove temporary route
+      #
+      route delete -host $clientipaddr -interface $adapipaddr
+    done
+    #
+    # If logging is enabled, append HACMP log file to clinfo.rc log file.
+    #
+    if [ -n "$logfile" ]
+    then
+      cat $outfile >>$logfile
+    fi
+    #
+    # Affected IP address is on our system, so there is nothing more to be done.
+    #
+    exit 0
+  fi
+fi
+
+#
+# If control reaches this point, we are on a system that either does not have
+# the cluster.es.server.utils fileset installed or does not have the
+# affected IP address assigned to a network interface, so all we need to do is
+# flush the ARP cache.  While there is no need to ping anything as long as ARP 
+# cache is flushed, this logic has been retained solely for compatibility with
+# prior releases.  
+#
+#
+# Delete ARP cache entry for affected host
+#
+# WARNING!!!  For the logic below to work properly on clinfo clients, the
+# service adapter IP label passed as the second parameter to this shell script
+# must resolve properly to an IP address on this host (must be found in
+# /etc/hosts, DNS, or NIS).
+#
+arp -d $label
+arprc=$?
+if [ $arprc = 1 ]
+then
+  #
+  # If ARP entry not found, try deleting it from ATM ARP cache.
+  #
+  if [ -x /usr/${HA_DIR}/sbin/cluster/utilities/clgetif ] && [ "$adaprole" = "service" ]
+  then
+    if [ "$nettype" = "atm" ]
+    then
+      LOCALNODENAME=$(odmget HACMPcluster | grep -w nodename | cut -d'"' -f2)
+      myipaddr=$(cllsif -i $LOCALNODENAME -Sc \
+	    | cut -d: -f2,3,7 | grep $adapnet | grep service: | cut -d: -f3)
+      myinterface=$(clgetif -a $myipaddr 2>/dev/null)
+      if [ -n "$myinterface" ]
+      then
+        lsattr -El $myinterface | grep svc && arp -t atm -d $label
+      else
+        arp -t atm -d $label
+      fi
+    fi
+  else
+    arp -t atm -d $label
+    #
+    # Wait 5 secs and delete it again to circumvent bug in ATM ARP cache support
+    #
+    sleep 5
+    arp -t atm -d $label
+  fi
+fi
+
+#
+# Ping all hosts in TOTAL_CLIENT_LIST
+# Note that this is not necessary in order to update the client's arp
+# cache, as flushing the arp cache has already been done to force an
+# arp cahe update. This logic has been retained solely for compatibility
+# with prior HACMP releases. 
+#
+for host in $TOTAL_CLIENT_LIST
+do
+  echo "Ping client $host once..."
+  ping -c1 $host
+done
+
+#
+# If logging is enabled, append HACMP log file to clinfo.rc log file.
+#
+if [ -n "$logfile" ]
+then
+  cat $outfile >>$logfile
+fi

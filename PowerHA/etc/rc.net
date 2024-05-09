@@ -1,0 +1,204 @@
+#!/bin/ksh
+# IBM_PROLOG_BEGIN_TAG 
+# This is an automatically generated prolog. 
+#  
+# bos720 src/bos/usr/sbin/netstart/rc.net 1.38 
+#  
+# Licensed Materials - Property of IBM 
+#  
+# COPYRIGHT International Business Machines Corp. 1985,1995 
+# All Rights Reserved 
+#  
+# US Government Users Restricted Rights - Use, duplication or 
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
+#  
+# IBM_PROLOG_END_TAG 
+# @(#)90      1.38  src/bos/usr/sbin/netstart/rc.net, cmdnet, bos720 9/27/07 02:10:50
+# 
+# COMPONENT_NAME: CMDNET	(/etc/rc.net)
+# 
+# ORIGINS: 27 
+#
+# (C) COPYRIGHT International Business Machines Corp. 1985, 1995
+# All Rights Reserved
+# Licensed Materials - Property of IBM
+#
+# US Government Users Restricted Rights - Use, duplication or
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+
+##################################################################
+# rc.net - called by cfgmgr during 2nd boot phase.
+#
+# Configures and starts TCP/IP interfaces.
+# Sets hostname, default gateway and static routes.
+# Note: all the stdout should be redirected to a file (e.g. /dev/null),
+#	because stdout is used to pass logical name(s) back to the cfgmgr
+#	to be configured.  The LOGFILE variable specifies the output file.
+#
+# The first section of rc.net configures the network via the new
+#	configuration methods.  These configuration methods require that
+#	the interface and protocol information be entered in the ODM
+#	database (with either SMIT or the high level configuration commands
+#	(mkdev, chdev).
+# The second section (commented out) is an example of the equivalent
+#	traditional commands used to perform the same function.  You may
+#	use the traditional commands instead of the configuration methods
+#	if you prefer.  These commands do NOT use the ODM database.
+# The third section performs miscellaneous commands which are
+#	compatible with either of the previous two sections.
+##################################################################
+#
+# Close file descriptor 1 and 2 because the parent may be waiting
+# for the file desc. 1 and 2 to be closed.  The reason is that this shell
+# script may spawn a child which inherit all the file descriptor from the parent
+# and the child process may still be running after this process is terminated.
+# The file desc. 1 and 2 are not closed and leave the parent hanging
+# waiting for those desc. to be finished.
+
+export PATH=/usr/bin:/usr/sbin:$PATH
+
+umask 022
+
+#LOGFILE=/dev/null	# LOGFILE is where all stdout goes.
+LOGFILE=/tmp/rc.net.out	# LOGFILE is where all stdout goes.
+/bin/rm -f $LOGFILE	# Make sure that LOGFILE doesnot exist.
+>$LOGFILE		# truncate LOGFILE.
+export RCNETNO=1	# used by no to know if it is called from rc.net
+exec 1<&-		# close descriptor 1
+exec 2<&-		# close descriptor 2
+exec 1< /dev/null	# open descriptor 1
+exec 2<	/dev/null	# open descriptor 2
+
+STATUS=$(lsdev -C -S1 -F name -l inet0)
+
+##################################################################
+# Part I - Configuration using the data in the ODM database:
+# Enable network interface(s):
+##################################################################
+# This should be done before routes are defined.
+# For each network adapter that has already been configured, the
+# following commands will define, load and configure a corresponding
+# interface.
+# NOTE: If you are using a diskless/dataless machine, you may want to
+#       disable the logging of messages to the LOGFILE by the cfgif
+#       routine. On some diskless/dataless machines, the message
+#       logging causes the client to hang on LED 581 when booting.
+
+/usr/lib/methods/defif 			>>$LOGFILE 2>&1
+/usr/lib/methods/cfgif  $*			>>$LOGFILE 2>&1
+# If a diskless or dataless machine uses this configuration method, you
+# may want to replace the previous line with the following.
+#
+# /usr/lib/methods/cfgif  $*
+
+##################################################################
+# Configure the Internet protocol kernel extension (netinet):
+##################################################################
+# The following commands will also set hostname, default gateway,
+# and static routes as found in the ODM database for the network.
+/usr/lib/methods/definet 			>>$LOGFILE 2>&1
+/usr/lib/methods/cfginet 			>>$LOGFILE 2>&1
+
+# Check to see if /etc/rc.net was invoked from cfgmgr.  If so,
+# and if inet0 was already Available, do not reconfigure.
+if [[ $AIX_CFGMGR_MODE != "" ]] then
+	if [[ $STATUS = "inet0" ]] && [[ -n $LOGIN ]]; then
+		exit
+	fi
+fi
+
+##################################################################
+# Part II - Traditional Configuration.
+##################################################################
+# An alternative method for bringing up all the default interfaces 
+# is to specify explicitly which interfaces to configure using the
+# ifconfig command.  Ifconfig requires the configuration information 
+# be specified on the command line.  Ifconfig will not update the
+# information kept in the ODM configuration database.
+#
+# Valid network interfaces are:
+# lo=local loopback, en=standard ethernet, et=802.3 ethernet
+# sl=serial line IP, tr=802.5 token ring, xs=X.25
+#
+# e.g., en0 denotes standard ethernet network interface, unit zero.
+#
+# Below are examples of how you could bring up each interface using
+# ifconfig.  Since you can specify either a hostname or a dotted
+# decimal address to set the interface address, it is convenient to
+# set the hostname at this point and use it for the address of 
+# an interface, as shown below:
+#
+#/bin/hostname robo.austin.ibm.com	>>$LOGFILE 2>&1
+#
+# (Remember that if you have more than one interface, 
+# you'll want to have a different IP address for each one.
+# Below, xx.xx.xx.xx stands for the internet address for the 
+# given interface).  
+#
+#/usr/sbin/ifconfig lo0 inet loopback    up >>$LOGFILE 2>&1
+#/usr/sbin/ifconfig en0 inet `hostname`  up >>$LOGFILE 2>&1
+#/usr/sbin/ifconfig et0 inet xx.xx.xx.xx  up >>$LOGFILE 2>&1
+#/usr/sbin/ifconfig tr0 inet xx.xx.xx.xx  up >>$LOGFILE 2>&1
+#/usr/sbin/ifconfig sl0 inet xx.xx.xx.xx  up >>$LOGFILE 2>&1
+#/usr/sbin/ifconfig xs0 inet xx.xx.xx.xx  up >>$LOGFILE 2>&1
+#
+#
+# Now we set any static routes.
+#
+# /usr/sbin/route add 0 gateway 		>>$LOGFILE 2>&1
+# /usr/sbin/route add 192.9.201.0 gateway 	>>$LOGFILE 2>&1
+
+
+##################################################################
+# Part III - Miscellaneous Commands.
+##################################################################
+# Set the hostid and uname to `hostname`, where hostname has been
+# set via ODM in Part I, or directly in Part II.
+# (Note it is not required that hostname, hostid and uname all be
+# the same).
+/usr/sbin/hostid `hostname`		>>$LOGFILE 2>&1
+/bin/uname -S`hostname|sed 's/\..*$//'`	>>$LOGFILE 2>&1
+
+##################################################################
+#  Special SLIP handling
+##################################################################
+if [ -f /etc/rc.net.serial ] ; then
+	/etc/rc.net.serial
+fi
+
+##################################################################
+#  Special X25 handling
+##################################################################
+if [ -f /etc/rc.net.x25 ] ; then
+	/etc/rc.net.x25
+fi
+
+##################################################################
+# NOTE: The no option enable/disable in rc.net only works on pre 
+# 5.2 systems. 
+# On systems 5.2 or higher in order to enable/disable
+# specific no options on future reboots this information has
+# to be present in the /etc/tunables/nextboot file. This can
+# be done by using no -r -o <no_optionname>=<value> on the command
+# line. On subsequent reboots the the specified no_optionname value
+# will be maintained since it will be written to the nextboot file
+# To summarize a no option can be set as follows to be enabled
+# on future reboots 
+# Pre 5.2 Systems: 
+# no -o arptab_size=10
+# 5.2 and later:
+# use no -r -o arptab_size=10; this creates an entry in the
+# nextboot file and preserves the value on subsequent reboots
+##################################################################
+# The following note applies only to pre 5.2 system for reasons
+# specified in the above NOTE.
+# This disables extended netstat statistics for performance
+# reasons.  To have extended netstat statistics enabled on
+# future reboots, comment out the following three lines.
+##################################################################
+if [ -f /usr/sbin/no ] ; then
+	/usr/sbin/no -o extendednetstats=0 >>/dev/null 2>&1
+fi
+
+unset RCNETNO

@@ -1,0 +1,72 @@
+# @(#)77	1.2 src/43haes/usr/sbin/cluster/clinfo/clhosts, hacmp.clinfo, 52haes_r540, r5400622c 4/26/03 16:58:45
+# IBM_PROLOG_BEGIN_TAG 
+# This is an automatically generated prolog. 
+#  
+#  
+#  
+# Licensed Materials - Property of IBM 
+#  
+# (C) COPYRIGHT International Business Machines Corp. 1990,2005 
+# All Rights Reserved 
+#  
+# US Government Users Restricted Rights - Use, duplication or 
+# disclosure restricted by GSA ADP Schedule Contract with IBM Corp. 
+#  
+# IBM_PROLOG_END_TAG 
+#
+#  -------------------------------------------
+#  Upon proper configuration, this file (clhosts) should contain a list
+#  of IP labels/addresses of any HACMP for AIX servers with which the
+#  Cluster Information daemon (clinfo) may communicate.  Note that this 
+#  includes servers from any clusters accessible through logical network 
+#  connections. The installed version of clhosts on an HACMP for AIX 
+#  client node will differ from that on an HACMP for AIX server node.
+#
+#  Contents of clhosts on an HACMP for AIX client node
+#  ---------------------------------------------------
+#
+#  As installed, the clhosts file on an HACMP for AIX client node will 
+#  contain NO IP labels/addresses.  This is because HACMP for AIX server 
+#  addresses will vary from cluster to cluster, and these addresses must 
+#  be provided by the user at installation time.
+# 
+#  This file should contain all boot-time IP labels/addresses and/or the
+#  service IP labels/addresses of HACMP for AIX servers to be contacted 
+#  through logical network connections.  Upon startup, Clinfo uses these 
+#  IP labels/addresses to attempt communication with a Clsmuxpd process 
+#  executing on an HACMP for AIX server.  If Clinfo succeeds in 
+#  communicating with a Clsmuxpd process executing on a server at one of 
+#  the provided addresses, it then acquires an entire cluster map, 
+#  including a list of all HACMP for AIX server interface IP addresses.
+#  From then on, it will use this list, rather than the user-defined
+#  list in the clhosts file, to recover from Clsmuxpd communication loss.
+#  However, if Clinfo does not succeed in communicating with a Clsmuxpd
+#  process at any of the provided addresses, it will continue indefinitely
+#  to attempt communication, periodically trying each IP label/address
+#  in the clhosts file, in sequential order.
+#
+#  An example list of IP labels/addresses follows (Note: IP labels/addresses 
+#  begin in column 1. Comments preceded by '#' are permitted):
+#
+#  cowrie_en0_cl83    #  cowrie service
+#  140.186.91.189     #  limpet service
+#  floyd_en0_cl83     #  floyd service
+#  squid_en0_cl83     #  squid service
+#
+#  Contents of clhosts on an HACMP for AIX server node
+#  ---------------------------------------------------
+#
+#  As installed, the clhosts file on an HACMP for AIX server node will contain
+#  a loopback IP address.  Clinfo will attempt to communicate with a Clsmuxpd
+#  process locally.  If it succeeds, it then acquires an entire cluster
+#  map, including a list of all HACMP for AIX server interface IP addresses.  
+#  From then on, it will use this list rather than the provided loopback 
+#  IP address in the clhosts file to recover from Clsmuxpd communication loss.
+#  However, if Clinfo does not succeed in communicating with a Clsmuxpd
+#  process locally, it will continue indefinitely to attempt communication
+#  periodically ONLY to the local IP address.  For this reason, it is
+#  adviseable for the user to replace the loopback address with all HACMP for 
+#  AIX boot-time and/or service IP labels/addresses accessible through logical 
+#  connections with this node, just as on an HACMP for AIX client node.  The 
+#  loopback address is provided only as a convenience.
+127.0.0.1     # HACMP/ES for AIX

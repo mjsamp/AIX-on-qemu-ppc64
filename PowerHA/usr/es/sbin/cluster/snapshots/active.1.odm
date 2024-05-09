@@ -1,0 +1,2364 @@
+<VER
+clsnapshot_version=1.2.2.109
+cluster_name=aix_cluster
+cluster_id=1713240094
+cluster_version=11
+cluster_release=6.1
+snapshot_instance=1
+</VER
+
+<DSC
+Cluster Snapshot of active cluster configuration generated via a Dynamic Reconfiguration Event - Fri Apr 26 16:46:15 -03 2024
+</DSC
+
+<CLPOL
+</CLPOL
+
+<ODM
+
+HACMPcluster:
+	id = 1713240094
+	name = "aix_cluster"
+	nodename = "node01"
+	sec_level = "Standard"
+	sec_level_msg = ""
+	sec_encryption = ""
+	sec_persistent = ""
+	last_node_ids = "1, 2"
+	highest_node_id = 2
+	last_network_ids = "1 2"
+	highest_network_id = 0
+	last_site_ids = ""
+	highest_site_id = 0
+	handle = 1
+	cluster_version = 11
+	reserved1 = 0
+	reserved2 = 0
+	wlm_subdir = ""
+	settling_time = 0
+	rg_distribution_policy = "node"
+	noautoverification = 0
+	clvernodename = ""
+	clverhour = 0
+	clverstartupoptions = 0
+
+HACMPnode:
+	name = "node01"
+	object = "SYS_ADMIN_ID"
+	value = ""
+	node_id = 1
+	node_handle = 1
+	version = 11
+
+HACMPnode:
+	name = "node01"
+	object = "VERBOSE_LOGGING"
+	value = "high"
+	node_id = 1
+	node_handle = 1
+	version = 11
+
+HACMPnode:
+	name = "node01"
+	object = "NAME_SERVER"
+	value = "FALSE"
+	node_id = 1
+	node_handle = 1
+	version = 11
+
+HACMPnode:
+	name = "node01"
+	object = "DEBUG_LEVEL"
+	value = "Standard"
+	node_id = 1
+	node_handle = 1
+	version = 11
+
+HACMPnode:
+	name = "node01"
+	object = "MODEM_NUMBER"
+	value = ""
+	node_id = 1
+	node_handle = 1
+	version = 11
+
+HACMPnode:
+	name = "node01"
+	object = "MAX_BLOCK_SIZE"
+	value = "8192"
+	node_id = 1
+	node_handle = 1
+	version = 11
+
+HACMPnode:
+	name = "node01"
+	object = "COMMUNICATION_PATH"
+	value = "192.168.123.100"
+	node_id = 1
+	node_handle = 1
+	version = 11
+
+HACMPnode:
+	name = "node01"
+	object = "MANAGED_SYSTEM"
+	value = ""
+	node_id = 1
+	node_handle = 1
+	version = 11
+
+HACMPnode:
+	name = "node02"
+	object = "VERBOSE_LOGGING"
+	value = "high"
+	node_id = 2
+	node_handle = 2
+	version = 11
+
+HACMPnode:
+	name = "node02"
+	object = "DEBUG_LEVEL"
+	value = "Standard"
+	node_id = 2
+	node_handle = 2
+	version = 11
+
+HACMPnode:
+	name = "node02"
+	object = "SYS_ADMIN_ID"
+	value = ""
+	node_id = 2
+	node_handle = 2
+	version = 11
+
+HACMPnode:
+	name = "node02"
+	object = "MODEM_NUMBER"
+	value = ""
+	node_id = 2
+	node_handle = 2
+	version = 11
+
+HACMPnode:
+	name = "node02"
+	object = "MAX_BLOCK_SIZE"
+	value = "8192"
+	node_id = 2
+	node_handle = 2
+	version = 11
+
+HACMPnode:
+	name = "node02"
+	object = "COMMUNICATION_PATH"
+	value = "192.168.123.102"
+	node_id = 2
+	node_handle = 2
+	version = 11
+
+HACMPnode:
+	name = "node02"
+	object = "MANAGED_SYSTEM"
+	value = ""
+	node_id = 2
+	node_handle = 2
+	version = 11
+
+HACMPnode:
+	name = "node02"
+	object = "NAME_SERVER"
+	value = "FALSE"
+	node_id = 2
+	node_handle = 2
+	version = 11
+
+HACMPnim:
+	name = "ether"
+	desc = "Ethernet Protocol"
+	addrtype = 0
+	path = "/usr/sbin/rsct/bin/hats_nim"
+	para = ""
+	grace = 60
+	hbrate = 1000000
+	cycle = 10
+	gratarp = 1
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = "Generic_UDP"
+	src_routing = 1
+
+HACMPnim:
+	name = "token"
+	desc = "Token Ring Protocol"
+	addrtype = 0
+	path = "/usr/sbin/rsct/bin/hats_nim"
+	para = ""
+	grace = 90
+	hbrate = 1000000
+	cycle = 10
+	gratarp = 1
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = "Generic_UDP"
+	src_routing = 1
+
+HACMPnim:
+	name = "fddi"
+	desc = "Fiber Data Optical Protocol"
+	addrtype = 0
+	path = "/usr/sbin/rsct/bin/hats_nim"
+	para = ""
+	grace = 60
+	hbrate = 1000000
+	cycle = 10
+	gratarp = 1
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = "Generic_UDP"
+	src_routing = 1
+
+HACMPnim:
+	name = "hps"
+	desc = "High Performance Switch"
+	addrtype = 0
+	path = "/usr/sbin/rsct/bin/hats_nim"
+	para = ""
+	grace = 60
+	hbrate = 1000000
+	cycle = 10
+	gratarp = 1
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = "Generic_UDP"
+	src_routing = 1
+
+HACMPnim:
+	name = "atm"
+	desc = "Asynchronous Transfer Mode Protocol"
+	addrtype = 0
+	path = "/usr/sbin/rsct/bin/hats_nim"
+	para = ""
+	grace = 90
+	hbrate = 1000000
+	cycle = 10
+	gratarp = 0
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = "Generic_UDP"
+	src_routing = 1
+
+HACMPnim:
+	name = "rs232"
+	desc = "RS232 Serial Protocol"
+	addrtype = 1
+	path = "/usr/sbin/rsct/bin/hats_rs232_nim"
+	para = ""
+	grace = 60
+	hbrate = 2000000
+	cycle = 5
+	gratarp = 0
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = ""
+	src_routing = 0
+
+HACMPnim:
+	name = "tmscsi"
+	desc = "TMSCSI Serial protocol"
+	addrtype = 1
+	path = "/usr/sbin/rsct/bin/hats_scsi_nim"
+	para = ""
+	grace = 60
+	hbrate = 2000000
+	cycle = 5
+	gratarp = 0
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = ""
+	src_routing = 0
+
+HACMPnim:
+	name = "tmssa"
+	desc = "TMSSA Serial protocol"
+	addrtype = 1
+	path = "/usr/sbin/rsct/bin/hats_ssa_nim"
+	para = ""
+	grace = 60
+	hbrate = 2000000
+	cycle = 5
+	gratarp = 0
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = ""
+	src_routing = 0
+
+HACMPnim:
+	name = "diskhb"
+	desc = "Disk Heartbeating Protocol"
+	addrtype = 1
+	path = "/usr/sbin/rsct/bin/hats_diskhb_nim"
+	para = ""
+	grace = 30
+	hbrate = 2000000
+	cycle = 4
+	gratarp = 0
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = ""
+	src_routing = 0
+
+HACMPnim:
+	name = "XD_rs232"
+	desc = "Serial Protocol for Extended Distance Heartbeat"
+	addrtype = 1
+	path = "/usr/sbin/rsct/bin/hats_rs232_nim"
+	para = ""
+	grace = 30
+	hbrate = 2500000
+	cycle = 6
+	gratarp = 0
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = ""
+	src_routing = 0
+
+HACMPnim:
+	name = "XD_ip"
+	desc = "Internet Protocol for Extended Distance Heartbeat"
+	addrtype = 0
+	path = "/usr/sbin/rsct/bin/hats_nim"
+	para = ""
+	grace = 30
+	hbrate = 2500000
+	cycle = 12
+	gratarp = 1
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = "Generic_UDP"
+	src_routing = 1
+
+HACMPnim:
+	name = "XD_data"
+	desc = "Internet Protocol for Extended Distance Data Mirroring"
+	addrtype = 0
+	path = "/usr/sbin/rsct/bin/hats_nim"
+	para = ""
+	grace = 30
+	hbrate = 2500000
+	cycle = 12
+	gratarp = 1
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = "Generic_UDP"
+	src_routing = 1
+
+HACMPnim:
+	name = "ib"
+	desc = "Infiniband"
+	addrtype = 0
+	path = "/usr/sbin/rsct/bin/hats_nim"
+	para = ""
+	grace = 60
+	hbrate = 1000000
+	cycle = 10
+	gratarp = 1
+	entry_type = "adapter_type"
+	next_generic_type = "transport"
+	next_generic_name = "Generic_UDP"
+	src_routing = 1
+
+HACMPnetwork:
+	name = "net_ether_01"
+	attr = "public"
+	network_id = 0
+	globalname = ""
+	nimname = "ether"
+	alias = "1"
+	pollInterval = 0
+	monitor_method = "default"
+	alias_hb_addr = ""
+	alias_hb_netmask = ""
+	netmask = "255.255.255.0"
+	net_family = 1
+
+HACMPnetwork:
+	name = "net_ether_02"
+	attr = "public"
+	network_id = 2
+	globalname = ""
+	nimname = "ether"
+	alias = "1"
+	pollInterval = 0
+	monitor_method = "default"
+	alias_hb_addr = ""
+	alias_hb_netmask = ""
+	netmask = "255.255.255.0"
+	net_family = 1
+
+HACMPadapter:
+	type = "ether"
+	network = "net_ether_01"
+	nodename = "node01"
+	ip_label = "hacluster01"
+	function = "boot"
+	identifier = "192.168.1.10"
+	netmask = "255.255.255.0"
+	haddr = ""
+	interfacename = "en1"
+	hb_alias = ""
+	nodebound = 0
+	max_aliases = 0
+	sitename = ""
+
+HACMPadapter:
+	type = "ether"
+	network = "net_ether_01"
+	nodename = "node01"
+	ip_label = "node01"
+	function = "boot"
+	identifier = "192.168.123.100"
+	netmask = "255.255.255.0"
+	haddr = ""
+	interfacename = "en0"
+	hb_alias = ""
+	nodebound = 0
+	max_aliases = 0
+	sitename = ""
+
+HACMPadapter:
+	type = "ether"
+	network = "net_ether_02"
+	nodename = ""
+	ip_label = "service"
+	function = "shared"
+	identifier = "192.168.100.10"
+	netmask = "255.255.255.0"
+	haddr = ""
+	interfacename = ""
+	hb_alias = ""
+	nodebound = 0
+	max_aliases = 0
+	sitename = ""
+
+HACMPadapter:
+	type = "ether"
+	network = "net_ether_02"
+	nodename = "node01"
+	ip_label = "haprod01"
+	function = "boot"
+	identifier = "10.16.0.110"
+	netmask = "255.255.255.0"
+	haddr = ""
+	interfacename = "en4"
+	hb_alias = ""
+	nodebound = 0
+	max_aliases = 0
+	sitename = ""
+
+HACMPadapter:
+	type = "ether"
+	network = "net_ether_01"
+	nodename = "node02"
+	ip_label = "hacluster02"
+	function = "boot"
+	identifier = "192.168.1.20"
+	netmask = "255.255.255.0"
+	haddr = ""
+	interfacename = "en1"
+	hb_alias = ""
+	nodebound = 0
+	max_aliases = 0
+	sitename = ""
+
+HACMPadapter:
+	type = "ether"
+	network = "net_ether_01"
+	nodename = "node02"
+	ip_label = "node02"
+	function = "boot"
+	identifier = "192.168.123.102"
+	netmask = "255.255.255.0"
+	haddr = ""
+	interfacename = "en0"
+	hb_alias = ""
+	nodebound = 0
+	max_aliases = 0
+	sitename = ""
+
+HACMPadapter:
+	type = "ether"
+	network = "net_ether_02"
+	nodename = "node02"
+	ip_label = "haprod02"
+	function = "boot"
+	identifier = "10.16.0.120"
+	netmask = "255.255.255.0"
+	haddr = ""
+	interfacename = "en4"
+	hb_alias = ""
+	nodebound = 0
+	max_aliases = 0
+	sitename = ""
+
+HACMPgroup:
+	group = "aixRG"
+	type = ""
+	stype = "ignore"
+	nodes = "node01 node02"
+	id = 1
+	group_duration = 0
+	acq_order = 0
+	rel_order = 0
+	startup_pref = "OHN"
+	fallover_pref = "FNPN"
+	fallback_pref = "FBHPN"
+	sa_type = ""
+	sa_key = ""
+
+HACMPresource:
+	group = "aixRG"
+	name = "SERVICE_LABEL"
+	value = "service"
+	id = 10
+	monitor_method = ""
+
+HACMPresource:
+	group = "aixRG"
+	name = "FORCED_VARYON"
+	value = "false"
+	id = 2
+	monitor_method = ""
+
+HACMPresource:
+	group = "aixRG"
+	name = "VG_AUTO_IMPORT"
+	value = "false"
+	id = 3
+	monitor_method = ""
+
+HACMPresource:
+	group = "aixRG"
+	name = "FSCHECK_TOOL"
+	value = "fsck"
+	id = 4
+	monitor_method = ""
+
+HACMPresource:
+	group = "aixRG"
+	name = "RECOVERY_METHOD"
+	value = "sequential"
+	id = 5
+	monitor_method = ""
+
+HACMPresource:
+	group = "aixRG"
+	name = "FS_BEFORE_IPADDR"
+	value = "false"
+	id = 6
+	monitor_method = ""
+
+HACMPresource:
+	group = "aixRG"
+	name = "SSA_DISK_FENCING"
+	value = "false"
+	id = 7
+	monitor_method = ""
+
+HACMPevent:
+	name = "swap_adapter"
+	desc = "Script run to swap IP Addresses between two network adapters."
+	setno = 101
+	msgno = 1
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/swap_adapter"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "swap_adapter_complete"
+	desc = "Script run after the swap_adapter script has successfully completed."
+	setno = 101
+	msgno = 2
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/swap_adapter_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "network_up"
+	desc = "Script run after a network has become active."
+	setno = 101
+	msgno = 3
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/network_up"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "network_down"
+	desc = "Script run when a network has failed."
+	setno = 101
+	msgno = 4
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/network_down"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "network_up_complete"
+	desc = "Script run after the network_up script has successfully completed."
+	setno = 101
+	msgno = 5
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/network_up_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "network_down_complete"
+	desc = "Script run after the network_down script has successfully completed."
+	setno = 101
+	msgno = 6
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/network_down_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_up"
+	desc = "Script run when a node is attempting to join the cluster."
+	setno = 101
+	msgno = 7
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_up"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_down"
+	desc = "Script run when a node is attempting to leave the cluster."
+	setno = 101
+	msgno = 8
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_down"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_up_complete"
+	desc = "Script run after the node_up script has successfully completed."
+	setno = 101
+	msgno = 9
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_up_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_down_complete"
+	desc = "Script run after the node_down script has successfully completed."
+	setno = 101
+	msgno = 10
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_down_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "join_standby"
+	desc = "Script run after a standby adapter has become active."
+	setno = 101
+	msgno = 11
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/join_standby"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "fail_standby"
+	desc = "Script run after a standby adapter has failed."
+	setno = 101
+	msgno = 12
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/fail_standby"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "acquire_service_addr"
+	desc = "Script run to configure a service adapter with a service address."
+	setno = 101
+	msgno = 13
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/acquire_service_addr"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "acquire_takeover_addr"
+	desc = "Script run to configure a standby adapter with a service address."
+	setno = 101
+	msgno = 14
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/acquire_takeover_addr"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "get_disk_vg_fs"
+	desc = "Script run to acquire disks, varyon volume groups, and mount filesystems."
+	setno = 101
+	msgno = 15
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/get_disk_vg_fs"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_down_local"
+	desc = "Script run when it is the local node which is leaving the cluster."
+	setno = 101
+	msgno = 16
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_down_local"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_down_local_complete"
+	desc = "Script run after the node_down_local script has successfully completed."
+	setno = 101
+	msgno = 17
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_down_local_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_down_remote"
+	desc = "Script run when it is a remote node which is leaving the cluster."
+	setno = 101
+	msgno = 18
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_down_remote"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_down_remote_complete"
+	desc = "Script run after the node_down_remote script has successfully completed."
+	setno = 101
+	msgno = 19
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_down_remote_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_up_local"
+	desc = "Script run when it is the local node which is joining the cluster."
+	setno = 101
+	msgno = 20
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_up_local"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_up_local_complete"
+	desc = "Script run after the node_up_local script has successfully completed."
+	setno = 101
+	msgno = 21
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_up_local_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_up_remote"
+	desc = "Script run when it is a remote node which is joining the cluster."
+	setno = 101
+	msgno = 22
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_up_remote"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "node_up_remote_complete"
+	desc = "Script run after the node_up_remote script has successfully completed."
+	setno = 101
+	msgno = 23
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/node_up_remote_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "release_service_addr"
+	desc = "Script run to configure the boot address on the service adapter."
+	setno = 101
+	msgno = 24
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/release_service_addr"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "release_takeover_addr"
+	desc = "Script run to configure a standby address on a standby adapter."
+	setno = 101
+	msgno = 25
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/release_takeover_addr"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "release_vg_fs"
+	desc = "Script run to unmount filesystems and varyoff volume groups."
+	setno = 101
+	msgno = 26
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/release_vg_fs"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "start_server"
+	desc = "Script run to start application servers."
+	setno = 101
+	msgno = 27
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/start_server"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "stop_server"
+	desc = "Script run to stop application servers."
+	setno = 101
+	msgno = 28
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/stop_server"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "config_too_long"
+	desc = "Script run when the Cluster Manager has been in configuration for too long."
+	setno = 101
+	msgno = 29
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/config_too_long"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "event_error"
+	desc = "Script run when a previously executed script has failed to complete successfully."
+	setno = 101
+	msgno = 30
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/event_error"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_topology_start"
+	desc = "Topology reconfiguration is starting."
+	setno = 101
+	msgno = 31
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_topology_start"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_topology_complete"
+	desc = "Topology reconfiguration is complete."
+	setno = 101
+	msgno = 32
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_topology_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_release"
+	desc = "Release old resources."
+	setno = 101
+	msgno = 33
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_release"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_release_primary"
+	desc = "Release old primary resources."
+	setno = 101
+	msgno = 33
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_release_primary"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_release_secondary"
+	desc = "Release old secondary resources."
+	setno = 101
+	msgno = 33
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_release_secondary"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_acquire_secondary"
+	desc = "Acquire secondary resources."
+	setno = 101
+	msgno = 34
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_acquire_secondary"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_complete_secondary"
+	desc = "Acquire complete for secondary resources."
+	setno = 101
+	msgno = 35
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_complete_secondary"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_release_fence"
+	desc = "Script to process disk fencing during DARE release."
+	setno = 101
+	msgno = 77
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_release_fence"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_acquire_fence"
+	desc = "Script to process disk fencing during DARE acquire."
+	setno = 101
+	msgno = 78
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_acquire_fence"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_acquire"
+	desc = "Acquire new resources."
+	setno = 101
+	msgno = 34
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_acquire"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_resource_complete"
+	desc = "Resource reconfiguration is complete."
+	setno = 101
+	msgno = 35
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_resource_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "migrate"
+	desc = "Migrate cluster from HACMP Classic to HACMP/ES."
+	setno = 101
+	msgno = 36
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/migrate"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "migrate_complete"
+	desc = "Migration from HACMP Classic is complete."
+	setno = 101
+	msgno = 37
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/migrate_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "acquire_aconn_service"
+	desc = "Script run to move AIX Connections network protocols to service adapters."
+	setno = 101
+	msgno = 40
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/acquire_aconn_service"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "swap_aconn_protocols"
+	desc = "Script run to swap AIX Connections network protocols between two network adapters"
+	setno = 101
+	msgno = 41
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/swap_aconn_protocols"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "get_aconn_rs"
+	desc = "Script run to start AIX Connections services."
+	setno = 101
+	msgno = 42
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/get_aconn_rs"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "release_aconn_rs"
+	desc = "Script run to stop AIX Connections services."
+	setno = 101
+	msgno = 43
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/release_aconn_rs"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "server_restart"
+	desc = "Script to clean up failed application server before attempting restart"
+	setno = 101
+	msgno = 44
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/server_restart"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "server_restart_complete"
+	desc = "Script to complete restarting application server."
+	setno = 101
+	msgno = 45
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/server_restart_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "server_down"
+	desc = "Script to signal the beginning of an application server shutdown."
+	setno = 101
+	msgno = 52
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/server_down"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "server_down_complete"
+	desc = "Script to signal the completion of an application server shutdown."
+	setno = 101
+	msgno = 53
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/server_down_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "rg_move"
+	desc = "Script to move a resource group."
+	setno = 101
+	msgno = 54
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/rg_move"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "rg_move_release"
+	desc = "Script to release a resource group during rg_move."
+	setno = 101
+	msgno = 74
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/rg_move_release"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "rg_move_acquire"
+	desc = "Script to acquire a resource group during rg_move."
+	setno = 101
+	msgno = 78
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/rg_move_acquire"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "rg_move_fence"
+	desc = "Script to process disk fencing during rg_move."
+	setno = 101
+	msgno = 76
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/rg_move_fence"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "rg_move_complete"
+	desc = "Script to signal the completion of a resource group move."
+	setno = 101
+	msgno = 55
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/rg_move_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_down"
+	desc = "Script run when a site is attempting to leave the cluster."
+	setno = 101
+	msgno = 57
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_down"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_down_complete"
+	desc = "Script run after the site_down script has successfully completed."
+	setno = 101
+	msgno = 59
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_down_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_down_local"
+	desc = "Script run when it is the local site which is leaving the cluster."
+	setno = 101
+	msgno = 60
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_down_local"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_down_local_complete"
+	desc = "Script run after the site_down_local script has successfully completed."
+	setno = 101
+	msgno = 61
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_down_local_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_down_remote"
+	desc = "Script run when it is a remote site which is leaving the cluster."
+	setno = 101
+	msgno = 62
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_down_remote"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_down_remote_complete"
+	desc = "Script run after the site_down_remote script has successfully completed."
+	setno = 101
+	msgno = 63
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_down_remote_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_up"
+	desc = "Script run when a site is attempting to join the cluster."
+	setno = 101
+	msgno = 56
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_up"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_up_complete"
+	desc = "Script run after the site_up script has successfully completed."
+	setno = 101
+	msgno = 58
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_up_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_up_local"
+	desc = "Script run when it is the local site which is joining the cluster."
+	setno = 101
+	msgno = 64
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_up_local"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_up_local_complete"
+	desc = "Script run after the site_up_local script has successfully completed."
+	setno = 101
+	msgno = 65
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_up_local_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_up_remote"
+	desc = "Script run when it is a remote site which is joining the cluster."
+	setno = 101
+	msgno = 66
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_up_remote"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_up_remote_complete"
+	desc = "Script run after the site_up_remote script has successfully completed."
+	setno = 101
+	msgno = 67
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_up_remote_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_merge"
+	desc = "Script run when first geo_primary network recovers."
+	setno = 101
+	msgno = 68
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_merge"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_merge_complete"
+	desc = "Script run when after site_merge completes."
+	setno = 101
+	msgno = 69
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_merge_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_isolation"
+	desc = "Script run when all geo_primary networks at a site go down."
+	setno = 101
+	msgno = 70
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_isolation"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "site_isolation_complete"
+	desc = "Script run when after site_isolation completes."
+	setno = 101
+	msgno = 71
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/site_isolation_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "fail_interface"
+	desc = "Script run after an interface has failed."
+	setno = 101
+	msgno = 72
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/fail_interface"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "join_interface"
+	desc = "Script run after an interface has recovered."
+	setno = 101
+	msgno = 73
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/join_interface"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "cluster_notify"
+	desc = "Script to process cluster notification event."
+	setno = 101
+	msgno = 79
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/cluster_notify"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "resource_add"
+	desc = "Add resources to the HACMP cluster."
+	setno = 101
+	msgno = 80
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/resource_add"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "resource_modify"
+	desc = "Changes the configuration of resources in the HACMP cluster."
+	setno = 101
+	msgno = 84
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/resource_modify"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "resource_delete"
+	desc = "Removes resources from the HACMP cluster."
+	setno = 101
+	msgno = 81
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/resource_delete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "resource_online"
+	desc = "Activates resources in the HACMP cluster."
+	setno = 101
+	msgno = 82
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/resource_online"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "resource_offline"
+	desc = "De-activates resources in the HACMP cluster."
+	setno = 101
+	msgno = 83
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/resource_offline"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "resource_state_change"
+	desc = "Trigger event to move resource groups."
+	setno = 101
+	msgno = 85
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/resource_state_change"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "resource_state_change_complete"
+	desc = "End of resource state change event."
+	setno = 101
+	msgno = 86
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/resource_state_change_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "external_resource_state_change"
+	desc = "Event for user-requested resource group migration."
+	setno = 101
+	msgno = 87
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/external_resource_state_change"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "external_resource_state_change_complete"
+	desc = "Completion event for user-requested resource group migration."
+	setno = 101
+	msgno = 88
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/external_resource_state_change_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "intersite_fallover_prevented"
+	desc = "Script to signal that intersite fallover was prevented."
+	setno = 101
+	msgno = 89
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/intersite_fallover_prevented"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "reconfig_configuration_complete"
+	desc = "Script to signal that end of reconfiguration."
+	setno = 101
+	msgno = 90
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/reconfig_configuration_complete"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPevent:
+	name = "forced_down_too_long"
+	desc = "Script run when at least one of the nodes in the Cluster has been forced down for too long."
+	setno = 101
+	msgno = 91
+	catalog = "events.cat"
+	cmd = "/usr/es/sbin/cluster/events/forced_down_too_long"
+	notify = ""
+	pre = ""
+	post = ""
+	recv = ""
+	count = 0
+	event_duration = 0
+
+HACMPdaemons:
+	nodename = "node01"
+	daemon = "clstrmgr"
+	type = "start"
+	object = "manage"
+	value = "auto"
+
+HACMPdaemons:
+	nodename = "node01"
+	daemon = "clstrmgr"
+	type = "start"
+	object = "broadcast"
+	value = "true"
+
+HACMPdaemons:
+	nodename = "node01"
+	daemon = "clinfo"
+	type = "start"
+	object = "time"
+	value = "true"
+
+HACMPdaemons:
+	nodename = "node01"
+	daemon = "clstrmgrES"
+	type = "stop"
+	object = "time"
+	value = "now"
+
+HACMPdaemons:
+	nodename = "node01"
+	daemon = "clstrmgrES"
+	type = "stop"
+	object = "broadcast"
+	value = "true"
+
+HACMPdaemons:
+	nodename = "node01"
+	daemon = "clstrmgrES"
+	type = "stop"
+	object = "mode"
+	value = "graceful"
+
+HACMPdaemons:
+	nodename = "node01"
+	daemon = "clstrmgr"
+	type = "start"
+	object = "time"
+	value = "now"
+
+HACMPtopsvcs:
+	hbInterval = 1
+	fibrillateCount = 4
+	runFixedPri = 1
+	fixedPriLevel = 38
+	tsLogLength = 5000
+	gsLogLength = 5000
+	instanceNum = 40
+
+HACMPlogs:
+	name = "clstrmgr.debug"
+	description = "Generated by the clstrmgr daemon"
+	defaultdir = "/tmp"
+	value = "/tmp"
+	rfs = ""
+
+HACMPlogs:
+	name = "cluster.log"
+	description = "Generated by cluster scripts and daemons"
+	defaultdir = "/usr/es/adm"
+	value = "/usr/es/adm"
+	rfs = ""
+
+HACMPlogs:
+	name = "cluster.mmddyyyy"
+	description = "Cluster history files generated daily"
+	defaultdir = "/usr/es/sbin/cluster/history"
+	value = "/usr/es/sbin/cluster/history"
+	rfs = ""
+
+HACMPlogs:
+	name = "cspoc.log"
+	description = "Generated by CSPOC commands"
+	defaultdir = "/tmp"
+	value = "/tmp"
+	rfs = ""
+
+HACMPlogs:
+	name = "emuhacmp.out"
+	description = "Generated by the event emulator scripts"
+	defaultdir = "/tmp"
+	value = "/tmp"
+	rfs = ""
+
+HACMPlogs:
+	name = "hacmp.out"
+	description = "Generated by event scripts and utilities"
+	defaultdir = "/tmp"
+	value = "/tmp"
+	rfs = ""
+
+HACMPlogs:
+	name = "clavan.log"
+	description = "Generated by Application Availability Analysis tool"
+	defaultdir = "/var/adm"
+	value = "/var/adm"
+	rfs = ""
+
+HACMPlogs:
+	name = "clverify.log"
+	description = "Generated by Cluster Verification utility"
+	defaultdir = "/var/hacmp/clverify"
+	value = "/var/hacmp/clverify"
+	rfs = ""
+
+HACMPlogs:
+	name = "clcomd.log"
+	description = "Generated by clcomd daemon"
+	defaultdir = "/var/hacmp/clcomd"
+	value = "/var/hacmp/clcomd"
+	rfs = ""
+
+HACMPlogs:
+	name = "clcomddiag.log"
+	description = "Generated by clcomd daemon, debug information"
+	defaultdir = "/var/hacmp/clcomd"
+	value = "/var/hacmp/clcomd"
+	rfs = ""
+
+HACMPlogs:
+	name = "clconfigassist.log"
+	description = "Generated by Two-Node Cluster Configuration Assistant"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "clutils.log"
+	description = "Generated by cluster utilities and file propagation"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "cl_testtool.log"
+	description = "Generated by the Cluster Test Tool"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "autoverify.log"
+	description = "Generated by Auto Verify and Synchronize"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "sa.log"
+	description = "Generated by Application Discovery"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "clstrmgr.debug.long"
+	description = "Detail information from the clstrmgr daemon"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "cspoc.log.long"
+	description = "Detail information from CSPOC commands"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "cspoc.log.remote"
+	description = "Generated by remote node running CSPOC commands"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "clinfo.log"
+	description = "Generated by client node running clinfo"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPlogs:
+	name = "migration.log"
+	description = "Generated by cluster migration"
+	defaultdir = "/var/hacmp/log"
+	value = "/var/hacmp/log"
+	rfs = ""
+
+HACMPnpp:
+	name = "cl_highest_free_mem"
+	description = "Node Priority Policy based on highest percentage of free memory"
+	resource_variable = "IBM.Host.TotalPgSpFree"
+	condition = "largest"
+
+HACMPnpp:
+	name = "cl_lowest_disk_busy"
+	description = "Node Priority Policy based on lowest percentage of busy disk bandwidth"
+	resource_variable = "IBM.PhysicalVolume.PctBusy"
+	condition = "smallest"
+
+HACMPnpp:
+	name = "cl_highest_idle_cpu"
+	description = "Node Priority Policy based on highest percentage of CPU idle time"
+	resource_variable = "IBM.Host.PctTotalTimeIdle"
+	condition = "largest"
+
+HACMPrules:
+	name = "TE_JOIN_NODE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/node_up.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_FAIL_NODE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/node_down.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_JOIN_NETWORK"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/network_up.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_FAIL_NETWORK"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/network_down.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_SWAP_ADAPTER"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/swap_adapter.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_JOIN_STANDBY"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/join_standby.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_FAIL_STANDBY"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/fail_standby.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_MIGRATE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/migrate.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_DARE_CONFIGURATION"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/reconfig_configuration.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_SERVER_RESTART"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/server_restart.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_SERVER_DOWN"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/server_down.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_RG_MOVE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/rg_move.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_JOIN_SITE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/site_up.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_FAIL_SITE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/site_down.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_SITE_MERGE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/site_merge.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_SITE_ISOLATION"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/site_isolation.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_FAIL_ADAPTER"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/fail_interface.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_JOIN_ADAPTER"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/join_interface.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_JOIN_NODE_DEP"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/node_up_dependency.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_JOIN_NODE_DEP_COMPLETE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/node_up_dependency_complete.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_FAIL_NODE_DEP"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/node_down_dependency.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_FAIL_NODE_DEP_COMPLETE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/node_down_dependency_complete.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_RG_MOVE_RELEASE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/rg_offline.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_RG_MOVE_ACQUIRE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/rg_online.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_DARE_CONFIG_DEP_RELEASE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/reconfig_configuration_dependency_release.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_DARE_CONFIG_DEP_ACQUIRE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/reconfig_configuration_dependency_acquire.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_DARE_CONFIG_DEP_COMPLETE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/reconfig_configuration_dependency_complete.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_CLUSTER_NOTIFY"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/cluster_notify.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_RESOURCE_STATE_CHANGE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/resource_state_change.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_RESOURCE_STATE_CHANGE_COMPLETE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/resource_state_change_complete.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_EXTERNAL_RESOURCE_STATE_CHANGE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/external_resource_state_change.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_EXTERNAL_RESOURCE_STATE_CHANGE_COMPLETE"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/external_resource_state_change_complete.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_RG_MOVE_RELEASE_SECONDARY"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/rg_offline.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPrules:
+	name = "TE_RG_MOVE_ACQUIRE_SECONDARY"
+	state = 0
+	recovery_prog_path = "/usr/es/sbin/cluster/events/rg_online.rp"
+	recovery_type = 2
+	recovery_level = 0
+
+HACMPtimersvc:
+	name = "file_collections_auto_prop"
+	period = 600
+	start_timeofday = ""
+	stop_timeofday = ""
+	command = "/usr/es/sbin/cluster/utilities/clfileprop"
+	args = "-a"
+
+HACMPtimersvc:
+	name = "autoclverify"
+	period = 0
+	start_timeofday = "00:00:00"
+	stop_timeofday = ""
+	command = "/usr/es/sbin/cluster/utilities/clautover"
+	args = ""
+
+HACMPfilecollection:
+	name = "Configuration_Files"
+	description = "AIX and HACMP configuration files"
+	prop_sync = 0
+	prop_auto = 0
+
+HACMPfilecollection:
+	name = "HACMP_Files"
+	description = "User-defined scripts configured to HACMP"
+	prop_sync = 0
+	prop_auto = 0
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/etc/hosts"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/etc/services"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/etc/snmpd.conf"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/etc/snmpdv3.conf"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/etc/rc.net"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/etc/inetd.conf"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/usr/es/sbin/cluster/netmon.cf"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/usr/es/sbin/cluster/etc/clhosts"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/usr/es/sbin/cluster/etc/rhosts"
+
+HACMPfcfile:
+	fc_name = "Configuration_Files"
+	name = "/usr/es/sbin/cluster/etc/clinfo.rc"
+
+HACMPoemvgmethods:
+	type = "VxVM40"
+	name = "LISTNAMES"
+	command = "/usr/es/sbin/cluster/OEM/VxVM40/cllsvxvmdg"
+
+HACMPoemvgmethods:
+	type = "VxVM40"
+	name = "LSHDISKS"
+	command = "/usr/es/sbin/cluster/OEM/VxVM40/cllsvxvmdisk"
+
+HACMPoemvgmethods:
+	type = "VxVM40"
+	name = "ONLINE"
+	command = "/usr/es/sbin/cluster/OEM/VxVM40/cl_activate_vxms"
+
+HACMPoemvgmethods:
+	type = "VxVM40"
+	name = "OFFLINE"
+	command = "/usr/es/sbin/cluster/OEM/VxVM40/cl_deactivate_vxms"
+
+HACMPoemvgmethods:
+	type = "VxVM40"
+	name = "VERIFY"
+	command = "/usr/es/sbin/cluster/OEM/VxVM40/verify"
+
+HACMPoemvgmethods:
+	type = "VxVM40"
+	name = "STATUS"
+	command = "/usr/es/sbin/cluster/OEM/VxVM40/cllsvxvmstat"
+
+HACMPoemfsmethods:
+	type = "VxFS40"
+	name = "LISTNAMES"
+	command = "/usr/es/sbin/cluster/OEM/VxFS40/cllsvxfsvg"
+
+HACMPoemfsmethods:
+	type = "VxFS40"
+	name = "ONLINE"
+	command = "/usr/es/sbin/cluster/OEM/VxFS40/cl_activate_vxfs"
+
+HACMPoemfsmethods:
+	type = "VxFS40"
+	name = "OFFLINE"
+	command = "/usr/es/sbin/cluster/OEM/VxFS40/cl_deactivate_vxfs"
+
+HACMPoemfsmethods:
+	type = "VxFS40"
+	name = "VERIFY"
+	command = "/usr/es/sbin/cluster/OEM/VxFS40/verify"
+
+HACMPoemfsmethods:
+	type = "VxFS40"
+	name = "LSVOLUMES"
+	command = "/usr/es/sbin/cluster/OEM/VxFS40/cllsvxfsvg"
+
+HACMPoemfsmethods:
+	type = "VxFS40"
+	name = "STATUS"
+	command = "/usr/es/sbin/cluster/OEM/VxFS40/cllsvxfsstat"
+</ODM
