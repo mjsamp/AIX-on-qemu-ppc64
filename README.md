@@ -103,16 +103,21 @@ NFS daemon hangs during the boot then remove it
 ```bash
 rmitab rcnfs
 ```
-Then you can restore it after finish the install and get login prompt. It works after fix ps.
+Then you can run it after finish the install and get login prompt. It works after fix ps.
 
 ```bash
-root@node01:/>mknfs
+to start it
+root@node01:/>startsrc -g nfs
+create an export
 root@node01:/>mknfsexp -d /yourfsname
-0513-059 The nfsd Subsystem has been started. Subsystem PID is 4981162.
-0513-059 The rpc.mountd Subsystem has been started. Subsystem PID is 4522402.
+to list exports
 root@node01:/>showmount -e localhost
 export list for localhost:
 /yourfsname (everyone)
+
+to stop it
+root@node01:/>startsrc -g nfs
+
 ```
 
 Remove DSO
