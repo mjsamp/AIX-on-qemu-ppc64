@@ -45,6 +45,11 @@ ln -s /sbin/helpers/jfs2/fsck /sbin/helpers/jfs2/fsck64
 ```
 Do the same for logredo64 because it also hangs while moving a shared VG to another node (yes, PowerHA 6.1 worked on it after some issues fixed) so the varyon failed.
 
+```bash
+mv /sbin/helpers/jfs2/logredo64 sbin/helpers/jfs2/logredo64.old
+ln -s /sbin/helpers/jfs2/logredo /sbin/helpers/jfs2/logredo64
+```
+
 ## Fixing ps command
 
 ps is broken also (Segmentation Fault). Fortunately there is another ps that works but isn't the same so you may need replace -o flags like %c by comm in some scripts for example.
@@ -98,6 +103,29 @@ NFS daemon hangs during the boot then remove it
 ```bash
 rmitab rcnfs
 ```
+
+Remove DSO
+```bash
+rmitab aso
+```
+
+You may have this RPM issue
+```bash
+error: rpmdb: Thread/process 5177770/1 failed: Thread died in Berkeley DB library
+error: db4 error(-30974) from dbenv->failchk: DB_RUNRECOVERY: Fatal error, run database recovery
+error: cannot open Packages index using db4 -  (-30974)
+error: cannot open Packages database in /opt/freeware/packages
+error: rpmdb: Thread/process 5177770/1 failed: Thread died in Berkeley DB library
+error: db4 error(-30974) from dbenv->failchk: DB_RUNRECOVERY: Fatal error, run database recovery
+error: cannot open Packages index using db4 -  (-30974)
+error: cannot open Packages database in /opt/freeware/packages
+```
+To fix it add the following line to your /etc/initab after tcpip service (you find the script in the folder scripts) 
+
+```bash
+fixrpm:23456789:once:/fixrpm.sh > /dev/null 2>&1
+```
+
 ## Fix cron and crontab
 
 cron and crontab didn't work also and there is no alternative version.
