@@ -106,7 +106,13 @@ rmitab rcnfs
 Then you can restore it after finish the install and get login prompt. It works after fix ps.
 
 ```bash
-mknfs
+root@node01:/>mknfs
+root@node01:/>mknfsexp -d /yourfsname
+0513-059 The nfsd Subsystem has been started. Subsystem PID is 4981162.
+0513-059 The rpc.mountd Subsystem has been started. Subsystem PID is 4522402.
+root@node01:/>showmount -e localhost
+export list for localhost:
+/yourfsname (everyone)
 ```
 
 Remove DSO
