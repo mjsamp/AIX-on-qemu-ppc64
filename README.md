@@ -103,6 +103,11 @@ NFS daemon hangs during the boot then remove it
 ```bash
 rmitab rcnfs
 ```
+Then you can restore it after finish the install and get login prompt. It works after fix ps.
+
+```bash
+mknfs
+```
 
 Remove DSO
 ```bash
