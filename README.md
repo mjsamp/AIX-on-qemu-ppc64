@@ -193,6 +193,9 @@ JCL - 20231221_01 based on Oracle jdk8u401-b10
 PowerHA SystemMirror 6.1 worked but you need to fix some scripts.
 Look for the errors in hacmp.out then fix them yourself or search for the fixes on the internet.
 
+See PowerHA compatibilty matrix for more details.
+https://www.ibm.com/docs/en/powerha-aix/7.2?topic=reference-information
+
 Trying to run PowerHA 5.4 I had to downgrade perl to fix some issues so I keep it for 6.1 once it is working well.
 
 ```bash
