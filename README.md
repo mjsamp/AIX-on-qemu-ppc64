@@ -284,5 +284,13 @@ Testing PowerHA I was able to create a Resource Group with a service IP and a sh
 ## Contacts
 Linkedin: https://www.linkedin.com/in/marcos-jean-sampaio-05bb621b/
 
+## Buy me a coffee
 
+BTC bc1qd7c9mcvs0dgpd2nv59jsmm2j3qzjhq4a7mramu
+
+ETH 0x7cF556FFA4F3ffD57554D89A19DD92F546598544
+
+LTC LTJwUWPLdDDgK8AYNb419C7UGZgpxuy9qK
+
+DOGE DUBiQaGs4WKJFNc6Adq86QWU3aXgBJR3zW
 
