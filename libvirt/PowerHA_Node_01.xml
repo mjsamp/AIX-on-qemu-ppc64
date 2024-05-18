@@ -1,0 +1,108 @@
+<domain type="qemu">
+  <name>aix_7200-04-02-2027_node01</name>
+  <uuid>b1b3eaf1-8d72-486c-aee7-d82ec688058b</uuid>
+  <memory unit="KiB">4194304</memory>
+  <currentMemory unit="KiB">4194304</currentMemory>
+  <vcpu placement="static">2</vcpu>
+  <os>
+    <type arch="ppc64" machine="pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off">hvm</type>
+  </os>
+  <cpu mode="custom" match="exact" check="none">
+    <model fallback="forbid">POWER9</model>
+  </cpu>
+  <clock offset="utc"/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <devices>
+    <emulator>/usr/bin/qemu-system-ppc64</emulator>
+    <disk type="file" device="cdrom">
+      <driver name="qemu" type="raw"/>
+      <source file="/media/linuxuser/B446C78946C74AB6/PowerVM/VIOS/vios.iso"/>
+      <target dev="sda" bus="scsi"/>
+      <readonly/>
+      <boot order="2"/>
+      <address type="drive" controller="0" bus="0" target="0" unit="0"/>
+    </disk>
+    <disk type="file" device="disk">
+      <driver name="qemu" type="qcow2"/>
+      <source file="/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk0.qcow2"/>
+      <backingStore/>
+      <target dev="sdb" bus="scsi"/>
+      <boot order="1"/>
+      <address type="drive" controller="0" bus="0" target="0" unit="1"/>
+    </disk>
+    <disk type="file" device="disk" snapshot="no">
+      <driver name="qemu" type="raw" cache="none"/>
+      <source file="/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img"/>
+      <backingStore/>
+      <target dev="sdc" bus="scsi"/>
+      <shareable/>
+      <address type="drive" controller="0" bus="0" target="0" unit="4"/>
+    </disk>
+    <controller type="usb" index="0" model="qemu-xhci" ports="15">
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x03" function="0x0"/>
+    </controller>
+    <controller type="scsi" index="0" model="ibmvscsi">
+      <address type="spapr-vio" reg="0x00002001"/>
+    </controller>
+    <controller type="pci" index="0" model="pci-root">
+      <model name="spapr-pci-host-bridge"/>
+      <target index="0"/>
+    </controller>
+    <controller type="virtio-serial" index="0">
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x05" function="0x0"/>
+    </controller>
+    <interface type="network">
+      <mac address="56:44:45:30:31:31"/>
+      <source network="default"/>
+      <model type="spapr-vlan"/>
+      <address type="spapr-vio" reg="0x00000000"/>
+    </interface>
+    <interface type="network">
+      <mac address="56:44:45:30:31:32"/>
+      <source network="default"/>
+      <model type="spapr-vlan"/>
+      <address type="spapr-vio" reg="0x00001000"/>
+    </interface>
+    <interface type="network">
+      <mac address="56:44:45:30:31:33"/>
+      <source network="default"/>
+      <model type="spapr-vlan"/>
+      <address type="spapr-vio" reg="0x00002000"/>
+    </interface>
+    <interface type="network">
+      <mac address="56:44:45:30:31:34"/>
+      <source network="default"/>
+      <model type="spapr-vlan"/>
+      <address type="spapr-vio" reg="0x00003000"/>
+    </interface>
+    <interface type="network">
+      <mac address="56:44:45:30:31:35"/>
+      <source network="default"/>
+      <model type="spapr-vlan"/>
+      <address type="spapr-vio" reg="0x00004000"/>
+    </interface>
+    <serial type="pty">
+      <target type="spapr-vio-serial" port="0">
+        <model name="spapr-vty"/>
+      </target>
+      <address type="spapr-vio" reg="0x30000000"/>
+    </serial>
+    <console type="pty">
+      <target type="serial" port="0"/>
+      <address type="spapr-vio" reg="0x30000000"/>
+    </console>
+    <input type="keyboard" bus="usb">
+      <address type="usb" bus="0" port="2"/>
+    </input>
+    <input type="mouse" bus="usb">
+      <address type="usb" bus="0" port="1"/>
+    </input>
+    <memballoon model="virtio">
+      <address type="pci" domain="0x0000" bus="0x00" slot="0x07" function="0x0"/>
+    </memballoon>
+    <panic model="pseries"/>
+  </devices>
+</domain>
+

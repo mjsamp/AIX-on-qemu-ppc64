@@ -1,0 +1,12 @@
+<disk type="file" device="disk">
+  <driver name="qemu" type="raw"/>
+  <source file="/media/linuxuser/B446C78946C74AB6/PowerVM/libvirtd/sparse.img" index="4"/>
+  <backingStore/>
+  <target dev="sdd" bus="scsi"/>
+  <shareable/>
+  <alias name="scsi0-0-0-3"/>
+  <address type="drive" controller="0" bus="0" target="0" unit="3"/>
+</disk>
+
+
+
