@@ -9,6 +9,7 @@ XrayDisk 240GB SSD\
 Ubuntu 20.04.6 LTS (Focal Fossa) 64-bit\
 Kernel Linux 5.4.0-181-generic x86_64\
 QEMU emulator version 4.2.1 (Debian 1:4.2-3ubuntu6.28)\
+libvirt QEMU Driver 6.0.0-0ubuntu8.20\
 AIX aix_7200-04-02-2027_1of2_072020.iso
 
 ## Installation
