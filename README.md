@@ -85,6 +85,7 @@ cron
 crontab
 ps
 qdaemon
+tprof
 vmstat --> replace with vmstat64
 ```
 
