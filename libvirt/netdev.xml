@@ -1,0 +1,6 @@
+<interface type="network">
+  <source network="default" bridge="virbr0"/>
+  <target dev="vnet5"/>
+  <model type="spapr-vlan"/>
+  <alias name="net5"/>
+</interface>

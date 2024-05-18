@@ -1,0 +1,386 @@
+PERFPMR: Warning! This version of perfpmr is over 3 months old
+PERFPMR: You may want to check ftp site for possible newer version
+PERFPMR: sleeping for 5 seconds - will proceed with collection
+         if this command is not interrupted
+PERFPMR: Memory required: 140000000 bytes (133 MB)   noncomputational_mem_available=3376914432 bytes (3220) MB
+     UID     PID    PPID   C    STIME    TTY  TIME CMD
+    root 8454618       1   0 22:55:41   vty1  0:00 /usr/bin/trace -ad -M -N ?O?p 
+ABOVE TRACE COMMAND IS CURRENTLY RUNNING. IF THIS IS UNINTENTIONAL
+THEN CTRL/C OUT OF THIS SCRIPT NOW ELSE TRACE.SH WILL STOP THIS TRACE
+sleeping for 10 seconds to allow ctrl/c from script
+23:26:39-05/17/24 :	perfpmr.sh begin
+    PERFPMR: hostname: node01
+    PERFPMR: systemid: b1b3eaf1-8d72-486c-aee7-d82ec688058b
+    PERFPMR: perfpmr.sh Version Universal 2024/02/08  oslevel: 7.2
+    PERFPMR: current directory: /fs01RG/perfpmr
+    PERFPMR: perfpmr tool directory: /fs01RG/perfpmr/.
+    PERFPMR: Parameters passed to perfpmr.sh: 600
+    PERFPMR: Data collection started in foreground (renice -n -20)
+    PERFPMR: Current timezone: America/Sao_Paulo
+23:26:40-05/17/24 :	PERFPMR: executing perfpmr_perfpmr_premonitor -p 1 -t 1 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./perfpmr_premonitor.sh -p 1 -t 1
+Starting perfstat_trigger at Fri May 17 23:26:41 -03 2024
+Starting tcpstat at Fri May 17 23:26:41 -03 2024
+23:26:42-05/17/24 :	PERFPMR: executing perfpmr_allocate_tracebuffers stanza
+23:26:42-05/17/24 :	PERFPMR: executing perfpmr_trace -k 10e,254,116,117 -L 20000000 -T 20000000 -I -c -E3 5 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./trace.sh.sh -p  -k 10e,254,116,117 -L 20000000 -T 20000000 -I -c -E3 5
+     TRACE.SH: Stopping any previously running traces
+     TRACE.SH: Starting trace for 5 seconds
+/usr/bin/trace    -p   -k 10e,254,116,117  -f -n -C all -d -L 20000000 -T 20000000 -ao trace.raw
+23:26:56-05/17/24 :	initializing trace buffers  :  execution_time: 5 seconds
+23:27:02-05/17/24 :	trcon completed
+     TRACE.SH: Data collection started
+     TRACE.SH: trace data collection is being stopped
+23:27:07-05/17/24 :	trcoff completed
+     TRACE.SH: Suspending component trace
+23:27:07-05/17/24 :	trcstop  :  execution_time: 1 seconds
+     TRACE.SH: Trace stopped
+23:27:08-05/17/24 :	trcstop completed
+
+     TRACE.SH: Enabling locktrace
+lock tracing enabled for all classes
+     TRACE.SH: Starting trace for 5 seconds
+/usr/bin/trace    -p  -j 234,101,104,106,10C,10E,112,113,134,139,465,46D,46E,5D8,606,607,608,609,1044,4AF,419,11F,107,200,102,103,102F,4B0 -f -n -C all -d -L 20000000 -T 20000000 -ao trace.raw.lock
+23:27:09-05/17/24 :	initializing lock trace buffers  :  execution_time: 3 seconds
+23:27:12-05/17/24 :	trcon completed
+     TRACE.SH: Data collection started
+     TRACE.SH: trace data collection is being stopped
+23:27:17-05/17/24 :	trcoff completed
+     TRACE.SH: Suspending component trace
+23:27:17-05/17/24 :	trcstop  :  execution_time: 2 seconds
+     TRACE.SH: Trace stopped
+23:27:19-05/17/24 :	trcstop completed
+     TRACE.SH: Disabling locktrace
+lock tracing disabled for all classes
+     TRACE.SH: Trcnm data is in file trace.nm
+     TRACE.SH: /etc/trcfmt saved in file trace.fmt
+     TRACE.SH: Binary trace data files are in trace.raw.lock*
+     TRACE.SH: Trcnm data is in file trace.nm
+     TRACE.SH: /etc/trcfmt saved in file trace.fmt
+TRACE.SH: skipping collection of gennames/gensyms/inode data until config.sh
+     TRACE.SH: Resuming component trace from suspended state
+23:27:39-05/17/24 :	PERFPMR: executing perfpmr_comptrace -L 20000000 -T 20000000 -d -s 5 stanza
+                        PERFPMR: skipping comptrace collection
+23:27:39-05/17/24 :	PERFPMR: executing perfpmr_trace_419 -L 10000000 -T 5000000 60 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./trace_419.sh -L 10000000 -T 5000000 60
+23:27:40-05/17/24 :	trace_419.sh
+/usr/bin/trace -C all -j 419    -L 10000000 -T 5000000 -ano trc_419.raw
+23:28:43-05/17/24 :	trace_419 has been stopped
+23:28:43-05/17/24 :	PERFPMR: executing perfpmr_monitor -I 0 -N 0 -S 0 600 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./monitor.sh   -I 0 -N 0 -S 0 600
+23:28:44-05/17/24 :	monitor.sh -I
+
+     MONITOR: Capturing initial lsps, svmon, and vmstat data
+23:29:25-05/17/24 :	svmon -G   :  execution_time: 0 seconds
+23:29:25-05/17/24 :	svmon -P -O mapping=on,maxbufsize=32MB   :  execution_time: 0 seconds
+23:29:25-05/17/24 :	svmon -S -O pidlist=on,maxbufsize=32MB   :  execution_time: 3 seconds
+23:29:28-05/17/24 :	svmon.sh completed  :  execution_time: 3 seconds
+23:29:28-05/17/24 :	fcstat before on each fc adapter
+23:29:28-05/17/24 :	fcstats completed
+23:29:28-05/17/24 :	lsmpio before 
+23:29:29-05/17/24 :	IPSEC before 
+     MONITOR: Starting perf_xtra programs: initsleep=0 count=0 sleep=0
+     MONITOR: Starting system monitors for 600 seconds.
+              Starting <mpstat> monitoring
+mpstat: SMT is disabled, -s option can not be specified.
+              Starting <ps> monitoring
+              Starting <nfs> monitoring
+              Starting <netstat> monitoring
+              Starting <24x7count> monitoring
+              Starting <kdb> monitoring
+              Starting <emstat> monitoring
+              Starting <tstat> monitoring
+              Starting <sar> monitoring
+              Starting <iostat> monitoring
+              Starting <aiostat> monitoring
+              Starting <ventstat> monitoring
+              Starting <fcstat2> monitoring
+              Starting <iomon> monitoring
+              Starting <foldstat> monitoring
+              Starting <powerstat> monitoring
+              Starting <lparstat> monitoring
+iostat: No tapes found in the system.
+              Starting <vmstat> monitoring
+iostat: 0551-157 Asynchronous I/O not configured on the system.
+              Starting <pprof> monitoring
+     MONITOR: Waiting for measurement period to end....
+Option -E generates an useful report only in SPURR capable processors.
+
+     MONITOR: Capturing final lsps, svmon, and vmstat data
+23:41:02-05/17/24 :	svmon -G   :  execution_time: 0 seconds
+23:41:02-05/17/24 :	svmon -P -O mapping=on,maxbufsize=32MB   :  execution_time: 0 seconds
+23:41:02-05/17/24 :	svmon -S -O pidlist=on,maxbufsize=32MB   :  execution_time: 3 seconds
+23:41:05-05/17/24 :	svmon.sh completed  :  execution_time: 4 seconds
+23:41:05-05/17/24 :	fcstat after on each fc adapter
+23:41:05-05/17/24 :	fcstats completed
+23:41:05-05/17/24 :	lsmpio after 
+23:41:05-05/17/24 :	IPSEC after 
+     MONITOR: Generating reports....
+     MONITOR: Network reports are in netstat.int and nfsstat.int
+     MONITOR: Monitor reports are in monitor.int and monitor.sum
+23:41:07-05/17/24 :	PERFPMR: executing perfpmr_iptrace -L 0 10 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./iptrace.sh -L 0 10
+
+     IPTRACE: Starting iptrace for 10 seconds....
+0513-059 The iptrace Subsystem has been started. Subsystem PID is 7799148.
+0513-044 The iptrace Subsystem was requested to stop.
+     IPTRACE: iptrace collected.
+     IPTRACE: Binary iptrace data is in file iptrace.raw   :  execution_time: 10 seconds
+23:41:19-05/17/24 :	PERFPMR: executing perfpmr_tcpdump 10 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./tcpdump.sh 10
+
+     TCPDUMP: Starting tcpdump for 10 seconds....
+
+     TCPDUMP: tcpdump collected.
+
+
+     TCPDUMP: Binary tcpdump data is in file tcpdump.raw.en0
+     TCPDUMP: Binary tcpdump data is in file tcpdump.raw.en1
+     TCPDUMP: Binary tcpdump data is in file tcpdump.raw.en4
+TCPDUMP COLLECTION :  execution_time: 10 seconds
+23:41:40-05/17/24 :	PERFPMR: executing perfpmr_filemon -T 10000000 -O detailed,all -D 10 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./filemon.sh -T 10000000 -O detailed,all -D 10
+
+     FILEMON: Starting filesystem monitor for 10 seconds....
+23:41:40-05/17/24 :	Starting trace -C all -j 139,134,107,10B,15B,163,19C,1C9,221,222,228,232,2A1,2A2,45B,5D8,AB2 -L 10000000 -T 10000000 -andfo filemon_trace.raw  :  execution_time: 3 seconds
+23:41:44-05/17/24 :	trcon initiated  :  execution_time: 0 seconds
+     FILEMON: tracing started
+23:41:54-05/17/24 :	trcstop initiated  :  execution_time: 0 seconds
+23:41:54-05/17/24 :	FILEMON: trcstop completed
+     FILEMON: Generating report....
+23:41:55-05/17/24 :	filemon report generating .. 23:41:55-05/17/24 :	running gensyms/fs01RG/perfpmr/./filemon.sh[150]: 10486150 Memory fault(coredump)
+  :  execution_time: 1 seconds
+23:41:56-05/17/24 :	FILEMON: filemon.sh post processing completed
+23:41:56-05/17/24 :	FILEMON: filemon.sh removing trace files
+23:41:57-05/17/24 :	FILEMON: filemon.sh completed  : execution_time: 17 seconds
+23:41:57-05/17/24 :	PERFPMR: executing perfpmr_tprof -f10 60 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./tprof.sh -f10 60
+
+     TPROF: Starting tprof for 60 seconds....
+23:41:59-05/17/24 :	Running tprof -v       -T 20000000 -l -r tprof -F  -A all -x /usr/bin/sleep 60   :  execution_time: 1 seconds
+
+     TPROF: Starting tprof with no PURR for 60 seconds....
+23:42:00-05/17/24 :	Running tprof -v      -T 20000000 -l -r tprof_nopurr -F  -A all -x /usr/bin/sleep 60   :  execution_time: 1 seconds
+     TPROF: Sample data collected....
+23:42:01-05/17/24 :	tprof      -l -r tprof -skej  :  execution_time: 0 seconds
+23:42:01-05/17/24 :	tprof     -l -r tprof_nopurr -zskej  :  execution_time: 0 seconds
+mv: cannot rename tprof.trc* to tprof_data/tprof.trc*: 
+No such file or directory
+mv: cannot rename tprof_nopurr.trc* to tprof_data/tprof_nopurr.trc*: 
+No such file or directory
+mv: cannot rename tprof.syms to tprof_data/tprof.syms: 
+No such file or directory
+mv: cannot rename tprof_nopurr.syms to tprof_data/tprof_nopurr.syms: 
+No such file or directory
+     TPROF: tprof trc and syms files are in tprof_data
+23:42:01-05/17/24 :	tprof collection completed
+     TPROF: Tprof report is in tprof.sum and tprof_nopurr.prof
+23:42:01-05/17/24 :	PERFPMR: executing perfpmr_hpmcount -H 5 stanza
+                        PERFPMR: skipping hpmcount collection
+23:42:01-05/17/24 :	PERFPMR: executing perfpmr_pmucount -g all -o pmucount_kuyng.txt -e pmucount.stderr -P 59 1 stanza
+                        PERFPMR: skipping pmucount collection
+23:42:02-05/17/24 :	PERFPMR: executing perfpmr_probevue 5 stanza
+                        PERFPMR: skipping probevue collection
+23:42:02-05/17/24 :	PERFPMR: executing perfpmr_config -u 0 stanza
+                        PERFPMR: Executing /fs01RG/perfpmr/./config.sh     -u 0
+23:42:02-05/17/24 :	config.sh begin
+
+     CONFIG.SH: Generating SW/HW configuration
+23:42:25-05/17/24 :	copying ODM files  :  execution_time: 2 seconds
+23:42:27-05/17/24 :	do_kdb_vmm  :  execution_time: 33 seconds
+23:43:01-05/17/24 :	ipcs -Smqsa  :  execution_time: 0 seconds
+23:43:01-05/17/24 :	lsmcode -A  :  execution_time: 1 seconds
+23:43:02-05/17/24 :	lspv -u   :  execution_time: 0 seconds
+23:43:02-05/17/24 :	lspv   :  execution_time: 0 seconds
+23:43:02-05/17/24 :	lsvg   :  execution_time: 1 seconds
+23:43:03-05/17/24 :	lsvg -l  :  execution_time: 1 seconds
+23:43:04-05/17/24 :	lslv lv  :  execution_time: 4 seconds
+23:43:09-05/17/24 :	lsattr -E -l dev  :  execution_time: 6 seconds
+23:43:15-05/17/24 :	getting disk queue_depth info  :  execution_time: 5 seconds
+23:43:20-05/17/24 :	disk queue_depth info completed
+23:43:20-05/17/24 :	df  :  execution_time: 0 seconds
+23:43:25-05/17/24 :	/usr/bin/netstat -in -rn -D -an -c -Cn  :  execution_time: 1 seconds
+RPC: 1832-011 Program unavailable: nfso: 1831-731 cannot contact local lockd.
+RPC: 1832-011 Program unavailable: nfso: 1831-730 cannot contact local statd.
+RPC: 1832-011 Program unavailable: nfso: 1831-730 cannot contact local statd.
+RPC: 1832-011 Program unavailable: nfso: 1831-731 cannot contact local lockd.
+RPC: 1832-011 Program unavailable: nfso: 1831-730 cannot contact local statd.
+RPC: 1832-011 Program unavailable: nfso: 1831-730 cannot contact local statd.
+RPC: 1832-011 Program unavailable: nfso: 1831-731 cannot contact local lockd.
+RPC: 1832-011 Program unavailable: nfso: 1831-730 cannot contact local statd.
+RPC: 1832-011 Program unavailable: nfso: 1831-730 cannot contact local statd.
+skeyctl: keys are not supported on this system.
+23:43:39-05/17/24 :	getmempool.sh  :  execution_time: 11 seconds
+23:43:50-05/17/24 :	getvmpool.sh  :  execution_time: 5 seconds
+23:43:55-05/17/24 :	getj2mem.sh  :  execution_time: 2 seconds
+23:43:58-05/17/24 :	genkld  :  execution_time: 0 seconds
+23:43:58-05/17/24 :	genkex  :  execution_time: 0 seconds
+23:43:59-05/17/24 :	getevars  :  execution_time: 0 seconds
+23:43:59-05/17/24 :	ls /proc/pid/cwd  :  execution_time: 0 seconds
+23:43:59-05/17/24 :	errpt  :  execution_time: 1 seconds
+23:44:00-05/17/24 :	emgr -lv3 > emgr.out There is no efix data on this system.
+  :  execution_time: 2 seconds
+23:44:02-05/17/24 :	lslpp -ch  :  execution_time: 5 seconds
+23:44:07-05/17/24 :	instfix -ic  :  execution_time: 65 seconds
+23:45:13-05/17/24 :	lscfg -vp  :  execution_time: 0 seconds
+23:45:14-05/17/24 :	do_kdb_devsw  :  execution_time: 18 seconds
+23:45:32-05/17/24 :	echo vnode|kdb  :  execution_time: 29 seconds
+23:46:01-05/17/24 :	echo vfs|kdb  :  execution_time: 3 seconds
+23:46:04-05/17/24 :	collect dscrctl and NX settingsHardware Data Streams not supported on this system
+/usr/sbin/nxstat: illegal option -- S
+Usage:
+/usr/sbin/nxstat [-AUWT] [-a atype] [-u uindex] [-w windex] [-t wtype] interval [count]
+  :  execution_time: 7 seconds
+23:46:11-05/17/24 :	echo dmpdt_chrp -i  :  execution_time: 0 seconds
+23:46:11-05/17/24 :	sysdumpdev -l, -e  :  execution_time: 1 seconds
+23:46:12-05/17/24 :	gennames  :  execution_time: 19 seconds
+cp: /etc/resolv.conf: No such file or directory
+23:46:33-05/17/24 :	VIO client cfg data  :  execution_time: 5 seconds
+/var/perf/daily//*.nmon not found
+./*.nmon not found
+23:46:44-05/17/24 :	getting alog information
+23:46:44-05/17/24 :	powermt data being collected
+23:46:45-05/17/24 :	db2 tids being collected  :  execution_time: 0 seconds
+23:46:45-05/17/24 :	proctree -Tt  :  execution_time: 0 seconds
+23:46:45-05/17/24 :	memdetails.sh  -u 0   :  execution_time: 177 seconds
+23:49:42-05/17/24 :	memdetails.sh  completed
+23:49:42-05/17/24 :	application symbol tables being generated  :  execution_time: 1 seconds
+23:49:43-05/17/24 :	collect logfiles  :  execution_time: 1 seconds
+23:49:44-05/17/24 :	ipsec  :  execution_time: 0 seconds
+23:49:45-05/17/24 :	smtctl  :  execution_time: 0 seconds
+23:49:45-05/17/24 :	lruobj  :  execution_time: 8 seconds
+/fs01RG/perfpmr
+23:49:53-05/17/24 :	AHAFS:  AHAFS is being used .. collecting ahafs config
+  :  execution_time: 0 seconds
+23:49:59-05/17/24 :	th  |kdb  :  execution_time: 5 seconds
+23:50:05-05/17/24 :	running lsconf  :  execution_time: 17 seconds
+23:50:22-05/17/24 :	do_kdb_scb  :  execution_time: 28 seconds
+cpuextintr_ctl(): Function not implemented
+23:50:50-05/17/24 :	vnicstat.sh  :  execution_time: 0 seconds
+23:50:50-05/17/24 :	radinfo  :  execution_time: 0 seconds
+23:50:50-05/17/24 :	nvme_collect/fs01RG/perfpmr/./config.sh[3]: /usr/lib/scripts/snap/nvme_collect:  not found
+  :  execution_time: 0 seconds
+23:50:50-05/17/24 :	pmctl/pmcycles  :  execution_time: 1 seconds
+23:50:51-05/17/24 :	vxfs  :  execution_time: 0 seconds
+23:50:51-05/17/24 :	lcpu2bid  :  snap execution_time: 0 seconds
+23:50:51-05/17/24 :	ipf  :  execution_time: 0 seconds
+23:50:51-05/17/24 :	efsenable  :  execution_time: 1 seconds
+23:50:52-05/17/24 :	snap -gGfFLktRSn -d /fs01RG/perfpmr/snap_data
+Destination directory set to /fs01RG/perfpmr/snap_data
+Checking space requirement for general information......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................... done.
+.********Checking and initializing directory structure
+Creating /fs01RG/perfpmr/snap_data/flash directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/client_collect directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/vfc_client_collect directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/nvme_collect directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/scsidisk_collect directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/dpcom_collect directory tree... done.
+Directory /fs01RG/perfpmr/snap_data/client_collect already exists... skipping
+Directory /fs01RG/perfpmr/snap_data/vfc_client_collect already exists... skipping
+Directory /fs01RG/perfpmr/snap_data/nvme_collect already exists... skipping
+Directory /fs01RG/perfpmr/snap_data/scsidisk_collect already exists... skipping
+Directory /fs01RG/perfpmr/snap_data/dpcom_collect already exists... skipping
+Creating /fs01RG/perfpmr/snap_data/lvm directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/scraid directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/filesys directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/kernel directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/nfs directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/tcpip directory tree... done.
+Directory /fs01RG/perfpmr/snap_data/general already exists... skipping
+Creating /fs01RG/perfpmr/snap_data/general/diagnostics directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/general/nim directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/pcixscsi directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/sissas directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/testcase directory tree... done.
+Creating /fs01RG/perfpmr/snap_data/other directory tree... done.
+********Finished setting up directory /fs01RG/perfpmr/snap_data
+
+Checking Space requirement for client_collect
+Checking Space requirement for vfc_client_collect
+The script vfc_client_collect is not executable in /usr/lib/ras/snapscripts
+Checking Space requirement for nvme_collect
+The script nvme_collect is not executable in /usr/lib/ras/snapscripts
+Checking Space requirement for scsidisk_collect
+Checking Space requirement for dpcom_collect
+Checking Space requirement for nfs
+Checking space requirement for tcpip information........................................................ done.
+Checking space requirement for kernel information................ done.
+Checking space requirement for filesys information.......................... done.
+Checking space requirement for logical volume manager information.........VGs.....PVs... done.
+Checking space requirement for scraid information..... done.
+Checking Space requirement for client_collect
+Checking Space requirement for vfc_client_collect
+The script vfc_client_collect is not executable in /usr/lib/ras/snapscripts
+Checking Space requirement for nvme_collect
+The script nvme_collect is not executable in /usr/lib/ras/snapscripts
+Checking Space requirement for scsidisk_collect
+Checking Space requirement for dpcom_collect
+Checking Space requirement for nfs
+Checking space requirement for flash information.... done.
+Checking for enough free space in filesystem... done.
+
+Gathering general system information...................................................................................................................................................... done.
+Including Pd* ODM files in general information............ done.
+Including security files in general information.............................................................................................................................................................................................................................................................................................................. done.
+Gathering platform/scanout information.done.
+Gathering client_collect data
+Gathering vfc_client_collect data
+The script vfc_client_collect is not executable in /usr/lib/ras/snapscripts
+Gathering nvme_collect data
+The script nvme_collect is not executable in /usr/lib/ras/snapscripts
+Gathering scsidisk_collect data
+Gathering dpcom_collect data
+Gathering nfs data
+Gathering pcixscsi system information....... done.
+Gathering sissas system information...... done.
+Gathering tcpip system information......................................................... done.
+Gathering kernel system information................. done.
+Gathering filesys system information.......................... done.
+Gathering logical volume manager information.........VGs................PVs... done.
+Gathering scraid system information..... done.
+Gathering client_collect data
+Gathering vfc_client_collect data
+The script vfc_client_collect is not executable in /usr/lib/ras/snapscripts
+Gathering nvme_collect data
+The script nvme_collect is not executable in /usr/lib/ras/snapscripts
+Gathering scsidisk_collect data
+Gathering dpcom_collect data
+Gathering nfs data
+Gathering flash system information.... done.
+  :  snap execution_time: 628 seconds
+00:01:20-05/18/24 :	locale
+00:01:20-05/18/24 :	ipclimits
+00:01:20-05/18/24 :	pmlist
+Output in pmlist.allgroups.txt
+00:01:23-05/18/24 :	pmlist completed  :  execution_time: 1 seconds
+00:01:24-05/18/24 :	collecting inode data from kdb  :  execution_time: 31 seconds
+00:01:55-05/18/24 :	running gensyms/fs01RG/perfpmr/./config.sh[30]: 9372028 Memory fault(coredump)
+  :  execution_time: 2 seconds
+00:01:57-05/18/24 :	gensyms completed
+00:01:58-05/18/24 :	proc/version
+     CONFIG.SH: Report is in file config.sum
+00:01:58-05/18/24 :	config.sh completed  :  execution_time: 1173 seconds
+
+    PERFPMR: Data collection complete.
+
+Stopping perfpmr_premonitor.sh
+    root  9044242        1   0 23:26:41   vty1  0:00 /bin/ksh /fs01RG/perfpmr/./perfpmr_premonitor.sh -p 1 -t 1 
+In perfpmr_premonitor cleanup
+
+PERFPMR: Data files can be archived and gzipped using:
+   perfpmr.sh -z filename [-o "dirs"] 
+      filename  is the name of the archive file. 
+         An example of a typical archive filename:
+            /tmp/salesforceticket#.perfpmr.pax.gz
+         Or /tmp/salesforceticket#.host.perfpmr.pax.gz
+      "dirs"      dirs is a list of directories or perfdata directory name enclosed in quotes.
+       When  -o is specified, you must be in the parent directory of the data director[y\ies] specified
+          ex. perfpmr.sh -z /tmp/TS0000000.perfpmr.pax.gz -o perfdata
+       If -o not specified, all files in current directory are archived.
+       For ftp upload instructions, visit:
+       https://www.ibm.com/support/pages/enhanced-customer-data-repository-ecurep-send-data-ftp
+       NOTE: Blue Diamond clients should upload to the BD servers instead.
+IMPORTANT: there is a core file in this directory. Please exclude this from
+           the list of perfpmr data files that will be uploaded
+-rw-------    1 root     system     11537028 May 18 00:01 core
+00:02:00-05/18/24 :	perfpmr.sh completed  :  execution_time: 2147 seconds
