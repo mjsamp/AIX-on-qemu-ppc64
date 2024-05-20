@@ -1,0 +1,658 @@
+2024-05-11 02:42:16.750+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 92e9ca5b-a042-4f9f-bd73-36d057a42982 \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=31,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/home/linuxuser/Downloads/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=33,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=34,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=35,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=36,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=37,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/1 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-11T03:15:39.002517Z qemu-system-ppc64: terminating on signal 15 from pid 1684 (/usr/sbin/libvirtd)
+2024-05-11 03:15:39.440+0000: shutting down, reason=shutdown
+2024-05-11 03:44:31.470+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 92e9ca5b-a042-4f9f-bd73-36d057a42982 \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=31,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/home/linuxuser/Downloads/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=33,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=34,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=35,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=36,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=37,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/1 (label charserial0)
+2024-05-11T03:51:33.396417Z qemu-system-ppc64: terminating on signal 15 from pid 1695 (/usr/sbin/libvirtd)
+2024-05-11 03:51:33.797+0000: shutting down, reason=destroyed
+2024-05-11 13:28:26.571+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=32,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/home/linuxuser/Downloads/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/4 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-11T14:27:03.637723Z qemu-system-ppc64: terminating on signal 15 from pid 1673 (/usr/sbin/libvirtd)
+2024-05-11 14:27:04.109+0000: shutting down, reason=shutdown
+2024-05-14 01:25:20.201+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=33,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/1 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-14T01:55:48.369321Z qemu-system-ppc64: terminating on signal 15 from pid 1727 (/usr/sbin/libvirtd)
+2024-05-14 01:55:49.809+0000: shutting down, reason=shutdown
+2024-05-14 02:17:12.888+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-4-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-4-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-4-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-4-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-4-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=33,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/1 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-14T03:08:01.223747Z qemu-system-ppc64: terminating on signal 15 from pid 1727 (/usr/sbin/libvirtd)
+2024-05-14 03:08:02.162+0000: shutting down, reason=shutdown
+2024-05-14 03:14:05.987+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-5-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-5-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-5-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-5-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-5-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=33,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/1 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-14T03:47:01.334268Z qemu-system-ppc64: terminating on signal 15 from pid 1727 (/usr/sbin/libvirtd)
+2024-05-14 03:47:02.078+0000: shutting down, reason=shutdown
+2024-05-14 14:09:47.901+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-7-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-7-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-7-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-7-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-7-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=33,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/3 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-14T17:09:42.063603Z qemu-system-ppc64: terminating on signal 15 from pid 1727 (/usr/sbin/libvirtd)
+2024-05-14 17:09:43.215+0000: shutting down, reason=shutdown
+2024-05-14 18:24:02.472+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-3-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=33,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/2 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-14T21:40:19.451353Z qemu-system-ppc64: terminating on signal 15 from pid 1682 (/usr/sbin/libvirtd)
+2024-05-14 21:40:19.942+0000: shutting down, reason=shutdown
+2024-05-15 02:23:30.502+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-6-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-6-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-6-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-6-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-6-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=33,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/2 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-15T13:17:30.991738Z qemu-system-ppc64: terminating on signal 15 from pid 1682 (/usr/sbin/libvirtd)
+2024-05-15 13:17:31.460+0000: shutting down, reason=shutdown
+2024-05-15 18:26:44.729+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-181-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-9-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-9-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-9-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-9-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-9-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=33,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/1 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-15T21:17:53.211832Z qemu-system-ppc64: terminating on signal 15 from pid 1682 (/usr/sbin/libvirtd)
+2024-05-15 21:17:53.902+0000: shutting down, reason=shutdown
+2024-05-15 22:03:06.073+0000: starting up libvirt version: 6.0.0, package: 0ubuntu8.20 (Mauricio Faria de Oliveira <mfo@canonical.com> Tue, 16 Apr 2024 14:20:13 -0300), qemu version: 4.2.1Debian 1:4.2-3ubuntu6.28, kernel: 5.4.0-182-generic, hostname: localhost.localdomain
+LC_ALL=C \
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin \
+HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_ \
+XDG_DATA_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.local/share \
+XDG_CACHE_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.cache \
+XDG_CONFIG_HOME=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/.config \
+QEMU_AUDIO_DRV=none \
+/usr/bin/qemu-system-ppc64 \
+-name guest=aix_7200-04-02-2027_node02,debug-threads=on \
+-S \
+-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-2-aix_7200-04-02-2027_/master-key.aes \
+-machine pseries-bionic,accel=tcg,usb=off,dump-guest-core=off,cap-htm=off,accel=tcg,usb=off,dump-guest-core=off \
+-cpu POWER9 \
+-m 2048 \
+-overcommit mem-lock=off \
+-smp 2,sockets=2,cores=1,threads=1 \
+-uuid 2b0746bb-95eb-4199-be1e-de8e450ec02b \
+-display none \
+-no-user-config \
+-nodefaults \
+-chardev socket,id=charmonitor,fd=33,server,nowait \
+-mon chardev=charmonitor,id=monitor,mode=control \
+-rtc base=utc \
+-no-shutdown \
+-boot strict=on \
+-device qemu-xhci,p2=15,p3=15,id=usb,bus=pci.0,addr=0x3 \
+-device spapr-vscsi,id=scsi0,reg=0x00002002 \
+-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/aix_7200-04-02-2027_1of2_072020.iso","node-name":"libvirt-3-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-3-format","read-only":true,"driver":"raw","file":"libvirt-3-storage"}' \
+-device scsi-cd,bus=scsi0.0,channel=0,scsi-id=0,lun=0,device_id=drive-scsi0-0-0-0,drive=libvirt-3-format,id=scsi0-0-0-0,bootindex=2 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/hdisk1.qcow2","node-name":"libvirt-2-storage","auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-2-format","read-only":false,"driver":"qcow2","file":"libvirt-2-storage","backing":null}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=1,device_id=drive-scsi0-0-0-1,drive=libvirt-2-format,id=scsi0-0-0-1,bootindex=1 \
+-blockdev '{"driver":"file","filename":"/media/linuxuser/B446C78946C74AB6/PowerVM/PowerHA/01_shared_pv.img","node-name":"libvirt-1-storage","cache":{"direct":true,"no-flush":false},"auto-read-only":true,"discard":"unmap"}' \
+-blockdev '{"node-name":"libvirt-1-format","read-only":false,"cache":{"direct":true,"no-flush":false},"driver":"raw","file":"libvirt-1-storage"}' \
+-device scsi-hd,bus=scsi0.0,channel=0,scsi-id=0,lun=4,device_id=drive-scsi0-0-0-4,share-rw=on,drive=libvirt-1-format,id=scsi0-0-0-4,write-cache=on \
+-netdev tap,fd=35,id=hostnet0 \
+-device spapr-vlan,netdev=hostnet0,id=net0,mac=56:44:45:30:31:36,reg=0x00009000 \
+-netdev tap,fd=36,id=hostnet1 \
+-device spapr-vlan,netdev=hostnet1,id=net1,mac=56:44:45:30:31:37,reg=0x00005000 \
+-netdev tap,fd=37,id=hostnet2 \
+-device spapr-vlan,netdev=hostnet2,id=net2,mac=56:44:45:30:31:38,reg=0x00006000 \
+-netdev tap,fd=38,id=hostnet3 \
+-device spapr-vlan,netdev=hostnet3,id=net3,mac=56:44:45:30:31:39,reg=0x00007000 \
+-netdev tap,fd=39,id=hostnet4 \
+-device spapr-vlan,netdev=hostnet4,id=net4,mac=56:44:45:30:31:40,reg=0x00008000 \
+-chardev pty,id=charserial0 \
+-device spapr-vty,chardev=charserial0,id=serial0,reg=0x30000000 \
+-device usb-kbd,id=input0,bus=usb.0,port=2 \
+-device usb-mouse,id=input1,bus=usb.0,port=1 \
+-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7 \
+-sandbox on,obsolete=deny,elevateprivileges=deny,spawn=deny,resourcecontrol=deny \
+-msg timestamp=on
+char device redirected to /dev/pts/2 (label charserial0)
+vscsi_send_capabilities: capabilities size mismatch !
+VSCSI: Unknown MAD type 09
+2024-05-15T23:08:35.204042Z qemu-system-ppc64: terminating on signal 15 from pid 1699 (/usr/sbin/libvirtd)
+2024-05-15 23:08:35.761+0000: shutting down, reason=shutdown
