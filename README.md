@@ -316,7 +316,8 @@ To share a disk between two machines in order to create a shared Volume Group ju
 -drive file=01_shared_pv.qcow2,file.locking=off,if=none,id=drive-virtio-disk1 -device scsi-hd,drive=drive-virtio-disk1
 ```
 ## Observations
-Take a look into the console output files before trying install AIX if you don't have experience doing it.
+Take a look into the videos I've done before trying install AIX if you don't have experience doing it.
+https://www.youtube.com/playlist?list=PLWNnbCzUTMSY6c6rjKtGuSAzHCPONExv2
 
 This environment isn't recommended for production but it worth a try if you want to learn AIX and PowerHA for example.
 
