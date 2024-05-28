@@ -68,7 +68,7 @@ root@node01:/>lslpp -w /usr/bin/crontab
   ----------------------------------------------------------------------------
   /usr/bin/crontab                            bos.rte.cron          File
 ```
-Now copy the fileset from an old AIX install media to a temporary folder and list it and extract if it contains the binary:
+Now copy the fileset from an old AIX install media to a temporary folder and list it then extract if it contains the binary:
 ```bash
 #list the content
 root@node01:/>restore -Tqvf bos.rte.cron
