@@ -93,7 +93,7 @@ vmstat --> replace with vmstat64
 ## The following are alternatives if you don't have an older AIX install media.
 ### Fixing ps command
 
-ps is broken also (Segmentation Fault). Fortunately there is another ps that works but isn't the same so you may need replace -o flags like %c by comm in some scripts for example.
+Command ps is broken (Segmentation Fault). Fortunately there is another ps that works but isn't the same so you may need replace -o flags like %c by comm for example in some scripts.
 This is the alternative ps.
 
 ```bash
