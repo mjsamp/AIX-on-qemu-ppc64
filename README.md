@@ -19,17 +19,38 @@ Create a qcow2 disk:
 qemu-img create -f qcow2 hdisk0.qcow2 20G
 ```
 
-Run the following command to install AIX from the iso:
+Define the virtual machine using virsh (see libvirt folder for XML files and edit it to reflect your ISO and virtual hard disks files path):
 
 ```bash
-qemu-system-ppc64 -cpu POWER8 -machine pseries -m 4096 -serial stdio -drive file=hdisk0.qcow2,if=none,id=drive-virtio-disk0 -device virtio-scsi-pci,id=scsi -device scsi-hd,drive=drive-virtio-disk0 -cdrom aix_7200-04-02-2027_1of2_072020.iso -prom-env "boot-command=boot cdrom:" -prom-env "input-device=/vdevice/vty@71000000" -prom-env "output-device=/vdevice/vty@71000000"
+virsh define AIX_qemu_install.xml
 ```
 \
-Then run the following command to boot AIX from disk:
+Then check the boot options and set CDROM as first boot:\
+![IMAGE ALT TEXT HERE](./images/boot_options.png)\
+\
+Start the machine and wait for the initial install screen so press 1 and enter:\
+![IMAGE ALT TEXT HERE](./images/tela_01.png)\
+\
+On the next screen choose option 2:\
+![IMAGE ALT TEXT HERE](./images/tela_02.png)\
+\
+On the next screen choose option 4:\
+![IMAGE ALT TEXT HERE](./images/tela_02_mais_opcoes.png)\
+\
+On the next screen define install options (disable Enable System Backups... so it finishes faster) then press 0 and Enter then confirm install:\
+![IMAGE ALT TEXT HERE](./images/tela_02_opcoes_instalacao.png)\
 
-```bash
-qemu-system-ppc64 -cpu POWER8 -machine pseries -m 2048 -serial mon:stdio -drive file=hdisk0.qcow2,if=none,id=drive-virtio-disk0 -device virtio-scsi-pci,id=scsi -device scsi-hd,drive=drive-virtio-disk0 -cdrom aix_7200-04-02-2027_1of2_072020.iso -prom-env "boot-command=boot disk:" -net nic,macaddr=56:44:45:30:31:31 -net tap,script=no,ifname=tap0 -nographic
-```
+Wait till install finishes then follow instructions. If everything goes ok it will reboot the machine at the end. Then wait for the install screen again and choose Maintenance Mode (option 3).\
+![IMAGE ALT TEXT HERE](./images/tela_03_modo_manutencao.png)\
+\
+Access the rootvg and follow the steps to fix boot and inittab services.\
+![IMAGE ALT TEXT HERE](./images/tela_03_modo_manutencao_acesso_rootvg.png)\
+\
+After fix boot and services halt the machine using command halt and wait it stop.\
+If halt fails force stop then define the disk as the first boot option.\
+Watch my video where I show you all these steps to install it using virsh and virt-manager for more details.
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/EFftKpKCj_Y/0.jpg)](https://www.youtube.com/watch?v=EFftKpKCj_Y)\
 
 ## Fixing boot
 The first boot hangs trying to run fsck64. Then you need to replace the 64 bits by the 32 bits.
@@ -310,11 +331,14 @@ Path: /etc/objrepos
   cluster.es.server.utils    6.1.0.0  COMMITTED  ES Server Utilities
 ```
 
-To share a disk between two machines in order to create a shared Volume Group just add file.locking=off to the drive file options for each disk:
-
+To share disks between two machines in order to create a shared Volume Group create raw disk images for each disk:\
+The following command will create a sparse raw disk image
 ```bash
--drive file=01_shared_pv.qcow2,file.locking=off,if=none,id=drive-virtio-disk1 -device scsi-hd,drive=drive-virtio-disk1
+dd if=/dev/zero of=sparse.img bs=1k count=0 seek=10485760
 ```
+See my video Updates on Install AIX and run PowerHA using virsh and virt-manager for more details.\
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/_zZIwsy8JLs/0.jpg)](https://www.youtube.com/watch?v=_zZIwsy8JLs)\
+
 ## Observations
 Take a look into the videos I've done before trying install AIX if you don't have experience doing it.\
 https://www.youtube.com/playlist?list=PLWNnbCzUTMSY6c6rjKtGuSAzHCPONExv2
