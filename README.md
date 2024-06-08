@@ -346,7 +346,18 @@ https://www.youtube.com/playlist?list=PLWNnbCzUTMSY6c6rjKtGuSAzHCPONExv2
 This environment isn't recommended for production but it worth a try if you want to learn AIX and PowerHA for example.
 
 Testing PowerHA I was able to create a Resource Group with a service IP and a shared Volume Group successfully and move and failover worked very well in my tests.
-\
+
+You can create an install ISO after fix everything so you don't need to do these steps everytime you need to install it on a new machine.
+
+First create a mksysb image:
+```bash
+mksysb /backups/aix72qemu_fixed.mksysb
+```
+Then create the iso image:
+```bash
+mkcd -L -S -I /images/aix72qemu_fixed.iso -m /images/aix72qemu_fixed.mksysb
+```
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/SNvnmmXTENk/0.jpg)](https://www.youtube.com/watch?v=SNvnmmXTENk)
 
 
