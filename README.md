@@ -351,11 +351,11 @@ You can create an install ISO after fix everything so you don't need to do these
 
 First create a mksysb image:
 ```bash
-mksysb /backups/aix72qemu_fixed.mksysb
+mksysb /images/mksysb/aix72qemu_fixed.mksysb
 ```
 Then create the iso image:
 ```bash
-mkcd -L -S -I /images/aix72qemu_fixed.iso -m /images/aix72qemu_fixed.mksysb
+mkcd -L -S -I /images/iso/ -m /images/mksysb/aix72qemu_fixed.mksysb
 ```
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/SNvnmmXTENk/0.jpg)](https://www.youtube.com/watch?v=SNvnmmXTENk)
